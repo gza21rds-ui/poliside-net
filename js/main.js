@@ -304,35 +304,62 @@ function initHeroStickyScroll() {
   window.addEventListener('resize', () => requestAnimationFrame(update), { passive: true });
 }
 
-/* ===========================================
-   Insight Page Helpers
-   =========================================== */
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTO0Jmg4lrbprc2UZm0_4gXHPHjkxnHEvEiNIUsLHRbbl3q9IdHTjPjQTdFsZYwq5_c1sRrxCROMR1p/pub?output=csv';
+
+async function fetchArticlesFromCSV() {
+  try {
+    const res = await fetch(SHEET_CSV_URL);
+    if (!res.ok) throw new Error('Network error: ' + res.status);
+    const csvText = await res.text();
+    
+    return new Promise((resolve) => {
+      if (typeof Papa === 'undefined') { console.error('PapaParse is not loaded'); resolve([]); return; }
+      Papa.parse(csvText, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          const articles = results.data.map(row => ({
+            ...row,
+            published: row.published === 'TRUE' || row.published === 'true'
+          }));
+          resolve(articles);
+        },
+        error: function(err) {
+          console.error('CSV Parse Error:', err);
+          resolve([]);
+        }
+      });
+    });
+  } catch (err) {
+    console.error('Fetch CSV Error:', err);
+    return [];
+  }
+}
+
 async function loadArticles(category = 'all') {
   try {
-    const response = await fetch('tables/insight_articles?limit=100&sort=-published_at');
-    const result = await response.json();
-    let articles = result.data || [];
-    articles = articles.filter(a => a.published);
-    if (category !== 'all') articles = articles.filter(a => a.category === category);
-    return articles;
+    const articles = await fetchArticlesFromCSV();
+    let result = articles || [];
+    result = result.filter(a => a.published);
+    if (category !== 'all') result = result.filter(a => a.category === category);
+    return result.sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
   } catch (err) { console.error('Error loading articles:', err); return []; }
 }
 
 async function loadArticleBySlug(slug) {
   try {
-    const response = await fetch('tables/insight_articles?limit=100');
-    const result = await response.json();
-    return (result.data || []).find(a => a.slug === slug) || null;
+    const articles = await fetchArticlesFromCSV();
+    return (articles || []).find(a => a.slug === slug) || null;
   } catch (err) { console.error('Error loading article:', err); return null; }
 }
 
 async function loadRelatedArticles(currentId, relatedIds) {
   try {
-    const response = await fetch('tables/insight_articles?limit=100');
-    const result = await response.json();
-    const articles = result.data || [];
-    if (relatedIds && relatedIds.length > 0) return articles.filter(a => relatedIds.includes(a.id) && a.id !== currentId && a.published);
-    return articles.filter(a => a.id !== currentId && a.published).sort((a, b) => new Date(b.published_at) - new Date(a.published_at)).slice(0, 3);
+    const articles = await fetchArticlesFromCSV();
+    const allArticles = articles || [];
+    let result = allArticles.filter(a => a.id !== currentId && a.published);
+    if (relatedIds && relatedIds.length > 0) return result.filter(a => relatedIds.includes(a.id));
+    return result.sort((a, b) => new Date(b.published_at) - new Date(a.published_at)).slice(0, 3);
   } catch (err) { console.error('Error loading related articles:', err); return []; }
 }
 

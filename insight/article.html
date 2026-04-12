@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVR4P6J8D5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QVR4P6J8D5');
+  </script>
+  <title>POLISIDE Insight - 記事詳細</title>
+  
+  <!-- OGP Tags (JavaScript will inject canonical dynamically) -->
+  <meta property="og:type" content="article">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#C76A45">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <style>
+    .article-header { padding: 40px 0; text-align: center; background: var(--color-bg-alt); }
+    .article-meta { font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 16px; }
+    .article-meta span { display: inline-block; padding: 4px 12px; border-radius: 20px; background: rgba(199,106,69,0.1); color: var(--color-accent); font-weight: 600; margin-right: 12px; }
+    .article-title { font-size: 2rem; font-weight: 800; color: var(--color-text); line-height: 1.4; max-width: 800px; margin: 0 auto; }
+    .article-content { max-width: 740px; margin: 40px auto; padding: 0 20px; font-size: 1.05rem; line-height: 1.8; color: var(--color-text); }
+    .article-content h2 { margin-top: 48px; margin-bottom: 20px; font-size: 1.5rem; color: var(--color-text-dark); border-bottom: 2px solid var(--color-accent); padding-bottom: 10px; }
+    .article-content p { margin-bottom: 24px; }
+    .article-content strong { color: var(--color-accent); }
+    .btn-back { display: inline-block; margin-top: 40px; color: var(--color-accent); font-weight: 600; text-decoration: none; }
+    .btn-back i { margin-right: 8px; }
+    #loadingSpinner { text-align: center; padding: 80px; font-size: 1.2rem; color: var(--color-text-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">POLISIDE</a>
+      <div class="nav__links">
+        <a href="../index.html" class="nav__link">TOP</a>
+        <a href="index.html" class="nav__link">POLISIDE Insight</a>
+        <a href="../fellowship.html" class="nav__link">POLISIDE Fellowship</a>
+        <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="nav__link nav__link--cta">
+          <i class="fab fa-line"></i> LINE相談
+        </a>
+      </div>
+      <div class="nav__hamburger" aria-label="メニュー" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div id="loadingSpinner">記事を読み込んでいます...<br><br><div class="loading__spinner" style="margin:0 auto;"></div></div>
+    
+    <div id="articleContainer" style="display: none;">
+      <header class="article-header">
+        <div class="container--narrow">
+          <div class="article-meta"><span id="a-category"></span> <span id="a-date" style="background:transparent;color:inherit;padding:0;"></span></div>
+          <h1 class="article-title" id="a-title"></h1>
+        </div>
+      </header>
+
+      <article class="article-content" id="a-content">
+        <!-- Content gets injected here -->
+      </article>
+
+      <div style="text-align:center; padding-bottom: 60px;">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i>Insight一覧へ戻る</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__legal" style="padding-top:40px; margin-top:20px;">
+        <a href="../index.html">TOP</a>
+        <a href="index.html">POLISIDE Insight</a>
+        <a href="../terms.html">利用規約</a>
+        <a href="../privacy.html">プライバシーポリシー</a>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 POLISIDE. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const slug = urlParams.get('slug');
+      
+      if (!slug) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      // loadArticleBySlug is defined in main.js
+      const article = await loadArticleBySlug(slug);
+      
+      document.getElementById('loadingSpinner').style.display = 'none';
+      
+      if (!article) {
+        document.getElementById('articleContainer').innerHTML = '<div style="text-align:center;padding:80px"><h2>記事が見つかりませんでした</h2><a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i>一覧へ戻る</a></div>';
+        document.getElementById('articleContainer').style.display = 'block';
+        return;
+      }
+
+      // Inject data
+      document.title = `${article.title} - POLISIDE Insight`;
+      
+      // Update Canonical Tag
+      const canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      canonical.href = `https://poliside.net/insight/article.html?slug=${article.slug}`;
+      document.head.appendChild(canonical);
+
+      document.getElementById('a-title').textContent = article.title;
+      document.getElementById('a-category').textContent = article.category || 'コラム';
+      
+      // formatDate is defined in main.js
+      document.getElementById('a-date').textContent = formatDate(article.published_at);
+      document.getElementById('a-content').innerHTML = article.content;
+      
+      document.getElementById('articleContainer').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
