@@ -372,7 +372,7 @@ function renderArticleCard(article) {
   const icons = { '選挙': '🗳️', '議会': '🏛️', '発信': '📢', '考え方': '💡', '政策': '📋' };
   const icon = icons[article.category] || '📄';
   return `
-    <a href="insight/article.html?slug=${article.slug}" class="insight-card animate-on-scroll">
+    <a href="/insight/article.html?slug=${article.slug}" class="insight-card animate-on-scroll">
       <div class="insight-card__img">${icon}</div>
       <div class="insight-card__body">
         <span class="insight-card__category">${article.category || 'その他'}</span>
