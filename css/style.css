@@ -118,11 +118,11 @@ p{margin-bottom:1rem;line-height:1.85;font-size:1.05rem}
 .nav__overlay.open{display:block}
 
 /* ==========================================
-   HERO — Two-column visual impact
+   HERO — Center-aligned with visual gimmick
    ========================================== */
 .hero-wrapper{position:relative}
 
-.hero{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding-top:64px;
+.hero{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:100px 0 120px;
   background:
     linear-gradient(135deg, #FAF8F2 0%, #F5F0E8 25%, #EDE8DF 50%, #F3EFE6 75%, #FAFAF6 100%);
 }
@@ -153,26 +153,28 @@ p{margin-bottom:1rem;line-height:1.85;font-size:1.05rem}
 .hero__blob--sage{width:550px;height:550px;background:radial-gradient(circle,rgba(107,143,113,.08),transparent 65%);bottom:-8%;left:-8%}
 .hero__blob--cream{width:500px;height:500px;background:radial-gradient(circle,rgba(243,241,235,.55),transparent 60%);top:20%;left:30%}
 
-/* Split layout — text left, visual right */
-.hero__split{position:relative;z-index:10;display:flex;align-items:center;justify-content:center;gap:48px;max-width:1100px;width:100%;padding:0 32px;margin:0 auto}
-.hero__text-side{flex:1;max-width:540px;text-align:left}
-.hero__visual-side{flex:1;display:flex;align-items:center;justify-content:center;max-width:480px}
-
+/* Centered text block */
+.hero__center{position:relative;z-index:10;text-align:center;padding:0 32px;max-width:800px;width:100%}
 .hero__label{font-family:var(--font-accent);font-size:.75rem;font-weight:600;color:var(--color-accent);letter-spacing:.28em;text-transform:uppercase;margin-bottom:22px;display:block;opacity:0;transform:translateY(10px);animation:heroFadeUp .7s var(--ease-out) .2s forwards}
-.hero__main-copy{font-family:var(--font-heading);font-size:clamp(2.4rem,5vw,3.8rem);font-weight:800;color:var(--color-primary);line-height:1.2;margin-bottom:24px;opacity:0;transform:translateY(16px);animation:heroFadeUp .7s var(--ease-out) .4s forwards;letter-spacing:.02em}
+.hero__main-copy{font-family:var(--font-heading);font-size:clamp(2.6rem,6vw,4.2rem);font-weight:800;color:var(--color-primary);line-height:1.2;margin-bottom:28px;opacity:0;transform:translateY(16px);animation:heroFadeUp .7s var(--ease-out) .4s forwards;letter-spacing:.02em}
 .hero__main-copy .accent{color:var(--color-accent);position:relative}
-.hero__sub-copy{font-size:clamp(.95rem,1.4vw,1.1rem);color:var(--color-text-light);line-height:2;margin-bottom:32px;opacity:0;transform:translateY(10px);animation:heroFadeUp .7s var(--ease-out) .55s forwards}
+.hero__sub-copy{font-size:clamp(1rem,1.5vw,1.15rem);color:var(--color-text-light);line-height:2;margin-bottom:36px;opacity:0;transform:translateY(10px);animation:heroFadeUp .7s var(--ease-out) .55s forwards}
 .hero__cta-group{opacity:0;transform:translateY(10px);animation:heroFadeUp .7s var(--ease-out) .7s forwards}
 
 @keyframes heroFadeUp{to{opacity:1;transform:translateY(0)}}
 
-/* Visual frame — image with decorative rings */
-.hero__visual-frame{position:relative;width:100%;max-width:440px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;opacity:0;animation:heroFadeUp .8s var(--ease-out) .5s forwards}
-.hero__visual-img{width:88%;height:88%;object-fit:cover;border-radius:24px;box-shadow:0 16px 48px rgba(0,0,0,.08),0 4px 12px rgba(199,106,69,.1);position:relative;z-index:3;transition:transform .4s var(--ease)}
-.hero__visual-img:hover{transform:scale(1.02)}
-.hero__visual-ring{position:absolute;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
-.hero__visual-ring--1{width:105%;height:105%;border:1.5px dashed rgba(199,106,69,.15);animation:ringRotate 40s linear infinite}
-.hero__visual-ring--2{width:115%;height:115%;border:1px solid rgba(107,143,113,.08);animation:ringRotate 60s linear infinite reverse}
+/* Gimmick area — illustration with animated rings */
+.hero__gimmick{position:relative;z-index:10;margin-top:48px;display:flex;align-items:center;justify-content:center;opacity:0;animation:heroFadeUp .8s var(--ease-out) .9s forwards}
+.hero__gimmick-inner{position:relative;width:320px;height:320px;display:flex;align-items:center;justify-content:center}
+.hero__gimmick-img{width:220px;height:220px;object-fit:cover;border-radius:50%;box-shadow:0 12px 40px rgba(0,0,0,.08),0 4px 16px rgba(199,106,69,.12);position:relative;z-index:3;transition:transform .4s var(--ease)}
+.hero__gimmick-img:hover{transform:scale(1.04)}
+
+/* Animated rings — orbital gimmick feel */
+.hero__ring{position:absolute;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%)}
+.hero__ring--outer{width:310px;height:310px;border:1.5px dashed rgba(199,106,69,.16);animation:ringRotate 40s linear infinite}
+.hero__ring--mid{width:270px;height:270px;border:1px solid rgba(107,143,113,.10);animation:ringRotate 28s linear infinite reverse}
+.hero__ring--inner{width:240px;height:240px;border:1px dashed rgba(199,106,69,.08);animation:ringRotate 50s linear infinite}
+
 @keyframes ringRotate{to{transform:translate(-50%,-50%) rotate(360deg)}}
 
 /* Scroll indicator */
@@ -181,7 +183,6 @@ p{margin-bottom:1rem;line-height:1.85;font-size:1.05rem}
 .hero__scroll-line{width:1px;height:32px;position:relative;overflow:hidden;background:var(--color-border)}
 .hero__scroll-line::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--color-accent);animation:scrollLine 2.6s ease infinite}
 @keyframes scrollLine{0%{top:-100%}50%{top:0}100%{top:100%}}
-
 
 /* Wave transition */
 .hero__wave{position:absolute;bottom:-1px;left:0;right:0;height:80px;pointer-events:none;z-index:5}
@@ -545,12 +546,14 @@ p{margin-bottom:1rem;line-height:1.85;font-size:1.05rem}
   .nav__links{position:fixed;top:0;right:-100%;width:85%;max-width:300px;height:100vh;background:var(--color-bg);flex-direction:column;justify-content:center;padding:36px;gap:22px;transition:right var(--transition-base);box-shadow:-4px 0 24px rgba(0,0,0,.06)}
   .nav__links.open{right:0}
   .nav__hamburger{display:flex}
-  .hero__main-copy{font-size:clamp(2rem,7vw,2.8rem)}
-  .hero__sub-copy{font-size:.95rem}
-  .hero__split{flex-direction:column-reverse;gap:24px;padding:0 20px;text-align:center}
-  .hero__text-side{max-width:100%;text-align:center}
-  .hero__visual-side{max-width:320px}
-  .hero__visual-frame{max-width:280px}
+  .hero__main-copy{font-size:clamp(2.1rem,7vw,3rem)}
+  .hero__sub-copy{font-size:1rem}
+  .hero__gimmick{margin-top:32px}
+  .hero__gimmick-inner{width:260px;height:260px}
+  .hero__gimmick-img{width:180px;height:180px}
+  .hero__ring--outer{width:250px;height:250px}
+  .hero__ring--mid{width:220px;height:220px}
+  .hero__ring--inner{width:195px;height:195px}
   .story__visual{min-height:140px}
   .service-grid{grid-template-columns:1fr}
   .insight-grid{grid-template-columns:1fr}
@@ -575,8 +578,11 @@ p{margin-bottom:1rem;line-height:1.85;font-size:1.05rem}
 }
 @media(max-width:480px){
   .cta-btn{padding:13px 26px;font-size:.98rem}
-  .hero__visual-side{max-width:260px}
-  .hero__visual-frame{max-width:240px}
+  .hero__gimmick-inner{width:220px;height:220px}
+  .hero__gimmick-img{width:150px;height:150px}
+  .hero__ring--outer{width:210px;height:210px}
+  .hero__ring--mid{width:185px;height:185px}
+  .hero__ring--inner{width:165px;height:165px}
   .fellowship-process{grid-template-columns:1fr}
   .challenge-item{padding:14px 16px}
   .stance__item{padding:14px 16px 14px 46px}
