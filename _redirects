@@ -1,1 +1,5 @@
-/about.html /about.html 200
+# --------------------------------------------------
+# Dummy _redirects file to overwrite bad Cloudflare cache
+# --------------------------------------------------
+/clear-cache-12345 /clear-cache-12345 302
+# End of file
