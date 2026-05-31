@@ -159,11 +159,14 @@
 
       <div class="story__inner">
         <div class="story__visual animate-on-scroll">
-          <div class="story__video-wrapper">
-            <!-- 活動風景などの動画に差し替えてください -->
-            <video autoplay loop muted playsinline class="story__video">
-              <source src="https://cdn.coverr.co/videos/coverr-someone-typing-on-a-laptop-5259/1080p.mp4" type="video/mp4">
-            </video>
+          <div class="story__video-wrapper youtube-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/XFIQ67GPbz0?autoplay=1&mute=1&loop=1&playlist=XFIQ67GPbz0&controls=0&showinfo=0&rel=0&modestbranding=1" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
 
@@ -262,11 +265,24 @@
 
       <div class="stance-wrapper">
         <div class="stance-visual animate-on-scroll">
-          <div class="story__video-wrapper">
-            <!-- 打ち合わせや対話の風景などの動画に差し替えてください -->
-            <video autoplay loop muted playsinline class="story__video">
-              <source src="https://cdn.coverr.co/videos/coverr-a-group-of-business-people-walking-5246/1080p.mp4" type="video/mp4">
-            </video>
+          <div class="stance__illustration-wrapper">
+            <svg class="stance__animated-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+              <!-- Pulsing rings -->
+              <circle class="stance__ring stance__ring--1" cx="200" cy="200" r="80" fill="none" stroke="var(--color-accent-pale)" stroke-width="3"/>
+              <circle class="stance__ring stance__ring--2" cx="200" cy="200" r="140" fill="none" stroke="var(--color-sage-pale)" stroke-width="2" stroke-dasharray="6,8"/>
+              <circle class="stance__ring stance__ring--3" cx="200" cy="200" r="180" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="4,6"/>
+              
+              <!-- Connecting lines -->
+              <path class="stance__line stance__line--1" d="M200,160 L200,90" stroke="var(--color-accent-pale)" stroke-width="2"/>
+              <path class="stance__line stance__line--2" d="M228,228 L290,290" stroke="var(--color-sage-pale)" stroke-width="2"/>
+              <path class="stance__line stance__line--3" d="M172,228 L110,290" stroke="var(--color-accent-pale)" stroke-width="2"/>
+              
+              <!-- Nodes -->
+              <circle class="stance__node stance__node--center" cx="200" cy="200" r="35" fill="var(--color-accent)"/>
+              <circle class="stance__node stance__node--orbit1" cx="200" cy="90" r="15" fill="var(--color-sage)"/>
+              <circle class="stance__node stance__node--orbit2" cx="290" cy="290" r="20" fill="var(--color-accent-light)"/>
+              <circle class="stance__node stance__node--orbit3" cx="110" cy="290" r="12" fill="var(--color-primary-light)"/>
+            </svg>
           </div>
         </div>
         <div class="stance">
