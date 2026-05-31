@@ -1,5 +1,2 @@
-# --------------------------------------------------
-# Dummy _redirects file to overwrite bad Cloudflare cache
-# --------------------------------------------------
-/clear-cache-12345 /clear-cache-12345 302
-# End of file
+# Cloudflare Pages _redirects
+# https://developers.cloudflare.com/pages/platform/redirects
