@@ -171,59 +171,40 @@ p{margin-bottom:1rem;line-height:1.9;font-size:1.02rem;letter-spacing:.03em}
   justify-content: center;
   align-items: center;
 }
-.hero-graphic-circle {
-  width: 320px;
-  height: 320px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-accent-pale) 0%, rgba(255,255,255,0.5) 100%);
+.hero-image-wrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
-.hero-graphic-circle::before {
-  content: '';
+.hero-image-wrapper:hover {
+  transform: translateY(-5px);
+}
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+.hero-image-badge {
   position: absolute;
-  top: -20px; right: -20px; bottom: -20px; left: -20px;
-  border: 2px dashed var(--color-sage-pale);
-  border-radius: 50%;
-  animation: spin 40s linear infinite;
-}
-.hero-graphic-icon {
-  font-size: 6rem;
-  color: var(--color-accent);
-  position: relative;
-  z-index: 2;
-  filter: drop-shadow(0 10px 15px rgba(199,106,69,0.2));
-}
-.hero-graphic-badge {
-  position: absolute;
-  bottom: 10px;
-  right: -20px;
-  background: #fff;
-  border: 2px solid var(--color-border);
-  padding: 12px 20px;
+  bottom: -15px;
+  right: -15px;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 16px 24px;
   border-radius: 30px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--color-primary);
-  font-size: 0.95rem;
-  z-index: 3;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 20px rgba(199, 106, 69, 0.3);
+  z-index: 2;
 }
-.hero-graphic-badge i {
-  color: var(--color-sage);
-  font-size: 1.2rem;
-}
-.hero-graphic-badge.top-left {
-  bottom: auto;
-  top: 10px;
-  right: auto;
-  left: -20px;
-}
-@keyframes spin { 100% { transform: rotate(360deg); } }
 .mainimg__sub {
   font-family: var(--font-accent);
   color: var(--color-accent);
