@@ -67,99 +67,178 @@
     <div class="nav__overlay"></div>
   </nav>
 
-  <!-- ===== HERO — Smooth Sticky Scroll ===== -->
-  <div class="hero-wrapper">
-    <section class="hero" id="hero" data-phase="0">
-      <div class="hero__blob hero__blob--warm"></div>
-      <div class="hero__blob hero__blob--sage"></div>
-      <div class="hero__blob hero__blob--cream"></div>
+  <!-- ===== HERO (Main Image) ===== -->
+  <section class="mainimg animate-on-scroll">
+    <div class="mainimg__inner">
+      <p class="mainimg__sub">政治活動のお悩みまるごと支援！</p>
+      <h1 class="mainimg__title">政治の挑戦を、<br><span class="highlight">ひとりにしない。</span></h1>
+      <p class="mainimg__desc">
+        Polisideは、若手候補者・若手議員の「隣に立つ」伴走型サポートです。<br>
+        正解を押し付けず、孤立させず、考える場を一緒につくります。
+      </p>
+    </div>
+  </section>
 
-      <!-- Centered text block at top -->
-      <div class="hero__center" id="heroCenter">
-        <span class="hero__label">Accompaniment Support</span>
-        <h1 class="hero__main-copy">政治の挑戦を、<br><span class="accent">ひとりにしない。</span></h1>
-        <p class="hero__sub-copy">
-          Polisideは、若手候補者・若手議員の<br>
-          「隣に立つ」伴走型サポートです。<br>
-          正解を押し付けず、孤立させず、考える場を一緒につくります。
-        </p>
-        <div class="hero__cta-group">
-          <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="cta-btn">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            <span>LINEで無料相談をはじめる</span>
-          </a>
-          <p class="cta-note" style="margin-top:12px;">
-            <strong>初回相談０円！</strong><br>
-            LINE追加後、アンケートに回答で初回60分の無料相談をご案内
-          </p>
+  <main class="contents-body">
+    <!-- ===== WORRY (こんなことで悩んでいませんか？) ===== -->
+    <section id="worry" class="section">
+      <div class="container">
+        <h2 class="lp-section-title"><span>こんなことで</span><br><span class="big">悩んでいませんか？</span></h2>
+        <div class="gridbox gridbox-col3">
+          <div class="gridbox-border animate-on-scroll">
+            <figure><i class="fas fa-map-signs"></i></figure>
+            <h3><span>準備の進め方</span></h3>
+            <ul>
+              <li>選挙に出るって、何をどこまで準備すればいいか分からない</li>
+              <li>立候補を決意したが、全体像が見えない</li>
+            </ul>
+          </div>
+          <div class="gridbox-border animate-on-scroll delay-1">
+            <figure><i class="fas fa-heart-crack"></i></figure>
+            <h3><span>孤独と不安</span></h3>
+            <ul>
+              <li>毎日の活動に心が折れそうになる</li>
+              <li>誰にも本音で相談できず、一人で抱え込んでいる</li>
+            </ul>
+          </div>
+          <div class="gridbox-border animate-on-scroll delay-2">
+            <figure><i class="fas fa-bullhorn"></i></figure>
+            <h3><span>広報戦略</span></h3>
+            <ul>
+              <li>効果的なSNS発信や広報活動のやり方が分からない</li>
+              <li>自分の想いが有権者に届いているか不安だ</li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <!-- Gimmick illustration area — below text -->
-      <div class="hero__gimmick">
-        <div class="hero__illustration" id="heroIllustration">
-          <div class="hero__ring hero__ring--outer"></div>
-          <div class="hero__ring hero__ring--mid"></div>
-          <div class="hero__ring hero__ring--inner"></div>
-
-          <!-- Main person silhouette — Energetic Orange -->
-          <svg class="hero__person-main" width="90" height="160" viewBox="0 0 80 140" fill="none">
-            <circle cx="40" cy="24" r="17" fill="var(--color-accent-pale)" stroke="var(--color-accent)" stroke-width="1.5" stroke-opacity="0.5"/>
-            <ellipse cx="40" cy="78" rx="21" ry="35" fill="var(--color-accent-pale)" stroke="var(--color-accent)" stroke-width="1.5" stroke-opacity="0.3"/>
-            <line x1="40" y1="41" x2="40" y2="50" stroke="var(--color-accent)" stroke-width="1.5" stroke-opacity="0.4"/>
-            <circle cx="40" cy="24" r="5" fill="var(--color-accent)" fill-opacity="0.6"/>
-          </svg>
-
-          <!-- Companion silhouette — Vivid Blue -->
-          <svg class="hero__person-companion" width="90" height="160" viewBox="0 0 80 140" fill="none">
-            <circle cx="40" cy="24" r="17" fill="var(--color-sage-pale)" stroke="var(--color-sage)" stroke-width="1.5" stroke-opacity="0.5"/>
-            <ellipse cx="40" cy="78" rx="21" ry="35" fill="var(--color-sage-pale)" stroke="var(--color-sage)" stroke-width="1.5" stroke-opacity="0.3"/>
-            <line x1="40" y1="41" x2="40" y2="50" stroke="var(--color-sage)" stroke-width="1.5" stroke-opacity="0.4"/>
-            <circle cx="40" cy="24" r="5" fill="var(--color-sage)" fill-opacity="0.6"/>
-          </svg>
-
-          <!-- Connection arc -->
-          <svg class="hero__connection-arc" width="140" height="50" viewBox="0 0 120 40" fill="none">
-            <path d="M8,34 Q60,0 112,34" stroke="var(--color-accent)" stroke-width="1.5" fill="none" stroke-dasharray="5,5" stroke-opacity="0.4"/>
-            <circle cx="60" cy="12" r="5" fill="var(--color-accent)" fill-opacity="0.6"/>
-          </svg>
-
-          <div class="hero__particles" id="heroParticles"></div>
-        </div>
-      </div>
-
-      <!-- Phase labels for smooth transition -->
-      <div class="hero__phase-labels">
-        <div class="hero__phase-label phase-1">右も左も分からず、ひとりで走っていた。</div>
-        <div class="hero__phase-label phase-2">隣で一緒に考えてくれる人がいた。</div>
-        <div class="hero__phase-label phase-3">自分の想いに、集中できるようになった。</div>
-      </div>
-
-      <div class="hero__wave">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-          <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="var(--color-bg-alt)"/>
-        </svg>
-      </div>
-
-      <div class="hero__scroll-indicator">
-        <span>SCROLL</span>
-        <div class="hero__scroll-line"></div>
       </div>
     </section>
-  </div>
 
-  <!-- ===== STORY ===== -->
-  <section class="section section--alt" id="story">
-    <div class="container">
-      <div class="section__header animate-on-scroll">
-        <span class="section__label">Our Story</span>
-        <h2 class="section__title">なぜPolisideが生まれたのか</h2>
-        <p class="section__desc">この活動は、一人の挑戦者の実体験から始まりました。</p>
+    <!-- ===== CAN (Polisideで支援しています) ===== -->
+    <section id="can" class="section section--alt">
+      <div class="container">
+        <h2 class="lp-section-title"><span class="big" style="color:var(--color-primary);">Poliside</span><span>で</span><br><span class="big">支援</span><span>しています！</span></h2>
+        <div class="gridbox gridbox-col2">
+          <div class="gridbox-border animate-on-scroll">
+            <h3><span>候補者ホームページ作成</span></h3>
+            <p style="margin-bottom: 16px; color: var(--color-text); line-height: 1.6;">あなたの想いや政策が伝わるホームページを、一緒に考えながらつくります。</p>
+            <ul>
+              <li>スマホ対応（レスポンシブ）デザイン</li>
+              <li>政策・プロフィールページの作成</li>
+              <li>SNSリンク連携</li>
+            </ul>
+          </div>
+          <div class="gridbox-border animate-on-scroll delay-1">
+            <h3><span>継続伴走サポート</span></h3>
+            <p style="margin-bottom: 16px; color: var(--color-text); line-height: 1.6;">HPの運用だけでなく、毎月の定期相談であなたの政治活動に伴走します。</p>
+            <ul>
+              <li>月1回 / 60分のオンライン相談</li>
+              <li>HP保守運用・コンテンツ更新対応</li>
+              <li>広報戦略や日々の活動に関するアドバイザリー</li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="story__inner">
+    <!-- ===== POINT (Polisideのスタンス・3つの強み) ===== -->
+    <section id="point" class="section">
+      <div class="container">
+        <h2 class="lp-section-title"><span>Poliside 伴走サポート</span><br><span class="big">3つのスタンス</span></h2>
+        <div class="gridbox gridbox-col3">
+          <div class="gridbox-border point-card animate-on-scroll">
+            <span class="point-card__num">01</span>
+            <figure><i class="fas fa-comments"></i></figure>
+            <h3><span>助言はするが、<br>決定はしない</span></h3>
+            <p style="color: var(--color-text); line-height: 1.6;">
+              最終的に責任を負うのは候補者自身です。Polisideはプロとして助言を行いますが、決断を代行したり答えを押し付けることはありません。
+            </p>
+          </div>
+          <div class="gridbox-border point-card animate-on-scroll delay-1">
+            <span class="point-card__num">02</span>
+            <figure><i class="fas fa-compass"></i></figure>
+            <h3><span>整えるが、<br>代行はしない</span></h3>
+            <p style="color: var(--color-text); line-height: 1.6;">
+              想いを言語化し、形にする手助けはしますが、本人の言葉でないものは有権者に届きません。あくまで思考を「整える」ことに注力します。
+            </p>
+          </div>
+          <div class="gridbox-border point-card animate-on-scroll delay-2">
+            <span class="point-card__num">03</span>
+            <figure><i class="fas fa-lightbulb"></i></figure>
+            <h3><span>考える場を<br>一緒につくる</span></h3>
+            <p style="color: var(--color-text); line-height: 1.6;">
+              立ち止まって振り返る時間が、政治活動には必要です。月に一度、フラットに相談できる「壁打ち相手」として隣に立ち続けます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FLOW (ご利用の流れ) ===== -->
+    <section id="flow" class="section section--warm">
+      <div class="container">
+        <h2 class="lp-section-title">ご利用の流れ</h2>
+        <div class="flow-grid">
+          <div class="flow-step animate-on-scroll">
+            <span class="flow-step__label">HOP 01</span>
+            <figure style="margin: 0 auto 20px; font-size: 2.5rem; color: var(--color-accent);"><i class="fab fa-line"></i></figure>
+            <h4 class="flow-step__title">LINE相談・ヒアリング</h4>
+            <p class="flow-step__desc">まずはLINEから気軽にご連絡ください。<br>初回60分無料相談にて、現在の想いや状況をじっくり伺います。</p>
+          </div>
+          <div class="flow-step animate-on-scroll delay-1">
+            <span class="flow-step__label">STEP 02</span>
+            <figure style="margin: 0 auto 20px; font-size: 2.5rem; color: var(--color-accent);"><i class="fas fa-laptop-code"></i></figure>
+            <h4 class="flow-step__title">HP構築・戦略設計</h4>
+            <p class="flow-step__desc">一緒に考えながら、あなたの政策が伝わるホームページを作成します。</p>
+          </div>
+          <div class="flow-step animate-on-scroll delay-2">
+            <span class="flow-step__label">JUMP! 03</span>
+            <figure style="margin: 0 auto 20px; font-size: 2.5rem; color: var(--color-accent);"><i class="fas fa-people-arrows"></i></figure>
+            <h4 class="flow-step__title">継続伴走スタート</h4>
+            <p class="flow-step__desc">HP完成後も、月1回の定期相談で走り続けるあなたをサポートします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <h2 class="lp-section-title">料金プラン</h2>
+        <div class="gridbox gridbox-col2">
+          <div class="gridbox-border animate-on-scroll">
+            <h3 style="font-size: 1.1rem; color: var(--color-text-muted); border: none; margin-bottom: 8px;">HP作成 初期構築費</h3>
+            <p style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 24px;">¥50,000<span style="font-size: 1rem; font-weight: normal;">（税別）</span></p>
+            <ul>
+              <li>レスポンシブ対応デザイン</li>
+              <li>政策・プロフィールページ作成</li>
+              <li>SNSリンク連携</li>
+              <li>初回ヒアリング相談込み</li>
+            </ul>
+          </div>
+          <div class="gridbox-border animate-on-scroll delay-1">
+            <h3 style="font-size: 1.1rem; color: var(--color-text-muted); border: none; margin-bottom: 8px;">月額継続サポート</h3>
+            <p style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 24px;">¥5,000<span style="font-size: 1rem; font-weight: normal;">/月（税別）</span></p>
+            <ul>
+              <li>月1回 / 60分のオンライン伴走相談</li>
+              <li>独自ドメイン管理・HP保守運用</li>
+              <li>コンテンツ更新対応</li>
+              <li>広報戦略・政治活動全般の壁打ち</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STORY (YouTube) ===== -->
+    <section id="story" class="section section--alt">
+      <div class="container">
+        <div class="section__header animate-on-scroll">
+          <span class="section__label">Our Story</span>
+          <h2 class="lp-section-title" style="margin-bottom: 24px;">なぜPolisideが生まれたのか</h2>
+          <p class="section__desc" style="text-align: center;">一人の挑戦者の実体験から始まりました。</p>
+        </div>
         <div class="story__visual animate-on-scroll">
-          <div class="story__video-wrapper youtube-wrapper">
+          <div class="story__video-wrapper youtube-wrapper" style="max-width: 800px; margin: 0 auto;">
             <iframe 
               src="https://www.youtube.com/embed/XFIQ67GPbz0?autoplay=1&mute=1&loop=1&playlist=XFIQ67GPbz0&controls=0&showinfo=0&rel=0&modestbranding=1" 
               title="YouTube video player" 
@@ -170,331 +249,42 @@
             </iframe>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="animate-on-scroll delay-2">
-          <div class="story__timeline">
-            <div class="story__timeline-item">
-              <div class="story__timeline-dot"></div>
-              <span class="story__timeline-year">立候補を決意</span>
-              <h3 class="story__timeline-title">区議会議員選挙に挑戦</h3>
-              <p class="story__timeline-desc">「自分の住むまちを、自分たちの手で変えたい」。その想いで区議会議員選挙に立候補しました。</p>
-            </div>
-            <div class="story__timeline-item">
-              <div class="story__timeline-dot"></div>
-              <span class="story__timeline-year">選挙活動中</span>
-              <h3 class="story__timeline-title">圧倒的な孤独と不安</h3>
-              <p class="story__timeline-desc">右も左も分からない中、誰にも相談できず、毎日の活動に心が折れそうになる日々が続きました。</p>
-            </div>
-            <div class="story__timeline-item">
-              <div class="story__timeline-dot"></div>
-              <span class="story__timeline-year">活動を振り返って</span>
-              <h3 class="story__timeline-title">「HP作成だけ」では足りない</h3>
-              <p class="story__timeline-desc">ホームページは作れても、日々の不安や迷いを分かち合える存在がいなかった。それが一番辛かった。</p>
-            </div>
-            <div class="story__timeline-item">
-              <div class="story__timeline-dot story__timeline-dot--accent"></div>
-              <span class="story__timeline-year">Poliside設立</span>
-              <h3 class="story__timeline-title">だから「隣に立つ」サポートを</h3>
-              <p class="story__timeline-desc">HP作成だけでなく、継続して隣に立ち続ける。あの日の自分が欲しかったサービスをつくりました。</p>
-            </div>
+    <!-- ===== RELATED LINKS ===== -->
+    <section id="lineup" class="section">
+      <div class="container">
+        <h2 class="lp-section-title"><span>関連サービス</span></h2>
+        <div class="gridbox gridbox-col2">
+          <div class="gridbox-border animate-on-scroll" style="align-items: center; text-align: center;">
+            <h3 style="border: none;">Poliside Fellowship</h3>
+            <p style="margin-bottom: 24px; color: var(--color-text);">当選後の若手議員のための伴走型コーチングプログラム。</p>
+            <a href="fellowship.html" class="cta-btn" style="padding: 12px 24px; font-size: 1rem;">詳しく見る</a>
           </div>
-
-          <div class="story__quote">
-            <span class="story__quote-mark">"</span>
-            <p>あのとき、隣に誰かがいてくれたら、もっと走れたかもしれない。<br>だから、今度は自分がその「隣」になりたい。</p>
+          <div class="gridbox-border animate-on-scroll delay-1" style="align-items: center; text-align: center;">
+            <h3 style="border: none;">Poliside Insight</h3>
+            <p style="margin-bottom: 24px; color: var(--color-text);">選挙・議会・政策に関する知見をまとめた記事メディア。</p>
+            <a href="insight/index.html" class="cta-btn" style="padding: 12px 24px; font-size: 1rem;">記事を読む</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- ===== CHALLENGE ===== -->
-  <section class="section" id="challenge">
-    <div class="container">
-      <div class="section__header animate-on-scroll">
-        <span class="section__label">Challenge</span>
-        <h2 class="section__title">政治活動における課題</h2>
-        <p class="section__desc">こんな不安を感じていませんか？</p>
-      </div>
+  <!-- ===== FLOATING CTA ===== -->
+  <div class="floating-btn">
+    <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener">
+      <i class="fab fa-line"></i>
+      <span>LINEで無料相談</span>
+    </a>
+  </div>
 
-      <div class="challenge-list">
-        <div class="challenge-item animate-on-scroll">
-          <div class="challenge-item__icon"><i class="fas fa-map-signs"></i></div>
-          <p class="challenge-item__text">選挙にでるって一体何をどこまで準備すればいいの？</p>
-        </div>
-        <div class="challenge-item animate-on-scroll delay-1">
-          <div class="challenge-item__icon"><i class="fas fa-heart-crack"></i></div>
-          <p class="challenge-item__text">決心したとしても毎日の活動に心が挫けそうになる。</p>
-        </div>
-        <div class="challenge-item animate-on-scroll delay-2">
-          <div class="challenge-item__icon"><i class="fas fa-bullhorn"></i></div>
-          <p class="challenge-item__text">効果的な広報活動はどうすればいいのだろう。</p>
-        </div>
-      </div>
-
-      <div class="challenge-answer animate-on-scroll">
-        <p style="margin-bottom:0;">
-          PolisideはHP作成だけでなく、<br>
-          政治活動の中で不安になるあなたの伴走役になります。<br>
-          <strong style="color:var(--color-accent);font-size:1.15rem;display:block;margin-top:6px;">一緒に走り切りましょう！</strong>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA (Mid) ===== -->
+  <!-- ===== CTA (Bottom) ===== -->
   <section class="section section--darker cta-section">
     <div class="container animate-on-scroll">
       <h2 class="cta-section__title">まずは、ひとりで抱えないことから。</h2>
       <p class="cta-section__sub">あなたの想いを、聞かせてください。</p>
-      <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="cta-btn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        <span>LINEで無料相談をはじめる</span>
-      </a>
-      <p class="cta-note"><strong>初回相談０円！</strong><br>LINE公式アカウント追加後、簡単なアンケートに回答いただくと初回60分の無料相談をご案内します。</p>
-    </div>
-  </section>
-
-  <!-- ===== STANCE ===== -->
-  <section class="section section--alt" id="stance">
-    <div class="container">
-      <div class="section__header animate-on-scroll">
-        <span class="section__label">Our Stance</span>
-        <h2 class="section__title">Polisideのスタンス</h2>
-        <p class="section__desc">私たちはこう考えています。</p>
-      </div>
-
-      <div class="stance-wrapper">
-        <div class="stance-visual animate-on-scroll">
-          <div class="stance__illustration-wrapper">
-            <svg class="stance__animated-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-              <!-- Pulsing rings -->
-              <circle class="stance__ring stance__ring--1" cx="200" cy="200" r="80" fill="none" stroke="var(--color-accent-pale)" stroke-width="3"/>
-              <circle class="stance__ring stance__ring--2" cx="200" cy="200" r="140" fill="none" stroke="var(--color-sage-pale)" stroke-width="2" stroke-dasharray="6,8"/>
-              <circle class="stance__ring stance__ring--3" cx="200" cy="200" r="180" fill="none" stroke="var(--color-border)" stroke-width="1" stroke-dasharray="4,6"/>
-              
-              <!-- Connecting lines -->
-              <path class="stance__line stance__line--1" d="M200,160 L200,90" stroke="var(--color-accent-pale)" stroke-width="2"/>
-              <path class="stance__line stance__line--2" d="M228,228 L290,290" stroke="var(--color-sage-pale)" stroke-width="2"/>
-              <path class="stance__line stance__line--3" d="M172,228 L110,290" stroke="var(--color-accent-pale)" stroke-width="2"/>
-              
-              <!-- Nodes -->
-              <circle class="stance__node stance__node--center" cx="200" cy="200" r="35" fill="var(--color-accent)"/>
-              <circle class="stance__node stance__node--orbit1" cx="200" cy="90" r="15" fill="var(--color-sage)"/>
-              <circle class="stance__node stance__node--orbit2" cx="290" cy="290" r="20" fill="var(--color-accent-light)"/>
-              <circle class="stance__node stance__node--orbit3" cx="110" cy="290" r="12" fill="var(--color-primary-light)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="stance">
-          <div class="stance__item animate-on-scroll delay-1">
-            <div class="stance__icon"><i class="fas fa-comments"></i></div>
-            <p class="stance__text">Polisideは「助言」はしますが、「決定」はしません。</p>
-          </div>
-          <div class="stance__item animate-on-scroll delay-2">
-            <div class="stance__icon"><i class="fas fa-compass"></i></div>
-            <p class="stance__text">Polisideは「整え」ますが、「代行」はしません。</p>
-          </div>
-          <div class="stance__item animate-on-scroll delay-3">
-            <div class="stance__icon"><i class="fas fa-lightbulb"></i></div>
-            <p class="stance__text">Polisideは「考える場」をつくりますが、「答え」は押し付けません。</p>
-          </div>
-        </div>
-      </div>
-
-      <p class="stance__note animate-on-scroll">
-        候補者や議員の前に立つのではなく、常に「隣」に立つ存在でありたいと考えています。
-      </p>
-    </div>
-  </section>
-
-  <!-- ===== SERVICE ===== -->
-  <section class="section" id="service">
-    <div class="container">
-      <div class="section__header animate-on-scroll">
-        <span class="section__label">Support</span>
-        <h2 class="section__title">Polisideでサポートすること</h2>
-      </div>
-
-      <div class="service-grid">
-        <div class="service-card animate-on-scroll">
-          <span class="service-card__badge">SINGLE</span>
-          <div class="service-card__icon"><i class="fas fa-laptop-code"></i></div>
-          <h3 class="service-card__title">候補者ホームページ作成</h3>
-          <p class="service-card__desc">あなたの想いや政策が伝わるホームページを、一緒に考えながらつくります。</p>
-          <p class="service-card__desc" style="font-size:.86rem;color:var(--color-text-muted);margin-top:6px;">※ 単発でのご依頼も可能です</p>
-        </div>
-        <div class="service-card animate-on-scroll delay-1">
-          <span class="service-card__badge">CONTINUOUS</span>
-          <div class="service-card__icon"><i class="fas fa-handshake-angle"></i></div>
-          <h3 class="service-card__title">継続サポート</h3>
-          <ul class="service-card__list">
-            <li>HP保守運用（独自ドメイン対応）</li>
-            <li>月1回・1時間の相談対応</li>
-            <li>政治活動全般に関する相談</li>
-            <li>広報戦略の設計も一緒に</li>
-          </ul>
-        </div>
-      </div>
-
-      <p class="service-note animate-on-scroll">※ 当選を保証するサービスではありません。あくまで「隣で一緒に考える」サポートです。</p>
-
-      <div class="flow animate-on-scroll">
-        <div class="flow__step">
-          <div class="flow__step-icon"><span class="flow__step-num">1</span><i class="fab fa-line"></i></div>
-          <h4 class="flow__step-title">LINE相談</h4>
-          <p class="flow__step-desc">まずは気軽に<br>LINEからご連絡</p>
-        </div>
-        <div class="flow__arrow"><i class="fas fa-chevron-right"></i></div>
-        <div class="flow__step">
-          <div class="flow__step-icon"><span class="flow__step-num">2</span><i class="fas fa-clipboard-list"></i></div>
-          <h4 class="flow__step-title">ヒアリング</h4>
-          <p class="flow__step-desc">想いや状況を<br>じっくり伺います</p>
-        </div>
-        <div class="flow__arrow"><i class="fas fa-chevron-right"></i></div>
-        <div class="flow__step">
-          <div class="flow__step-icon"><span class="flow__step-num">3</span><i class="fas fa-laptop-code"></i></div>
-          <h4 class="flow__step-title">HP構築</h4>
-          <p class="flow__step-desc">一緒に考えながら<br>ホームページ作成</p>
-        </div>
-        <div class="flow__arrow"><i class="fas fa-chevron-right"></i></div>
-        <div class="flow__step">
-          <div class="flow__step-icon"><span class="flow__step-num">4</span><i class="fas fa-people-arrows"></i></div>
-          <h4 class="flow__step-title">継続伴走</h4>
-          <p class="flow__step-desc">月次相談で<br>走り続けるサポート</p>
-        </div>
-      </div>
-
-      <div class="section__header animate-on-scroll mt-48">
-        <span class="section__label">Pricing</span>
-        <h2 class="section__title">料金</h2>
-        <p class="section__desc">シンプルで分かりやすい料金体系です。</p>
-      </div>
-
-      <div class="pricing">
-        <div class="pricing-card animate-on-scroll">
-          <p class="pricing-card__label">HP作成 初期構築費</p>
-          <p class="pricing-card__price">¥50,000<span>（税別）</span></p>
-          <p class="pricing-card__desc">あなたの想いが届くホームページを一緒に</p>
-          <ul class="pricing-card__features">
-            <li>レスポンシブ対応</li>
-            <li>政策・プロフィールページ</li>
-            <li>SNSリンク連携</li>
-            <li>初回相談込み</li>
-          </ul>
-        </div>
-        <div class="pricing-card animate-on-scroll delay-1">
-          <p class="pricing-card__label">月額費用</p>
-          <p class="pricing-card__price">¥5,000<span>/月（税別）</span></p>
-          <p class="pricing-card__desc">HP保守運用＋月1回の伴走相談</p>
-          <ul class="pricing-card__features">
-            <li>独自ドメイン管理</li>
-            <li>コンテンツ更新対応</li>
-            <li>月1回 / 60分の相談</li>
-            <li>政治活動・広報の相談</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PAYMENT FLOW ===== -->
-  <section class="section section--warm" id="payment">
-    <div class="container">
-      <div class="section__header animate-on-scroll">
-        <span class="section__label">Payment</span>
-        <h2 class="section__title">お支払いの流れ</h2>
-        <p class="section__desc">すべてLINE上でご案内。シンプルで安心な決済フローです。</p>
-      </div>
-
-      <div class="payment-flow animate-on-scroll">
-        <div class="payment-flow__step">
-          <div class="payment-flow__num">1</div>
-          <div class="payment-flow__content">
-            <h4><i class="fab fa-line" style="color:var(--color-line);margin-right:6px;"></i>LINEで無料相談</h4>
-            <p>LINE公式アカウントを追加し、簡単なアンケートに回答。<br>初回60分の無料相談を受けていただきます。</p>
-          </div>
-        </div>
-        <div class="payment-flow__step">
-          <div class="payment-flow__num">2</div>
-          <div class="payment-flow__content">
-            <h4><i class="fas fa-file-invoice" style="color:var(--color-accent);margin-right:6px;"></i>お見積もり・ご契約</h4>
-            <p>ヒアリング内容をもとにお見積もりをご提示。<br>ご納得いただいた上で、LINEにてご契約の確認を行います。</p>
-          </div>
-        </div>
-        <div class="payment-flow__step">
-          <div class="payment-flow__num">3</div>
-          <div class="payment-flow__content">
-            <h4><i class="fas fa-credit-card" style="color:var(--color-accent);margin-right:6px;"></i>お支払い</h4>
-            <p>銀行振込にてお支払いいただきます。<br>振込先はLINE上でご案内いたします。</p>
-          </div>
-        </div>
-        <div class="payment-flow__step">
-          <div class="payment-flow__num">4</div>
-          <div class="payment-flow__content">
-            <h4><i class="fas fa-rocket" style="color:var(--color-sage);margin-right:6px;"></i>サービス開始</h4>
-            <p>入金確認後、すぐにサポートを開始します。<br>月額費用は毎月同日に銀行振込でお願いしております。</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="payment-flow__note animate-on-scroll">
-        <p>
-          <strong>クレジットカード決済やオンライン決済にも今後対応予定です。</strong><br>
-          現時点では銀行振込のみとなります。ご不明な点はLINEにてお気軽にお問い合わせください。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA (After Service) ===== -->
-  <section class="section section--darker cta-section">
-    <div class="container animate-on-scroll">
-      <h2 class="cta-section__title">まずは、ひとりで抱えないことから。</h2>
-      <p class="cta-section__sub">LINEで気軽にご相談いただけます。</p>
-      <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="cta-btn">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        <span>LINEで無料相談をはじめる</span>
-      </a>
-      <p class="cta-note"><strong>初回相談０円！</strong><br>LINE公式アカウント追加後、簡単なアンケートに回答いただくと初回60分の無料相談をご案内します。</p>
-    </div>
-  </section>
-
-  <!-- ===== FELLOWSHIP ===== -->
-  <section class="section section--alt" id="fellowship-link">
-    <div class="container">
-      <div class="section__header animate-on-scroll">
-        <span class="section__label">Fellowship</span>
-        <h2 class="section__title">当選後も、ひとりにしないために。</h2>
-      </div>
-      <a href="fellowship.html" class="link-card animate-on-scroll">
-        <h3 class="link-card__title">Poliside Fellowship</h3>
-        <p class="link-card__desc">Polisideは、選挙のためだけのサービスではありません。当選後、最も孤立しやすい若手議員のための伴走型プログラム「Poliside Fellowship」を運営しています。</p>
-        <span class="link-card__arrow">Poliside Fellowshipについて詳しく見る <i class="fas fa-arrow-right"></i></span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== INSIGHT ===== -->
-  <section class="section" id="insight-link">
-    <div class="container">
-      <div class="section__header animate-on-scroll">
-        <span class="section__label">Insight</span>
-        <h2 class="section__title">Poliside Insight</h2>
-      </div>
-      <a href="insight/index.html" class="link-card animate-on-scroll">
-        <h3 class="link-card__title">Poliside Insight</h3>
-        <p class="link-card__desc">若手候補者・若手議員のために、選挙・議会・政策実現に関する知見をまとめています。</p>
-        <span class="link-card__arrow">Poliside Insightを見る <i class="fas fa-arrow-right"></i></span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== FINAL CTA ===== -->
-  <section class="section section--darker cta-section">
-    <div class="container animate-on-scroll">
-      <h2 class="cta-section__title">まずは、ひとりで抱えないことから。</h2>
-      <p class="cta-section__sub">あなたの挑戦を、隣で応援します。</p>
       <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="cta-btn">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
         <span>LINEで無料相談をはじめる</span>

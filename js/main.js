@@ -8,11 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollAnimations();
   initNavScrollEffect();
-  
-  if (document.querySelector('.hero-wrapper')) {
-    initHeroParticles();
-    initHeroStickyScroll();
-  }
 });
 
 /* ===========================================
@@ -78,92 +73,7 @@ function initScrollAnimations() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ===========================================
-   Hero Particles — warm, soft dots
-   =========================================== */
-function initHeroParticles() {
-  const container = document.getElementById('heroParticles');
-  if (!container) return;
-  
-  const count = 28;
-  const colors = [
-    'rgba(199,106,69,0.14)',
-    'rgba(199,106,69,0.08)',
-    'rgba(107,143,113,0.12)',
-    'rgba(107,143,113,0.06)',
-    'rgba(216,138,106,0.08)',
-    'rgba(139,181,146,0.06)',
-  ];
-  
-  for (let i = 0; i < count; i++) {
-    const dot = document.createElement('div');
-    const size = 3 + Math.random() * 7;
-    dot.style.cssText = `
-      width:${size}px;height:${size}px;
-      background:${colors[Math.floor(Math.random() * colors.length)]};
-      left:${Math.random() * 100}%;top:${Math.random() * 100}%;
-      border-radius:50%;position:absolute;
-    `;
-    container.appendChild(dot);
-  }
-}
 
-/* ===========================================
-   HERO — Sticky Scroll Sequence
-   =========================================== */
-function initHeroStickyScroll() {
-  const wrapper = document.querySelector('.hero-wrapper');
-  const hero = document.querySelector('.hero');
-  if (!wrapper || !hero) return;
-  
-  const blobWarm = document.querySelector('.hero__blob--warm');
-  const blobSage = document.querySelector('.hero__blob--sage');
-  const blobCream = document.querySelector('.hero__blob--cream');
-  
-  function clamp(v, min, max) { return Math.min(Math.max(v, min), max); }
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-  
-  let ticking = false;
-  
-  function update() {
-    const rect = wrapper.getBoundingClientRect();
-    const scrollRange = wrapper.offsetHeight - window.innerHeight;
-    const progress = clamp(-rect.top / scrollRange, 0, 1);
-    
-    // 0: Title, 1: Phase 1 (Single), 2: Phase 2 (Companion), 3: Phase 3 (Connected), 4: Outro
-    let phase = 0;
-    if (progress > 0.12 && progress < 0.38) phase = 1;
-    else if (progress >= 0.38 && progress < 0.65) phase = 2;
-    else if (progress >= 0.65 && progress < 0.88) phase = 3;
-    else if (progress >= 0.88) phase = 4;
-    
-    hero.setAttribute('data-phase', phase);
-    
-    // Parallax for soft background blobs
-    if (blobWarm) {
-      blobWarm.style.opacity = lerp(0.5, 1, easeOutCubic(clamp(progress / 0.15, 0, 1)));
-      blobWarm.style.transform = `translate(${progress * 25}px, ${progress * -18}px)`;
-    }
-    if (blobSage) {
-      blobSage.style.opacity = lerp(0.3, 0.85, easeOutCubic(clamp(progress / 0.20, 0, 1)));
-      blobSage.style.transform = `translate(${progress * -18}px, ${progress * 12}px)`;
-    }
-    if (blobCream) {
-      blobCream.style.opacity = lerp(0.35, 0.7, easeOutCubic(clamp((progress - 0.05) / 0.15, 0, 1)));
-      blobCream.style.transform = `translate(${progress * 12}px, ${progress * -8}px)`;
-    }
-    
-    ticking = false;
-  }
-  
-  window.addEventListener('scroll', () => {
-    if (!ticking) { requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-  
-  update();
-  window.addEventListener('resize', () => requestAnimationFrame(update), { passive: true });
-}
 
 /* ===========================================
    Insight Page Helpers
