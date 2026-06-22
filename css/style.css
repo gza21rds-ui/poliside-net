@@ -171,39 +171,66 @@ p{margin-bottom:1rem;line-height:1.9;font-size:1.02rem;letter-spacing:.03em}
   justify-content: center;
   align-items: center;
 }
-.hero-image-wrapper {
+/* Hero Illustration Area */
+.hero-illustration {
   position: relative;
   width: 100%;
-  max-width: 480px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  transform: translateY(0);
-  transition: transform 0.3s ease;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
-.hero-image-wrapper:hover {
-  transform: translateY(-5px);
-}
-.hero-image {
+.hero-illustration img,
+.hero-illustration svg {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  aspect-ratio: 4/3;
+  filter: drop-shadow(0 16px 40px rgba(15, 23, 42, 0.08));
+  transition: transform 0.4s var(--ease);
 }
-.hero-image-badge {
+.hero-illustration:hover img,
+.hero-illustration:hover svg {
+  transform: translateY(-6px) scale(1.02);
+}
+@media (max-width: 768px) {
+  .hero-illustration {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* Hero Decorative Gradient Circles */
+.hero-deco-circle {
   position: absolute;
-  bottom: -15px;
-  right: -15px;
-  background: var(--color-accent);
-  color: #fff;
-  padding: 16px 24px;
-  border-radius: 30px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.1rem;
-  box-shadow: 0 10px 20px rgba(199, 106, 69, 0.3);
-  z-index: 2;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-deco-circle--1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.25), transparent 70%);
+  top: -80px;
+  right: -120px;
+}
+.hero-deco-circle--2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.2), transparent 70%);
+  bottom: -60px;
+  left: -100px;
+}
+.hero-deco-circle--3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.15), transparent 70%);
+  top: 40%;
+  left: 30%;
+  filter: blur(80px);
+  opacity: 0.3;
 }
 .mainimg__sub {
   font-family: var(--font-accent);
@@ -810,4 +837,392 @@ p{margin-bottom:1rem;line-height:1.9;font-size:1.02rem;letter-spacing:.03em}
   .fellowship-process{grid-template-columns:1fr}
   .challenge-item{padding:14px 16px}
   .stance__item{padding:14px 16px 14px 46px}
+}
+
+/* ==========================================
+   VISUAL ENHANCEMENT — To C Design Boost
+   ========================================== */
+
+/* ---------- 2. Section Wave Divider ---------- */
+.section-wave {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  line-height: 0;
+  background: transparent;
+}
+.section-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.section-wave--flip {
+  transform: rotate(180deg);
+}
+.section-wave--alt svg path {
+  fill: var(--color-bg-alt);
+}
+.section-wave--white svg path {
+  fill: var(--color-bg);
+}
+@media (max-width: 768px) {
+  .section-wave {
+    height: 40px;
+  }
+}
+
+/* ---------- 3. Worry Card Improvement ---------- */
+.worry-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 32px 28px;
+  text-align: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.worry-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-accent-pale) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+.worry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-left-color: var(--color-accent-dark);
+}
+.worry-card:hover::before {
+  opacity: 1;
+}
+.worry-card__icon-wrap {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: #fff;
+  font-size: 2.4rem;
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.2);
+  position: relative;
+  z-index: 1;
+}
+.worry-card__icon-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px dashed rgba(249, 115, 22, 0.15);
+  animation: pulseRing 4s infinite ease-in-out;
+}
+.worry-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+.worry-card__text {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- 4. Flow Connector Arrow ---------- */
+.flow-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+.flow-connector::after {
+  content: '→';
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  transition: transform var(--transition-base);
+}
+.flow-connector:hover::after {
+  transform: translateX(4px);
+}
+@media (max-width: 768px) {
+  .flow-connector {
+    padding: 8px 0;
+  }
+  .flow-connector::after {
+    content: '↓';
+    font-size: 1.8rem;
+  }
+}
+
+/* ---------- 5. Price Card Improvement ---------- */
+.price-card {
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 28px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.price-card--recommended {
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.12);
+}
+.price-card--recommended::before {
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-accent-dark), var(--color-accent), var(--color-accent-light));
+}
+.price-card--recommended::after {
+  content: 'おすすめ';
+  position: absolute;
+  top: 18px;
+  right: -30px;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 40px;
+  transform: rotate(45deg);
+  letter-spacing: 0.08em;
+}
+.price-amount {
+  font-family: var(--font-accent);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.price-unit {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+.price-card__label {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+.price-card__features {
+  text-align: left;
+  margin-top: 20px;
+}
+.price-card__features li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+.price-card__features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-sage);
+  font-weight: 700;
+}
+
+/* ---------- 6. Story Layout Improvement ---------- */
+.story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .story-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+.story-text {
+  position: relative;
+}
+.story-text blockquote {
+  border-left: 4px solid var(--color-accent);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  position: relative;
+}
+.story-text blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -12px;
+  left: -4px;
+  font-size: 3.5rem;
+  color: var(--color-accent);
+  opacity: 0.15;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.story-visual {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.story-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---------- 7. Lineup Card Improvement ---------- */
+.lineup-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.lineup-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-light);
+}
+.lineup-card__badge {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+.lineup-card__badge--coming {
+  background: var(--color-accent-pale);
+  color: var(--color-accent);
+}
+.lineup-card__badge--active {
+  background: var(--color-sage-pale);
+  color: var(--color-sage);
+}
+.lineup-card__icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  font-size: 1.5rem;
+  transition: transform var(--transition-base);
+}
+.lineup-card:hover .lineup-card__icon {
+  transform: scale(1.1);
+}
+.lineup-card__icon--accent {
+  background: var(--color-accent-pale);
+  color: var(--color-accent);
+}
+.lineup-card__icon--sage {
+  background: var(--color-sage-pale);
+  color: var(--color-sage);
+}
+.lineup-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+.lineup-card__desc {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  line-height: 1.75;
+}
+
+/* ---------- 8. Global Decorations ---------- */
+
+/* Dot pattern background */
+.deco-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background-image:
+    radial-gradient(circle, var(--color-accent) 1px, transparent 1px),
+    radial-gradient(circle, var(--color-sage) 0.8px, transparent 0.8px);
+  background-size: 48px 48px, 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+.deco-dots--light {
+  opacity: 0.15;
+}
+.deco-dots--dense {
+  background-size: 28px 28px, 20px 20px;
+}
+
+/* Accent line under section titles */
+.accent-line {
+  width: 60px;
+  height: 4px;
+  background: var(--color-accent);
+  margin: 0 auto 40px;
+  border-radius: 2px;
+  position: relative;
+}
+.accent-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 70px;
+  width: 20px;
+  height: 4px;
+  background: var(--color-sage);
+  border-radius: 2px;
+}
+.accent-line--left {
+  margin-left: 0;
+}
+.accent-line--wide {
+  width: 100px;
 }
