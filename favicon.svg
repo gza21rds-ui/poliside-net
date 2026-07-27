@@ -1,11 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F97316"/>
-      <stop offset="100%" stop-color="#EA580C"/>
-    </linearGradient>
-  </defs>
-  <rect width="120" height="120" rx="28" fill="url(#bg)"/>
-  <text x="60" y="85" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="900" font-size="76" fill="#ffffff" text-anchor="middle">P</text>
-  <circle cx="86" cy="86" r="14" fill="#0EA5E9" stroke="#ffffff" stroke-width="4"/>
+  <rect width="120" height="120" rx="28" fill="#ffffff" />
+  
+  <!-- Left Pillar (The Candidate - Orange) -->
+  <path d="M 36 28 C 36 23.5 39.5 20 44 20 C 48.5 20 52 23.5 52 28 L 52 92 C 52 96.5 48.5 100 44 100 C 39.5 100 36 96.5 36 92 Z" fill="#F97316"/>
+  
+  <!-- Right Arch (The Supporter / PoliSide - Light Blue) overlapping and forming a 'P' -->
+  <path d="M 44 20 L 74 20 C 93.8 20 110 36.2 110 56 C 110 75.8 93.8 92 74 92 L 44 92 Z M 52 36 L 52 76 L 74 76 C 85 76 94 67 94 56 C 94 45 85 36 74 36 Z" fill="#0EA5E9" fill-rule="evenodd" opacity="0.95"/>
 </svg>
