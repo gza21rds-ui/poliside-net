@@ -212,3 +212,14 @@ function showToast(message, type = 'success') {
     }
   });
 })();
+
+// FAQ Accordion
+document.addEventListener('DOMContentLoaded', () => {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('active');
+    });
+  });
+});
