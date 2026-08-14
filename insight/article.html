@@ -153,7 +153,22 @@
       
       // formatDate is defined in main.js
       document.getElementById('a-date').textContent = formatDate(article.published_at);
+      
       document.getElementById('a-content').innerHTML = article.content;
+      
+      if (article.thumbnail) {
+        const thumb = document.createElement('img');
+        thumb.src = article.thumbnail;
+        thumb.alt = article.title;
+        thumb.style.width = '100%';
+        thumb.style.maxHeight = '450px';
+        thumb.style.objectFit = 'cover';
+        thumb.style.borderRadius = '16px';
+        thumb.style.marginBottom = '40px';
+        thumb.style.boxShadow = '0 8px 24px rgba(0,0,0,0.06)';
+        document.getElementById('a-content').prepend(thumb);
+      }
+
       
       document.getElementById('articleContainer').style.display = 'block';
     });

@@ -78,12 +78,38 @@ function initScrollAnimations() {
 /* ===========================================
    Insight Page Helpers
    =========================================== */
+async function fetchMicroCMS() {
+  const response = await fetch('https://poliside.microcms.io/api/v1/poliside?limit=100', {
+    headers: { 'X-MICROCMS-API-KEY': 'NvwN8T5qbZ69fxMRR8zF2rDbrh0D2C0uPuoe' }
+  });
+  const result = await response.json();
+  const fallbackImages = {
+    'mindset-for-beginners': '../images/insight/political_mindset.jpg',
+    'sns-basic-rules': '../images/insight/sns_rules.jpg',
+    'how-to-build-kouenkai': '../images/insight/community_connection.jpg'
+  };
+  return (result.contents || []).map(item => {
+    const slug = item.slug || item.id;
+    let thumbUrl = item.thumbnail ? item.thumbnail.url : null;
+    if (!thumbUrl && fallbackImages[slug]) thumbUrl = fallbackImages[slug];
+    return {
+      id: item.id,
+      title: item.title || '無題',
+      slug: slug,
+      category: (isinstance_array(item.category) ? item.category[0] : item.category) || 'その他',
+      lead: item.lead || '',
+      content: item.content || '',
+      published_at: item.publishedAt,
+      thumbnail: thumbUrl,
+      published: true
+    };
+  });
+}
+function isinstance_array(val) { return Array.isArray(val); }
+
 async function loadArticles(category = 'all') {
   try {
-    const response = await fetch('/api/articles?limit=100');
-    const result = await response.json();
-    let articles = result.data || [];
-    articles = articles.filter(a => a.published);
+    let articles = await fetchMicroCMS();
     if (category !== 'all') articles = articles.filter(a => a.category === category);
     return articles;
   } catch (err) { console.error('Error loading articles:', err); return []; }
@@ -91,20 +117,19 @@ async function loadArticles(category = 'all') {
 
 async function loadArticleBySlug(slug) {
   try {
-    const response = await fetch('/api/articles?limit=100');
-    const result = await response.json();
-    return (result.data || []).find(a => a.slug === slug) || null;
+    const articles = await fetchMicroCMS();
+    return articles.find(a => a.slug === slug) || null;
   } catch (err) { console.error('Error loading article:', err); return null; }
 }
 
 async function loadRelatedArticles(currentId, relatedIds) {
   try {
-    const response = await fetch('/api/articles?limit=100');
-    const result = await response.json();
-    const articles = result.data || [];
-    if (relatedIds && relatedIds.length > 0) return articles.filter(a => relatedIds.includes(a.id) && a.id !== currentId && a.published);
-    return articles.filter(a => a.id !== currentId && a.published).sort((a, b) => new Date(b.published_at) - new Date(a.published_at)).slice(0, 3);
+    const articles = await fetchMicroCMS();
+    if (relatedIds && relatedIds.length > 0) return articles.filter(a => relatedIds.includes(a.id) && a.id !== currentId);
+    return articles.filter(a => a.id !== currentId).sort((a, b) => new Date(b.published_at) - new Date(a.published_at)).slice(0, 3);
   } catch (err) { console.error('Error loading related articles:', err); return []; }
+}
+
 }
 
 function formatDate(dateStr) {
@@ -115,9 +140,10 @@ function formatDate(dateStr) {
 function renderArticleCard(article) {
   const icons = { '選挙': '🗳️', '議会': '🏛️', '発信': '📢', '考え方': '💡', '政策': '📋' };
   const icon = icons[article.category] || '📄';
+  const imgHtml = article.thumbnail ? `<img src="${article.thumbnail}" alt="${article.title}" style="width:100%;height:100%;object-fit:cover;">` : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">${icon}</div>`;
   return `
     <a href="/insight/article.html?slug=${article.slug}" class="insight-card animate-on-scroll">
-      <div class="insight-card__img">${icon}</div>
+      <div class="insight-card__img" style="padding:0; overflow:hidden; background: var(--color-bg-alt);">${imgHtml}</div>
       <div class="insight-card__body">
         <span class="insight-card__category">${article.category || 'その他'}</span>
         <h3 class="insight-card__title">${article.title}</h3>
