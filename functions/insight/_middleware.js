@@ -29,7 +29,21 @@ export async function onRequest(context) {
       const article = apiData.contents[0];
       const title = `${article.title} | PoliSide 政治活動ノウハウ`;
       const description = article.lead || 'PoliSideの政治活動ノウハウ記事です。';
-      const imageUrl = article.thumbnail ? article.thumbnail.url : 'https://poliside.net/ogp.jpg';
+      
+      const fallbackImages = {
+        'mindset-for-beginners': 'https://poliside.net/images/insight/political_mindset.jpg',
+        'sns-basic-rules': 'https://poliside.net/images/insight/sns_rules.jpg',
+        'how-to-build-kouenkai': 'https://poliside.net/images/insight/community_connection.jpg'
+      };
+
+      let imageUrl = article.thumbnail ? article.thumbnail.url : null;
+      if (!imageUrl && fallbackImages[slug]) {
+        imageUrl = fallbackImages[slug];
+      }
+      if (!imageUrl) {
+        imageUrl = 'https://poliside.net/ogp.jpg';
+      }
+
       const pageUrl = `https://poliside.net/insight/article.html?slug=${slug}`;
 
       // Rewrite HTML tags dynamically using Cloudflare HTMLRewriter
