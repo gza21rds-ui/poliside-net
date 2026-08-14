@@ -80,7 +80,7 @@ function initScrollAnimations() {
    =========================================== */
 async function loadArticles(category = 'all') {
   try {
-    const response = await fetch('tables/insight_articles?limit=100&sort=-published_at');
+    const response = await fetch('/api/articles?limit=100');
     const result = await response.json();
     let articles = result.data || [];
     articles = articles.filter(a => a.published);
@@ -91,7 +91,7 @@ async function loadArticles(category = 'all') {
 
 async function loadArticleBySlug(slug) {
   try {
-    const response = await fetch('tables/insight_articles?limit=100');
+    const response = await fetch('/api/articles?limit=100');
     const result = await response.json();
     return (result.data || []).find(a => a.slug === slug) || null;
   } catch (err) { console.error('Error loading article:', err); return null; }
@@ -99,7 +99,7 @@ async function loadArticleBySlug(slug) {
 
 async function loadRelatedArticles(currentId, relatedIds) {
   try {
-    const response = await fetch('tables/insight_articles?limit=100');
+    const response = await fetch('/api/articles?limit=100');
     const result = await response.json();
     const articles = result.data || [];
     if (relatedIds && relatedIds.length > 0) return articles.filter(a => relatedIds.includes(a.id) && a.id !== currentId && a.published);
