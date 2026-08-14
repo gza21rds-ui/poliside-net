@@ -130,8 +130,6 @@ async function loadRelatedArticles(currentId, relatedIds) {
   } catch (err) { console.error('Error loading related articles:', err); return []; }
 }
 
-}
-
 function formatDate(dateStr) {
   if (!dateStr) return '';
   return new Date(dateStr).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
