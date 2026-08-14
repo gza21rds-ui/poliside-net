@@ -387,7 +387,7 @@ p{margin-bottom:1rem;line-height:1.9;font-size:1.02rem;letter-spacing:.03em}
 /* Flow styling */
 .flow-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr auto 1fr auto 1fr;
   gap: 24px;
   position: relative;
 }
@@ -1292,3 +1292,15 @@ p{margin-bottom:1rem;line-height:1.9;font-size:1.02rem;letter-spacing:.03em}
 .faq-item.active .faq-answer {
   max-height: 500px;
 }
+
+
+/* Responsive Overrides & Mobile Optimization */
+@media (max-width: 768px) {
+  .faq-question { padding: 16px; }
+  .faq-answer p { padding: 0 16px 16px 48px; }
+  .lineup-card, .worry-card, .point-card { padding: 24px; }
+  .article-title { font-size: clamp(1.5rem, 5vw, 2rem) !important; }
+  .section { padding: 48px 0; }
+}
+.table-responsive { width: 100%; overflow-x: auto; }
+.article-content table { width: 100%; border-collapse: collapse; min-width: 500px; }
