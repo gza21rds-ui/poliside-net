@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <style>
@@ -47,14 +47,14 @@
         <img src="../favicon.svg" alt="PoliSide Icon" style="width:26px; height:26px; border-radius:6px; box-shadow: 0 2px 6px rgba(249,115,22,0.3);">
         PoliSide
       </a>
-      <div class="nav__links">
+      <div class="nav__links" id="mobile-menu">
         <a href="../index.html" class="nav__link">TOP</a>
         <a href="index.html" class="nav__link">政治活動ノウハウ記事</a>
         <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="nav__link nav__link--cta">
           <i class="fab fa-line"></i> LINE相談
         </a>
       </div>
-      <div class="nav__hamburger" aria-label="メニュー" role="button" tabindex="0">
+      <button class="nav__hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-menu" type="button" style="background:none;border:none;cursor:pointer;">
         <span></span><span></span><span></span>
       </div>
     </div>

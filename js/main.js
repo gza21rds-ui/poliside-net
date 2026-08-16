@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
    =========================================== */
 function initNavigation() {
   const hamburger = document.querySelector('.nav__hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
   const navLinks = document.querySelector('.nav__links');
   const overlay = document.querySelector('.nav__overlay');
   
@@ -243,7 +244,8 @@ document.addEventListener('DOMContentLoaded', () => {
   faqQuestions.forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
-      item.classList.toggle('active');
+      const isExpanded = item.classList.toggle('active');
+      btn.setAttribute('aria-expanded', isExpanded);
     });
   });
 });
