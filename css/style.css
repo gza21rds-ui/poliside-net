@@ -2044,3 +2044,58 @@ button:active, .cta-btn:active, .btn-sub:active, .nav__link--cta:active, .floati
   border-left: 1px solid rgba(226, 232, 240, 0.95) !important;
   box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
 }
+
+
+/* ── Trust Badges Single-Line Alignment ── */
+.hero-trust-badges {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+  margin-bottom: 20px !important;
+}
+.hero-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.9) !important;
+  padding: 5px 12px !important;
+  border-radius: 9999px !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: var(--color-primary) !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04) !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+@media (max-width: 600px) {
+  .hero-trust-badges {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+  .hero-badge {
+    padding: 4px 10px !important;
+    font-size: 0.74rem !important;
+  }
+}
+
+/* ── Fix Pricing Card Featured Tag Overflow ── */
+.pricing-card,
+.pricing-card--featured,
+.pricing-grid-wrap {
+  overflow: visible !important;
+}
+.pricing-card--featured {
+  margin-top: 10px;
+}
+.pricing-featured-tag {
+  position: absolute !important;
+  top: -15px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 20 !important;
+  overflow: visible !important;
+}
