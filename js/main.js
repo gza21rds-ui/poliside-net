@@ -79,32 +79,56 @@ function initScrollAnimations() {
 /* ===========================================
    Insight Page Helpers
    =========================================== */
+async function fetchStaticArticles() {
+  try {
+    const response = await fetch('/insight/data/articles.json', { cache: 'no-cache' });
+    if (!response.ok) return [];
+    const data = await response.json();
+    return Array.isArray(data) ? data : [];
+  } catch (e) {
+    return [];
+  }
+}
+
 async function fetchMicroCMS() {
-  const response = await fetch('https://poliside.microcms.io/api/v1/poliside?limit=100', {
-    headers: { 'X-MICROCMS-API-KEY': 'NvwN8T5qbZ69fxMRR8zF2rDbrh0D2C0uPuoe' }
-  });
-  const result = await response.json();
-  const fallbackImages = {
-    'mindset-for-beginners': '../images/insight/political_mindset.jpg',
-    'sns-basic-rules': '../images/insight/sns_rules.jpg',
-    'how-to-build-kouenkai': '../images/insight/community_connection.jpg'
-  };
-  return (result.contents || []).map(item => {
-    const slug = item.slug || item.id;
-    let thumbUrl = item.thumbnail ? item.thumbnail.url : null;
-    if (!thumbUrl && fallbackImages[slug]) thumbUrl = fallbackImages[slug];
-    return {
-      id: item.id,
-      title: item.title || '無題',
-      slug: slug,
-      category: (isinstance_array(item.category) ? item.category[0] : item.category) || 'その他',
-      lead: item.lead || '',
-      content: item.content || '',
-      published_at: item.publishedAt,
-      thumbnail: thumbUrl,
-      published: true
-    };
-  });
+  const [staticArticles, cmsArticles] = await Promise.all([
+    fetchStaticArticles(),
+    (async () => {
+      try {
+        const response = await fetch('https://poliside.microcms.io/api/v1/poliside?limit=100', {
+          headers: { 'X-MICROCMS-API-KEY': 'NvwN8T5qbZ69fxMRR8zF2rDbrh0D2C0uPuoe' }
+        });
+        const result = await response.json();
+        const fallbackImages = {
+          'mindset-for-beginners': '../images/insight/political_mindset.jpg',
+          'sns-basic-rules': '../images/insight/sns_rules.jpg',
+          'how-to-build-kouenkai': '../images/insight/community_connection.jpg'
+        };
+        return (result.contents || []).map(item => {
+          const slug = item.slug || item.id;
+          let thumbUrl = item.thumbnail ? item.thumbnail.url : null;
+          if (!thumbUrl && fallbackImages[slug]) thumbUrl = fallbackImages[slug];
+          return {
+            id: item.id,
+            title: item.title || '無題',
+            slug: slug,
+            category: (isinstance_array(item.category) ? item.category[0] : item.category) || 'その他',
+            lead: item.lead || '',
+            content: item.content || '',
+            published_at: item.publishedAt,
+            thumbnail: thumbUrl,
+            published: true
+          };
+        });
+      } catch (e) {
+        return [];
+      }
+    })()
+  ]);
+
+  const seenSlugs = new Set(staticArticles.map(a => a.slug));
+  const merged = [...staticArticles, ...cmsArticles.filter(a => !seenSlugs.has(a.slug))];
+  return merged.sort((a, b) => new Date(b.published_at || 0) - new Date(a.published_at || 0));
 }
 function isinstance_array(val) { return Array.isArray(val); }
 
@@ -140,8 +164,9 @@ function renderArticleCard(article) {
   const icons = { '選挙': '🗳️', '議会': '🏛️', '発信': '📢', '考え方': '💡', '政策': '📋' };
   const icon = icons[article.category] || '📄';
   const imgHtml = article.thumbnail ? `<img src="${article.thumbnail}" alt="${article.title}" style="width:100%;height:100%;object-fit:cover;">` : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">${icon}</div>`;
+  const href = article.static_url || `/insight/article.html?slug=${article.slug}`;
   return `
-    <a href="/insight/article.html?slug=${article.slug}" class="insight-card animate-on-scroll">
+    <a href="${href}" class="insight-card animate-on-scroll">
       <div class="insight-card__img" style="padding:0; overflow:hidden; background: var(--color-bg-alt);">${imgHtml}</div>
       <div class="insight-card__body">
         <span class="insight-card__category">${article.category || 'その他'}</span>

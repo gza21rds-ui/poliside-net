@@ -1,0 +1,343 @@
+[
+  {
+    "id": "topic-001",
+    "slug": "local-election-preparation-roadmap-6months",
+    "category": "選挙",
+    "title": "【完全版】地方選挙（市議・区議）立候補準備の6ヶ月ロードマップ｜新人が最初にやるべきステップ",
+    "target_keywords": [
+      "地方選挙 立候補 準備",
+      "市議会議員 選挙 準備 いつから",
+      "新人候補 やることリスト",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "地方選挙（市議会議員・区議会議員など）に新人で立候補する場合、いつからどのような順番で準備を進めればよいですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "published",
+    "published_at": "2026-11-03T09:00:00+09:00"
+  },
+  {
+    "id": "topic-002",
+    "slug": "election-campaign-task-volunteer-management-dashboard",
+    "category": "選挙",
+    "title": "選挙陣営のタスク管理・ボランティア運営を効率化する方法｜Excel・LINE管理の限界とダッシュボード活用術",
+    "target_keywords": [
+      "選挙 ボランティア 管理",
+      "選挙陣営 タスク管理 ツール",
+      "選挙事務所 情報共有",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "選挙陣営のタスク進行やボランティアスタッフのシフト・連絡管理を効率化するには、どのようなツールや方法が最適ですか？",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-003",
+    "slug": "politician-website-creation-guide-cost-and-elements",
+    "category": "発信",
+    "title": "政治家・立候補者のホームページ作成ガイド｜費用相場と有権者に信頼される必須5コンテンツ",
+    "target_keywords": [
+      "政治家 ホームページ 作成",
+      "選挙 立候補者 HP 費用",
+      "議員 ウェブサイト 作り方",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "政治家や新人候補者が公式ホームページを作成する際の費用相場と、必ず掲載すべき項目は何ですか？",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-004",
+    "slug": "first-general-question-local-council-guide",
+    "category": "議会",
+    "title": "新人地方議員のための「一般質問」作成完全ガイド｜テーマ選びから質問通告・答弁調整までの基本ステップ",
+    "target_keywords": [
+      "地方議会 一般質問 作り方",
+      "新人議員 一般質問 テーマ",
+      "質問通告書 書き方",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "地方議会の新人議員が初めての一般質問を作成する際、どのような手順でテーマ選定や原稿作成を進めればよいですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-005",
+    "slug": "independent-candidate-without-jiban-kanban-kaban",
+    "category": "考え方",
+    "title": "「地盤・看板・カバンなし」の無所属新人が地方選挙で戦うための現実的戦略とツール活用法",
+    "target_keywords": [
+      "無所属 新人 選挙 戦い方",
+      "地盤 看板 カバン なし",
+      "若手 立候補 準備",
+      "PoliStep",
+      "PoliDash"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "地盤・看板・カバン（資金や組織）がない無所属の新人候補者が、地方選挙で当選を目指すにはどうすればよいですか？",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-006",
+    "slug": "election-poster-board-mapping-and-volunteer-routing",
+    "category": "選挙",
+    "title": "告示日当日に慌てない！公営ポスター掲示板の貼り出しルート設計とボランティア進捗管理の鉄則",
+    "target_keywords": [
+      "選挙 ポスター貼り ボランティア",
+      "公営掲示板 地図 管理",
+      "告示日 タスク管理",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "選挙の告示日当日に公営掲示板へポスターを迅速に貼り切るための人員配置と進捗管理のコツは何ですか？",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-007",
+    "slug": "political-activity-vs-election-campaign-legal-boundaries",
+    "category": "選挙",
+    "title": "【公職選挙法の基礎】「政治活動」と「選挙運動」の明確な違い｜事前運動とみなされないためのチェックリスト",
+    "target_keywords": [
+      "政治活動 選挙運動 違い",
+      "公職選挙法 事前運動 基準",
+      "討議資料 チラシ 注意点",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "公職選挙法における「政治活動」と「選挙運動」の違いは何ですか？告示前に注意すべき事前運動の境界線を教えてください。",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-008",
+    "slug": "policy-pamphlet-flyer-structure-for-young-candidates",
+    "category": "発信",
+    "title": "駅頭・ポスティングで読まれる「討議資料（政治活動チラシ）」の構成テンプレートと3つの鉄則",
+    "target_keywords": [
+      "政治活動 チラシ 作り方",
+      "討議資料 デザイン テンプレート",
+      "駅頭 ビラ 受け取ってもらう",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "有権者に読まれる政治活動チラシ（討議資料）を作るには、表面・裏面にどのような内容を配置すべきですか？",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-009",
+    "slug": "turning-citizen-consultations-into-local-policies",
+    "category": "政策",
+    "title": "地域の「市民相談・困りごと」を具体的な政策・議会質問へ昇華させる3ステップ思考法",
+    "target_keywords": [
+      "地方議員 政策 立案 方法",
+      "市民相談 議会質問 つなげ方",
+      "公約 作り方 新人",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "地方議員や候補者が、住民から寄せられた個別の困りごとや地域課題を具体的な政策や議会質問にまとめるにはどうすればよいですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-010",
+    "slug": "local-election-cost-breakdown-deposit-and-public-subsidy",
+    "category": "考え方",
+    "title": "地方選挙に出るにはいくらかかる？供託金・公費負担（選挙公営）の仕組みと自己資金を抑える予算設計",
+    "target_keywords": [
+      "地方選挙 費用 相場",
+      "市議会議員 供託金 公費負担",
+      "選挙 自己資金 いくら",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "市議会議員や区議会議員などの地方選挙に立候補する場合、供託金や活動費を含めて自己資金はいくら必要ですか？公費負担制度についても教えてください。",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-011",
+    "slug": "small-team-election-operation-with-digital-tools",
+    "category": "選挙",
+    "title": "スタッフ3〜5人の少人数陣営でも勝てる！デジタルツールを活用した省力化・高密度な選挙運営モデル",
+    "target_keywords": [
+      "少人数 選挙 戦い方",
+      "選挙 陣営 スタッフ いない",
+      "選挙 DX ツール",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "専従スタッフやボランティアが数人しかいない少人数の選挙陣営で、効率よく選挙戦を回すための運営ノウハウを教えてください。",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-012",
+    "slug": "morning-station-speech-tips-for-beginners",
+    "category": "発信",
+    "title": "初めての「駅頭（朝立ち）・街頭演説」完全マニュアル｜準備物・場所取りマナーから心を動かすトーク構成まで",
+    "target_keywords": [
+      "駅頭 挨拶 やり方",
+      "街頭演説 コツ 新人",
+      "政治活動 朝立ち 準備",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "新人候補者が初めて駅頭での朝立ちや街頭演説を行う際、必要な準備物や暗黙のマナー、演説の構成はどうすればよいですか？",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-013",
+    "slug": "council-report-newsletter-continuation-tips",
+    "category": "議会",
+    "title": "当選後に差がつく「議会報告（市政・区政レポート）」の継続術｜4年間途切れず発信し続ける仕組みづくり",
+    "target_keywords": [
+      "議会報告 チラシ 書き方",
+      "市政報告 レポート ネタ",
+      "地方議員 活動報告 頻度",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "地方議員が当選後に議会報告チラシや活動レポートを無理なく継続して発行し続けるには、どのような構成とスケジュール管理が有効ですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-014",
+    "slug": "overcoming-loneliness-and-mental-burnout-in-politics",
+    "category": "考え方",
+    "title": "政治活動・選挙準備で「孤独と不安」に押し潰されそうなときに実践したいメンタルマネジメントと壁打ちの効用",
+    "target_keywords": [
+      "選挙 孤独 不安",
+      "政治活動 メンタル 折れそう",
+      "候補者 相談相手 壁打ち",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "選挙準備や政治活動中に強い孤独感やプレッシャーを感じた際、候補者はどのようにメンタルを保ち、誰に相談すればよいですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-015",
+    "slug": "election-filing-documents-pre-examination-checklist",
+    "category": "選挙",
+    "title": "立候補届出書類と「事前審査」でつまずかないための準備ガイド｜選挙管理委員会とのやり取りの要点",
+    "target_keywords": [
+      "立候補届出書類 書き方",
+      "選挙 事前審査 持ち物",
+      "選挙管理委員会 説明会",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "立候補予定者説明会から事前審査、告示日の届出までに準備すべき書類と注意点をステップごとに教えてください。",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-016",
+    "slug": "supporter-list-management-and-privacy-security",
+    "category": "選挙",
+    "title": "後援会名簿・支援者リストの安全な作り方と管理ルール｜個人情報保護と陣営内共有を両立させる方法",
+    "target_keywords": [
+      "後援会 名簿 管理",
+      "選挙 支援者リスト エクセル",
+      "陣営 情報セキュリティ",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "選挙における後援会名簿や支援者リストを作成する際、個人情報保護に配慮しつつ陣営内で効率的に管理するにはどうすればよいですか？",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-017",
+    "slug": "sns-x-instagram-line-strategy-for-local-politicians",
+    "category": "発信",
+    "title": "地方議員・候補者のためのSNS使い分け戦略（X・Instagram・公式LINE・HP）｜認知獲得からファン化までの導線設計",
+    "target_keywords": [
+      "政治家 SNS 使い分け",
+      "地方選挙 インスタ X LINE",
+      "候補者 Web導線 ホームページ",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "地方選挙の候補者は、X（旧Twitter）、Instagram、公式LINE、公式ホームページをそれぞれどのように役割分担して運用すべきですか？",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-018",
+    "slug": "how-to-read-local-government-budget-and-settlement",
+    "category": "政策",
+    "title": "新人議員・候補者が知っておきたい「自治体予算書・決算書」の読み解き方｜数字から地域課題と財源を見つける技術",
+    "target_keywords": [
+      "自治体 予算書 読み方 新人議員",
+      "地方議会 決算審査 ポイント",
+      "政策 財源 見つけ方",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "新人議員や立候補予定者が自治体の予算書や決算書を読んで政策立案に活かすには、まずどの数字や項目に注目すべきですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-019",
+    "slug": "balancing-day-job-and-election-preparation",
+    "category": "考え方",
+    "title": "会社員・子育て世代が働きながら地方選挙の準備を進めるタイムマネジメント術｜限られた時間で成果を出す優先順位",
+    "target_keywords": [
+      "会社員 立候補 兼業 準備",
+      "働きながら 選挙 準備",
+      "若手 政治活動 時間管理",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "会社員や子育て中の若手候補者が、仕事を続けながら限られた時間で地方選挙の準備を進めるにはどうスケジュールを組めばよいですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-020",
+    "slug": "campaign-week-7days-schedule-and-team-coordination",
+    "category": "選挙",
+    "title": "地方選挙「選挙戦7日間（または5日間）」のタイムスケジュール完全設計｜候補者と陣営スタッフの動き方",
+    "target_keywords": [
+      "市議会議員選挙 7日間 スケジュール",
+      "選挙期間中 陣営 動き方",
+      "街宣車 ウグイス 運行管理",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "地方議会議員選挙の告示日から投開票日前日までの選挙期間中、候補者と陣営スタッフは毎日どのようなスケジュールで動くべきですか？",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "status": "pending",
+    "published_at": null
+  }
+]

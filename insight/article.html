@@ -131,6 +131,11 @@
       // loadArticleBySlug is defined in main.js
       const article = await loadArticleBySlug(slug);
       
+      if (article && article.static_url) {
+        window.location.replace(article.static_url);
+        return;
+      }
+
       document.getElementById('loadingSpinner').style.display = 'none';
       
       if (!article) {

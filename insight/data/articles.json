@@ -1,1 +1,14 @@
-404: Not Found
+[
+  {
+    "id": "topic-001",
+    "title": "【完全版】地方選挙（市議・区議）立候補準備の6ヶ月ロードマップ｜新人が最初にやるべきステップ",
+    "slug": "local-election-preparation-roadmap-6months",
+    "category": "選挙",
+    "lead": "地方選挙（市議会議員・区議会議員など）に新人で立候補する方向けに、告示6ヶ月前からの準備ロードマップを完全解説。政策づくり、後援会設立、HP作成、立候補届出書類の準備まで、PoliStep・PoliDash・PoliSideを活用した実践手順をまとめました。",
+    "published_at": "2026-11-03T09:00:00+09:00",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "static_url": "/insight/posts/local-election-preparation-roadmap-6months.html",
+    "primary_product": "PoliStep",
+    "published": true
+  }
+]
