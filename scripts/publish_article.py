@@ -324,6 +324,12 @@ def generate_static_html(article_data):
       {spotlight_html}
 
       {faq_section_html}
+
+      <!-- 公職選挙法・法令遵守に関する注意事項 -->
+      <div style="margin-top: 40px; padding: 18px 22px; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 12px; font-size: 0.86rem; color: #475569; line-height: 1.7;">
+        <strong style="color: #0F172A;"><i class="fas fa-scale-balanced" style="color: #64748B; margin-right: 6px;"></i>法令遵守（公職選挙法等）に関するご注意</strong><br>
+        本記事は一般的な政治活動・選挙準備の情報提供を目的としており、特定の法的判断や選挙運動を誘導するものではありません。告示日前の投票依頼（事前運動）や戸別訪問、寄附行為等は公職選挙法により厳しく制限されています。選挙の種類や自治体によって運用・届出要件が異なる場合がありますので、実際の活動や制作物の仕様については必ず事前に管轄の選挙管理委員会へご確認ください。
+      </div>
     </article>
 
     <!-- 記事読了後のCTA導線 -->
