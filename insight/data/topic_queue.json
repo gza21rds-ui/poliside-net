@@ -18,17 +18,17 @@
   },
   {
     "id": "topic-002",
-    "slug": "election-campaign-task-volunteer-management-dashboard",
+    "slug": "election-poster-management-route-optimization-polidash",
     "category": "選挙",
-    "title": "選挙陣営のタスク管理・ボランティア運営を効率化する方法｜Excel・LINE管理の限界とダッシュボード活用術",
+    "title": "選挙ポスター貼りを最速で完了させる方法｜掲示板の住所一括登録・AIルート作成・ボランティア共有の鉄則",
     "target_keywords": [
-      "選挙 ボランティア 管理",
-      "選挙陣営 タスク管理 ツール",
-      "選挙事務所 情報共有",
+      "選挙ポスター 貼り方 効率",
+      "選挙 ポスター貼り ルート作成",
+      "ポスター掲示板 地図 アプリ",
       "PoliDash"
     ],
     "primary_product": "PoliDash",
-    "aeo_question": "選挙陣営のタスク進行やボランティアスタッフのシフト・連絡管理を効率化するには、どのようなツールや方法が最適ですか？",
+    "aeo_question": "選挙の告示日当日に公営掲示板へのポスター貼りを少人数スタッフで迅速・確実に完了させるには、どのような準備やツール活用が有効ですか？",
     "thumbnail": "/images/insight/community_connection.jpg",
     "status": "pending",
     "published_at": null

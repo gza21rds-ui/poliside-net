@@ -17,7 +17,11 @@ POSTS_DIR = os.path.join(BASE_DIR, "insight", "posts")
 ARTICLES_JSON_PATH = os.path.join(BASE_DIR, "insight", "data", "articles.json")
 TOPIC_QUEUE_PATH = os.path.join(BASE_DIR, "insight", "data", "topic_queue.json")
 SITEMAP_PATH = os.path.join(BASE_DIR, "sitemap.xml")
-LLMS_TXT_PATH = os.path.join(BASE_DIR, "llms.txt")
+LLMS_TXT_PATHS = [
+    os.path.join(BASE_DIR, "llms.txt"),
+    "/Users/takanoyousuke/.gemini/antigravity/scratch/poli-dash/public/llms.txt",
+    "/Users/takanoyousuke/.gemini/antigravity/scratch/polistep/public/llms.txt",
+]
 
 
 def format_jp_date(date_str):
@@ -32,35 +36,35 @@ def build_product_spotlight_html(primary_product):
     if primary_product == "PoliStep":
         return """
         <div class="ecosystem-spotlight" style="margin: 48px 0; padding: 32px; border-radius: 20px; background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%); border: 2px solid #0EA5E9; box-shadow: 0 10px 28px rgba(14, 165, 233, 0.08);">
-          <div style="display:inline-block; background:#0EA5E9; color:#fff; font-size:0.78rem; font-weight:800; padding:4px 12px; border-radius:999px; margin-bottom:12px;">立候補準備・進行支援アプリ</div>
-          <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">やるべきことが一目でわかる「PoliStep（ポリステップ）」</h3>
+          <div style="display:inline-block; background:#0EA5E9; color:#fff; font-size:0.78rem; font-weight:800; padding:4px 12px; border-radius:999px; margin-bottom:12px;">政治活動DX・フィールド活動可視化アプリ</div>
+          <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">孤独なドブ板を可視化で変える「PoliStep（ポリステップ）」</h3>
           <p style="margin-bottom:20px; color:#334155; font-size:0.98rem; line-height:1.75;">
-            「何からどの順番で準備すればいいか分からない」という新人候補者のために開発された、ステップバイステップの政治活動進行支援アプリです。立候補決意から告示日までの全タスクを迷わず管理できます。
+            日々の地域訪問・対話記録・ポスター貼付・街頭演説・ビラ配りをスマホ地図上でワンタップ記録。目標日からの1日あたりのノルマ自動逆算や、SNS・LINEグループへの日報画像自動生成まで、政治活動の進捗管理とチーム共有を完全無料でサポートします。
           </p>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
             <a href="https://polistep.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#0EA5E9; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
-              <i class="fas fa-shoe-prints"></i> PoliStep 公式サイトを見る
+              <i class="fas fa-shoe-prints"></i> PoliStep 公式サイトを見る（無料）
             </a>
             <a href="https://polidash.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem;">
-              <i class="fas fa-chart-line" style="color:#F97316;"></i> 陣営管理なら PoliDash
+              <i class="fas fa-map-location-dot" style="color:#10B981;"></i> ポスター貼付管理なら PoliDash
             </a>
           </div>
         </div>
         """
     elif primary_product == "PoliDash":
         return """
-        <div class="ecosystem-spotlight" style="margin: 48px 0; padding: 32px; border-radius: 20px; background: linear-gradient(135deg, #FFF7ED 0%, #FFFBEB 100%); border: 2px solid #F97316; box-shadow: 0 10px 28px rgba(249, 115, 22, 0.08);">
-          <div style="display:inline-block; background:#F97316; color:#fff; font-size:0.78rem; font-weight:800; padding:4px 12px; border-radius:999px; margin-bottom:12px;">選挙陣営向け高機能ダッシュボード</div>
-          <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">陣営タスクとボランティアを一元化する「PoliDash（ポリダッシュ）」</h3>
+        <div class="ecosystem-spotlight" style="margin: 48px 0; padding: 32px; border-radius: 20px; background: linear-gradient(135deg, #ECFDF5 0%, #F8FAFC 100%); border: 2px solid #10B981; box-shadow: 0 10px 28px rgba(16, 185, 129, 0.08);">
+          <div style="display:inline-block; background:#10B981; color:#fff; font-size:0.78rem; font-weight:800; padding:4px 12px; border-radius:999px; margin-bottom:12px;">選挙ポスター貼付管理アプリ</div>
+          <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">ポスター割り振りと進捗をスマホで一元管理「PoliDash（ポリダッシュ）」</h3>
           <p style="margin-bottom:20px; color:#334155; font-size:0.98rem; line-height:1.75;">
-            バラバラになりがちなExcelファイルやLINE連絡を卒業し、選挙陣営のタスク進捗・ボランティアシフト・重要共有事項をひとつの画面に集約。少人数陣営でもプロ並みのオペレーションを実現します。
+            掲示場所の住所リストをコピペするだけで地図上にピンを一括自動配置。AIがスタッフ人数や移動手段に合わせて最適な巡回ルートを自動生成し、ログイン不要の専用URLをLINEで送るだけでリアルタイムに進捗を同期できます。
           </p>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
-            <a href="https://polidash.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#F97316; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
-              <i class="fas fa-chart-line"></i> PoliDash 公式サイトを見る
+            <a href="https://polidash.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#10B981; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
+              <i class="fas fa-map-location-dot"></i> PoliDash 公式サイトを見る（無料）
             </a>
             <a href="https://polistep.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem;">
-              <i class="fas fa-shoe-prints" style="color:#0EA5E9;"></i> 準備手順なら PoliStep
+              <i class="fas fa-shoe-prints" style="color:#0EA5E9;"></i> 日々の地域活動記録なら PoliStep
             </a>
           </div>
         </div>
@@ -69,19 +73,19 @@ def build_product_spotlight_html(primary_product):
         return """
         <div class="ecosystem-spotlight" style="margin: 48px 0; padding: 32px; border-radius: 20px; background: linear-gradient(135deg, #F8FAFC 0%, #FFF7ED 100%); border: 2px solid #F97316; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);">
           <div style="display:inline-block; background:#0F172A; color:#fff; font-size:0.78rem; font-weight:800; padding:4px 12px; border-radius:999px; margin-bottom:12px;">PoliSide エコシステム</div>
-          <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">HP作成・伴走相談からツール活用までトータルサポート</h3>
+          <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">HP作成・伴走相談から政治活動DXツールまでトータルサポート</h3>
           <p style="margin-bottom:20px; color:#334155; font-size:0.98rem; line-height:1.75;">
-            PoliSide（候補者HP作成＆月1回のオンライン伴走サポート）に加え、準備ステップ管理アプリ「PoliStep」、選挙陣営ダッシュボード「PoliDash」であなたの挑戦を全方位から支えます。
+            PoliSide（候補者HP作成＆月1回のオンライン伴走サポート）に加え、日々の地域活動を地図とグラフで可視化する「PoliStep」、選挙ポスター貼付管理アプリ「PoliDash」であなたの挑戦を全方位から支えます。
           </p>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
             <a href="https://poliside.net/#pricing" style="display:inline-flex; align-items:center; gap:8px; background:#F97316; color:#fff; padding:12px 22px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.92rem;">
               <i class="fas fa-handshake-angle"></i> PoliSideの伴走支援・料金を見る
             </a>
             <a href="https://polidash.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 18px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.88rem;">
-              <i class="fas fa-chart-line" style="color:#F97316;"></i> PoliDash
+              <i class="fas fa-map-location-dot" style="color:#10B981;"></i> PoliDash（ポスター管理）
             </a>
             <a href="https://polistep.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 18px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.88rem;">
-              <i class="fas fa-shoe-prints" style="color:#0EA5E9;"></i> PoliStep
+              <i class="fas fa-shoe-prints" style="color:#0EA5E9;"></i> PoliStep（活動記録DX）
             </a>
           </div>
         </div>
@@ -182,7 +186,7 @@ def generate_static_html(article_data):
                 "url": "https://polidash.jp",
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web",
-                "description": "選挙陣営向けの高機能ダッシュボード。ボランティア管理や日々のタスク進行を一元化"
+                "description": "選挙ポスター貼付管理アプリ。住所一括登録・AI最適ルート自動生成・専用URLでのスタッフ共有・リアルタイム進捗管理"
             },
             {
                 "@type": "SoftwareApplication",
@@ -190,7 +194,7 @@ def generate_static_html(article_data):
                 "url": "https://polistep.jp",
                 "applicationCategory": "BusinessApplication",
                 "operatingSystem": "Web",
-                "description": "政治活動のステップバイステップ進行支援アプリ。立候補準備でやるべきことが明確になるロードマップツール"
+                "description": "日々の政治活動（地域訪問・対話記録・ポスター貼付・街頭演説・ビラ配り等）をスマホ地図上で可視化・逆算管理・日報画像生成できる政治活動DXアプリ"
             }
         ]
     }
@@ -337,7 +341,7 @@ def generate_static_html(article_data):
       <h3 style="color:#fff; font-size:1.4rem; margin-bottom:12px;">まずは、ひとりで抱えないことから。</h3>
       <p style="color:#CBD5E1; font-size:0.98rem; line-height:1.8; margin-bottom:24px;">
         PoliSideは、若手候補者・若手議員の「隣に立つ」伴走型サポートです。<br>
-        選挙準備のステップ整理（<a href="https://polistep.jp" target="_blank" rel="noopener" style="color:#38BDF8; text-decoration:underline;">PoliStep</a>）・陣営タスク管理（<a href="https://polidash.jp" target="_blank" rel="noopener" style="color:#FB923C; text-decoration:underline;">PoliDash</a>）・HP作成まで、初回60分無料でご相談いただけます。
+        日々の政治活動の地図記録・可視化（<a href="https://polistep.jp" target="_blank" rel="noopener" style="color:#38BDF8; text-decoration:underline;">PoliStep</a>）・選挙ポスター貼付管理（<a href="https://polidash.jp" target="_blank" rel="noopener" style="color:#34D399; text-decoration:underline;">PoliDash</a>）・HP作成まで、初回60分無料でご相談いただけます。
       </p>
       <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:14px;">
         <a href="https://lin.ee/en5smI7" onclick="if(typeof gtag==='function'){{gtag('event', 'add_line', {{ 'event_category': 'conversion' }});}}" target="_blank" rel="noopener" class="cta-btn">
@@ -362,8 +366,8 @@ def generate_static_html(article_data):
         <div class="footer__links">
           <a href="../../index.html" class="footer__link">TOP</a>
           <a href="../index.html" class="footer__link">政治活動ノウハウ記事</a>
-          <a href="https://polidash.jp" target="_blank" rel="noopener" class="footer__link">PoliDash（陣営管理）</a>
-          <a href="https://polistep.jp" target="_blank" rel="noopener" class="footer__link">PoliStep（準備支援）</a>
+          <a href="https://polidash.jp" target="_blank" rel="noopener" class="footer__link">PoliDash（ポスター管理）</a>
+          <a href="https://polistep.jp" target="_blank" rel="noopener" class="footer__link">PoliStep（活動記録DX）</a>
           <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="footer__link">LINE相談</a>
         </div>
       </div>
@@ -452,25 +456,24 @@ def update_sitemap(slug, published_at):
 
 
 def update_llms_txt(article_data):
-    if not os.path.exists(LLMS_TXT_PATH):
-        return
-    with open(LLMS_TXT_PATH, "r", encoding="utf-8") as f:
-        content = f.read()
-
     slug = article_data["slug"]
     title = article_data["title"]
     lead = article_data["lead"]
     url = f"https://poliside.net/insight/posts/{slug}.html"
     line = f"- [{title}]({url}): {lead}"
-
-    if url in content:
-        return
-
     marker = "<!-- ARTICLES_START -->"
-    if marker in content:
-        content = content.replace(marker, f"{marker}\n{line}")
-        with open(LLMS_TXT_PATH, "w", encoding="utf-8") as f:
-            f.write(content)
+
+    for llms_path in LLMS_TXT_PATHS:
+        if not os.path.exists(llms_path):
+            continue
+        with open(llms_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        if url in content:
+            continue
+        if marker in content:
+            content = content.replace(marker, f"{marker}\n{line}")
+            with open(llms_path, "w", encoding="utf-8") as f:
+                f.write(content)
 
 
 def mark_topic_published(slug, published_at):
