@@ -22,6 +22,9 @@ LLMS_TXT_PATHS = [
     "/Users/takanoyousuke/.gemini/antigravity/scratch/poli-dash/public/llms.txt",
     "/Users/takanoyousuke/.gemini/antigravity/scratch/polistep/public/llms.txt",
 ]
+POLIDASH_FEED_PATH = "/Users/takanoyousuke/.gemini/antigravity/scratch/poli-dash/lib/ecosystem-articles.json"
+POLISTEP_FEED_PATH = "/Users/takanoyousuke/.gemini/antigravity/scratch/polistep/src/data/ecosystemArticles.json"
+POLISTEP_SITEMAP_PATH = "/Users/takanoyousuke/.gemini/antigravity/scratch/polistep/public/sitemap.xml"
 
 
 def format_jp_date(date_str):
@@ -476,6 +479,73 @@ def update_llms_txt(article_data):
                 f.write(content)
 
 
+def update_sister_site_feeds(article_data):
+    """
+    PoliDash / PoliStep のトップページ表示用JSONフィードを更新する。
+    コピーコンテンツ判定（重複ペナルティ）を完全に回避するため、
+    記事本文やmeta description(lead)の丸写しは行わず、
+    各プロダクトの読者視点に合わせた短文紹介（1行ダイジェスト）のみを格納する。
+    """
+    slug = article_data["slug"]
+    title = article_data["title"]
+    category = article_data.get("category", "選挙")
+    published_at = article_data.get("published_at", datetime.now().strftime("%Y-%m-%dT09:00:00+09:00"))
+    date_jp = format_jp_date(published_at)
+    url = f"https://poliside.net/insight/posts/{slug}.html"
+    primary_product = article_data.get("primary_product", "PoliSide")
+
+    polidash_note = article_data.get(
+        "polidash_note",
+        f"【{category}ノウハウ】選挙準備・ポスター貼付計画や陣営オペレーションの効率化に役立つ実践解説。"
+    )
+    polistep_note = article_data.get(
+        "polistep_note",
+        f"【{category}ノウハウ】日々の地域活動・目標逆算計画や公職選挙法を踏まえた実践ステップを解説。"
+    )
+
+    for feed_path, note_text in [
+        (POLIDASH_FEED_PATH, polidash_note),
+        (POLISTEP_FEED_PATH, polistep_note),
+    ]:
+        os.makedirs(os.path.dirname(feed_path), exist_ok=True)
+        items = []
+        if os.path.exists(feed_path):
+            try:
+                with open(feed_path, "r", encoding="utf-8") as f:
+                    loaded = json.load(f)
+                    if isinstance(loaded, list):
+                        items = loaded
+            except Exception:
+                items = []
+
+        items = [x for x in items if x.get("slug") != slug]
+        items.insert(0, {
+            "slug": slug,
+            "title": title,
+            "category": category,
+            "published_at": published_at[:10],
+            "date_jp": date_jp,
+            "url": url,
+            "primary_product": primary_product,
+            "digest": note_text
+        })
+        items = items[:6]
+        with open(feed_path, "w", encoding="utf-8") as f:
+            json.dump(items, f, ensure_ascii=False, indent=2)
+
+    # PoliStep sitemap.xml の <lastmod> を最新記事公開日に自動更新
+    if os.path.exists(POLISTEP_SITEMAP_PATH):
+        with open(POLISTEP_SITEMAP_PATH, "r", encoding="utf-8") as f:
+            sxml = f.read()
+        sxml = re.sub(
+            r"(<loc>https://polistep\.jp/</loc>\s*<lastmod>)[0-9\-]+(</lastmod>)",
+            rf"\g<1>{published_at[:10]}\g<2>",
+            sxml
+        )
+        with open(POLISTEP_SITEMAP_PATH, "w", encoding="utf-8") as f:
+            f.write(sxml)
+
+
 def mark_topic_published(slug, published_at):
     if not os.path.exists(TOPIC_QUEUE_PATH):
         return
@@ -507,6 +577,7 @@ def main():
     update_articles_json(article_data)
     update_sitemap(article_data["slug"], article_data["published_at"])
     update_llms_txt(article_data)
+    update_sister_site_feeds(article_data)
     mark_topic_published(article_data["slug"], article_data["published_at"])
     print(f"Published static article successfully: {html_file}")
 
