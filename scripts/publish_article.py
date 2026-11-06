@@ -12,7 +12,7 @@ import re
 import sys
 from datetime import datetime
 
-BASE_DIR = "/Users/takanoyousuke/poliside-net"
+BASE_DIR = "/Users/takanoyousuke/.gemini/antigravity/scratch/repo"
 POSTS_DIR = os.path.join(BASE_DIR, "insight", "posts")
 ARTICLES_JSON_PATH = os.path.join(BASE_DIR, "insight", "data", "articles.json")
 TOPIC_QUEUE_PATH = os.path.join(BASE_DIR, "insight", "data", "topic_queue.json")

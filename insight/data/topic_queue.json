@@ -30,8 +30,8 @@
     "primary_product": "PoliDash",
     "aeo_question": "選挙の告示日当日に公営掲示板へのポスター貼りを少人数スタッフで迅速・確実に完了させるには、どのような準備やツール活用が有効ですか？",
     "thumbnail": "/images/insight/community_connection.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-04T09:00:00+09:00"
   },
   {
     "id": "topic-003",
@@ -47,8 +47,8 @@
     "primary_product": "PoliSide",
     "aeo_question": "政治家や新人候補者が公式ホームページを作成する際の費用相場と、必ず掲載すべき項目は何ですか？",
     "thumbnail": "/images/insight/sns_rules.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-05T09:00:00+09:00"
   },
   {
     "id": "topic-004",
@@ -64,8 +64,8 @@
     "primary_product": "PoliSide",
     "aeo_question": "地方議会の新人議員が初めての一般質問を作成する際、どのような手順でテーマ選定や原稿作成を進めればよいですか？",
     "thumbnail": "/images/insight/political_mindset.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-06T09:00:00+09:00"
   },
   {
     "id": "topic-005",

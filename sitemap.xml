@@ -42,4 +42,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://poliside.net/insight/posts/election-poster-management-route-optimization-polidash.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poliside.net/insight/posts/politician-website-creation-guide-cost-and-elements.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://poliside.net/insight/posts/first-general-question-local-council-guide.html</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

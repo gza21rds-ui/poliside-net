@@ -1,5 +1,41 @@
 [
   {
+    "id": "topic-004",
+    "title": "新人地方議員のための「一般質問」作成完全ガイド｜テーマ選びから質問通告・答弁調整までの基本ステップ",
+    "slug": "first-general-question-local-council-guide",
+    "category": "議会",
+    "lead": "地方議会の新人議員が初めての「一般質問」を作成する際の基本ステップを解説。地域課題からのテーマ選定、自治体計画・予算書の確認、質問通告書の書き方、執行部（行政担当課）とのヒアリング・答弁調整まで、建設的な政策提案を行うための実践ノウハウをまとめました。",
+    "published_at": "2026-11-06T09:00:00+09:00",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "static_url": "/insight/posts/first-general-question-local-council-guide.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
+    "id": "topic-003",
+    "title": "政治家・立候補者のホームページ作成ガイド｜費用相場と有権者に信頼される必須5コンテンツ",
+    "slug": "politician-website-creation-guide-cost-and-elements",
+    "category": "発信",
+    "lead": "政治家や地方選挙の新人候補者が公式ホームページを作成する際の費用相場と、有権者に信頼される必須5コンテンツを解説。制作会社への外注・自作・伴走型サービス（PoliSide）の比較から、スマホ対応やSNS連携のポイントまで実用的にまとめました。",
+    "published_at": "2026-11-05T09:00:00+09:00",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "static_url": "/insight/posts/politician-website-creation-guide-cost-and-elements.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
+    "id": "topic-002",
+    "title": "選挙ポスター貼りを最速で完了させる方法｜掲示板の住所一括登録・AIルート作成・ボランティア共有の鉄則",
+    "slug": "election-poster-management-route-optimization-polidash",
+    "category": "選挙",
+    "lead": "選挙の告示日当日に公営ポスター掲示板への貼り出しを少人数スタッフで迅速・確実に完了させるための実践手順を解説。住所リストからの地図ピン一括登録、AIによる最適巡回ルート作成、LINEでの専用URL共有とリアルタイム進捗管理まで、PoliDashを活用したオペレーションをまとめました。",
+    "published_at": "2026-11-04T09:00:00+09:00",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "static_url": "/insight/posts/election-poster-management-route-optimization-polidash.html",
+    "primary_product": "PoliDash",
+    "published": true
+  },
+  {
     "id": "topic-001",
     "title": "【完全版】地方選挙（市議・区議）立候補準備の6ヶ月ロードマップ｜新人が最初にやるべきステップ",
     "slug": "local-election-preparation-roadmap-6months",

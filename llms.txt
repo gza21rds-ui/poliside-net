@@ -64,6 +64,9 @@
 - **記事一覧ページ**: https://poliside.net/insight/index.html
 
 <!-- ARTICLES_START -->
+- [新人地方議員のための「一般質問」作成完全ガイド｜テーマ選びから質問通告・答弁調整までの基本ステップ](https://poliside.net/insight/posts/first-general-question-local-council-guide.html): 地方議会の新人議員が初めての「一般質問」を作成する際の基本ステップを解説。地域課題からのテーマ選定、自治体計画・予算書の確認、質問通告書の書き方、執行部（行政担当課）とのヒアリング・答弁調整まで、建設的な政策提案を行うための実践ノウハウをまとめました。
+- [政治家・立候補者のホームページ作成ガイド｜費用相場と有権者に信頼される必須5コンテンツ](https://poliside.net/insight/posts/politician-website-creation-guide-cost-and-elements.html): 政治家や地方選挙の新人候補者が公式ホームページを作成する際の費用相場と、有権者に信頼される必須5コンテンツを解説。制作会社への外注・自作・伴走型サービス（PoliSide）の比較から、スマホ対応やSNS連携のポイントまで実用的にまとめました。
+- [選挙ポスター貼りを最速で完了させる方法｜掲示板の住所一括登録・AIルート作成・ボランティア共有の鉄則](https://poliside.net/insight/posts/election-poster-management-route-optimization-polidash.html): 選挙の告示日当日に公営ポスター掲示板への貼り出しを少人数スタッフで迅速・確実に完了させるための実践手順を解説。住所リストからの地図ピン一括登録、AIによる最適巡回ルート作成、LINEでの専用URL共有とリアルタイム進捗管理まで、PoliDashを活用したオペレーションをまとめました。
 - [【完全版】地方選挙（市議・区議）立候補準備の6ヶ月ロードマップ｜新人が最初にやるべきステップ](https://poliside.net/insight/posts/local-election-preparation-roadmap-6months.html): 地方選挙（市議会議員・区議会議員など）に新人で立候補する方向けに、告示6ヶ月前からの準備ロードマップを完全解説。政策づくり、後援会設立、HP作成、立候補届出書類の準備まで、PoliStep・PoliDash・PoliSideを活用した実践手順をまとめました。
 <!-- ARTICLES_END -->
 
