@@ -12,7 +12,7 @@ import re
 import sys
 from datetime import datetime
 
-BASE_DIR = "/Users/takanoyousuke/.gemini/antigravity/scratch/repo"
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POSTS_DIR = os.path.join(BASE_DIR, "insight", "posts")
 ARTICLES_JSON_PATH = os.path.join(BASE_DIR, "insight", "data", "articles.json")
 TOPIC_QUEUE_PATH = os.path.join(BASE_DIR, "insight", "data", "topic_queue.json")
@@ -417,13 +417,24 @@ def update_articles_json(article_data):
             articles = []
 
     slug = article_data["slug"]
+    category = article_data.get("category", "選挙")
+    polidash_note = article_data.get(
+        "polidash_note",
+        f"【{category}ノウハウ】選挙準備・ポスター貼付計画や陣営オペレーションの効率化に役立つ実践解説。"
+    )
+    polistep_note = article_data.get(
+        "polistep_note",
+        f"【{category}ノウハウ】日々の地域活動・目標逆算計画や公職選挙法を踏まえた実践ステップを解説。"
+    )
     articles = [a for a in articles if a.get("slug") != slug]
     entry = {
         "id": article_data.get("id", slug),
         "title": article_data["title"],
         "slug": slug,
-        "category": article_data.get("category", "選挙"),
+        "category": category,
         "lead": article_data["lead"],
+        "polidash_note": polidash_note,
+        "polistep_note": polistep_note,
         "published_at": article_data.get("published_at", datetime.now().strftime("%Y-%m-%dT09:00:00+09:00")),
         "thumbnail": article_data.get("thumbnail", "/images/insight/political_mindset.jpg"),
         "static_url": f"/insight/posts/{slug}.html",
@@ -507,7 +518,8 @@ def update_sister_site_feeds(article_data):
         (POLIDASH_FEED_PATH, polidash_note),
         (POLISTEP_FEED_PATH, polistep_note),
     ]:
-        os.makedirs(os.path.dirname(feed_path), exist_ok=True)
+        if not os.path.exists(os.path.dirname(feed_path)):
+            continue
         items = []
         if os.path.exists(feed_path):
             try:

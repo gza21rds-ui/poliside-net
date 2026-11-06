@@ -1,0 +1,40 @@
+name: Daily SEO/AEO Article Publisher (PoliSide)
+
+on:
+  schedule:
+    # 毎日 09:00 JST (00:00 UTC) にクラウド上で自動実行（Macを閉じていても動作）
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish-daily-article:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Publish today's SEO/AEO article
+        run: python3 scripts/cloud_daily_publish.py
+
+      - name: Commit and push if updated
+        run: |
+          git config user.name "PoliSide Auto Publisher"
+          git config user.email "actions@github.com"
+          git add insight/ sitemap.xml llms.txt
+          if ! git diff --staged --quiet; then
+            git commit -m "feat(seo-aeo): auto-publish daily article via GitHub Actions"
+            git pull --rebase origin main
+            git push origin main
+          else
+            echo "No new changes to commit."
+          fi
