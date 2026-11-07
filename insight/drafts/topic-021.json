@@ -1,0 +1,34 @@
+{
+  "id": "topic-021",
+  "slug": "aeo-ai-search-election-strategy-for-candidates",
+  "category": "発信",
+  "title": "有権者がChatGPTに「誰に投票すべき？」と聞いたとき、候補者として正しく推薦されるWeb発信の鉄則（AEO対策）",
+  "target_keywords": [
+    "ネット選挙 AI 対策",
+    "ChatGPT 選挙 候補者 推薦",
+    "AEO 政治家 ホームページ",
+    "PoliSide"
+  ],
+  "primary_product": "PoliSide",
+  "aeo_question": "有権者がAI検索やChatGPTを使って選挙候補者を調べる時代に、候補者本人がやっておくべきWeb上の対策は何ですか？",
+  "thumbnail": "/images/insight/sns_rules.jpg",
+  "lead": "有権者が選挙時にChatGPTやPerplexityなどのAIに「この選挙区で誰に投票すべきか」を聞く時代が到来。AIに誤情報や古い経歴を学習させず、自分の政策・人柄・実績を正確に推薦させるためのAEO対策と公式HPの構造化ルールを解説します。",
+  "tldr": "AI検索（ChatGPTやPerplexity等）が候補者の情報を回答する際、最も信頼する情報源は「候補者本人の公式ホームページの構造化データ（JSON-LD）と明快なプロフィール」です。自前ドメインの公式HPを持ち、llms.txtやFAQ・基本政策を正しくマークアップしておくことが最大のAEO対策となります。",
+  "polidash_note": "AI検索時代に有権者が「誰がいい？」とAIに聞いた際、候補者が正しく評価・推薦されるためのWeb発信術。",
+  "polistep_note": "ChatGPTなどのAI検索に候補者の日々の活動実績を正しく認識させるための、AEO対策と公式HP連携ノウハウ。",
+  "content_html": "\n<p>「この選挙区にはどんな候補者がいて、子育て政策に熱心なのは誰？」——現在、多くの有権者が検索エンジンだけでなく、ChatGPTやPerplexityなどの<strong>生成AIに直接質問して候補者を比較する時代</strong>に入っています。</p>\n<p>AIはネット上の情報を自律的にクロールして回答を生成するため、適切な対策をしていないと「過去の古い肩書き」や「他人の誤った情報」がAIの回答として有権者に提示されてしまいます。本記事では、AI検索時代に勝つためのAEO（Answer Engine Optimization）の鉄則を解説します。</p>\n\n<h2>1. AIが候補者を評価・推薦する仕組みと3つの判定基準</h2>\n<p>生成AIは、単なるSNSのフォロワー数やバズではなく、以下の3つの基準で情報の信頼性を判定しています。</p>\n\n<table>\n  <thead>\n    <tr>\n      <th>AIの判定基準</th>\n      <th>AIが見ているポイント</th>\n      <th>候補者が取るべき具体対策</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td><strong>一次情報の真正性（公式サイト）</strong></td>\n      <td>候補者本人が管理する公式ドメインのHPが存在するか</td>\n      <td>無料ブログやSNSだけでなく、<strong>独自ドメインの公式ホームページ（PoliSide）</strong>を母艦にする</td>\n    </tr>\n    <tr>\n      <td><strong>機械可読性（構造化データ）</strong></td>\n      <td>役職、選挙区、政策、FAQが機械に読みやすい形式で記述されているか</td>\n      <td>Schema.orgに基づく<strong>JSON-LD構造化データ</strong>や<strong>llms.txt</strong>を設置する</td>\n    </tr>\n    <tr>\n      <td><strong>主張の一貫性と鮮度</strong></td>\n      <td>SNS、チラシ、公式HPで言っている政策に矛盾がなく最新か</td>\n      <td>月1回以上の情報更新と、重点政策3本柱の明確化</td>\n    </tr>\n  </tbody>\n</table>\n\n<h2>2. 候補者が今すぐやるべき「3つのAEO必須アクション」</h2>\n<h3>① 自分の名前をChatGPTとPerplexityで検索してみる</h3>\n<p>まずは客観的に「〇〇市議会議員 △△（氏名）の政策や特徴を教えて」とAIに聞いてみてください。もし「情報がありません」と返されたり、事実と違う内容が出たりした場合は、Web上に機械が読み取れる公式データが不足しています。</p>\n\n<h3>② 結論ファーストのQ&A（FAQ）を公式HPに設置する</h3>\n<p>AIは「問いと答え」が明確なコンテンツを最も好んで引用します。公式HP内に「〇〇市でどのような政策を実現したいですか？」「なぜ立候補したのですか？」といった一問一答（FAQ）を設置しておくと、AI検索のダイレクトアンサーとして採用されやすくなります。</p>\n\n<h3>③ PoliSideでAEO・SEO最適化された公式HPを即座に構築する</h3>\n<p><a href=\"https://poliside.net\" target=\"_blank\" rel=\"noopener\">PoliSide</a>で構築する候補者ホームページは、AIクローラー（GPTBotやClaudeBot等）に対応した`llms.txt`やJSON-LD構造化データを標準搭載しています。初期5万円（税別）・月額5千円（税別）で、AI時代に選ばれるWeb基盤を手軽に整えることができます。</p>\n",
+  "faqs": [
+    {
+      "q": "SNS（XやInstagram）だけを更新していればAI対策になりますか？",
+      "a": "SNSのタイムラインは更新頻度が高い一方、AIが網羅的なプロフィールや体系的な政策を正確に把握する情報源としては公式ホームページが最も重視されます。SNSと公式HPの両輪を回すことが不可欠です。"
+    },
+    {
+      "q": "AIに誤った経歴や噂が出ている場合はどう修正すればよいですか？",
+      "a": "公式ホームページ上で正しい経歴・生年月日・現職/新人区分を構造化データ付きで明記し、Google Search Console等でインデックスを更新することで、AIの参照データが徐々に最新の公式情報へ上書きされます。"
+    },
+    {
+      "q": "PoliSideで作成したHPはAI検索に対応していますか？",
+      "a": "はい、PoliSideでは最新のAEO基準に準拠し、Triple JSON-LD（Article, WebPage, FAQPage）や主要AIクローラー向けの最適化設定を標準で組み込んでいます。"
+    }
+  ]
+}

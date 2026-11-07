@@ -339,5 +339,175 @@
     "thumbnail": "/images/insight/community_connection.jpg",
     "status": "pending",
     "published_at": null
+  },
+  {
+    "id": "topic-021",
+    "slug": "aeo-ai-search-election-strategy-for-candidates",
+    "category": "発信",
+    "title": "有権者がChatGPTに「誰に投票すべき？」と聞いたとき、候補者として正しく推薦されるWeb発信の鉄則（AEO対策）",
+    "target_keywords": [
+      "ネット選挙 AI 対策",
+      "ChatGPT 選挙 候補者 推薦",
+      "AEO 政治家 ホームページ",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "有権者がAI検索やChatGPTを使って選挙候補者を調べる時代に、候補者本人がやっておくべきWeb上の対策は何ですか？",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-022",
+    "slug": "local-election-dx-vs-national-campaign-myths",
+    "category": "考え方",
+    "title": "無所属新人が「国政・知事選の派手なネット選挙」を真似してはいけない理由｜地方選挙で本当に効く草の根DX戦略",
+    "target_keywords": [
+      "地方選挙 ネット選挙 違い",
+      "無所属 地方議員 選挙 戦略",
+      "ネット選挙 バズ 票にならない",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "国政選挙や知事選挙で話題になる派手なネット選挙（バズやフォロワー集め）は、市区町村議会議員選挙でも効果がありますか？",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-023",
+    "slug": "consistent-policy-pillars-across-flyers-and-website",
+    "category": "発信",
+    "title": "チラシと公式HPで主張がバラバラになっていませんか？有権者の心に残る「政策3本柱」の絞り込み方",
+    "target_keywords": [
+      "選挙 政策 3本柱 絞り込み",
+      "チラシ ホームページ 主張 チグハグ",
+      "政治家 キャッチコピー 作り方",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "選挙の討議資料（チラシ）と公式ホームページで主張や政策がバラバラになってしまうのを防ぎ、有権者に一貫して伝えるにはどうすればよいですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-024",
+    "slug": "politician-profile-writing-guide-first-sentence",
+    "category": "発信",
+    "title": "経歴を並べるだけでは読まれない！有権者に信頼される「政治家プロフィール」の書き方と先頭の1文",
+    "target_keywords": [
+      "政治家 プロフィール 書き方",
+      "候補者 経歴 職歴 書き方",
+      "議員 ホームページ 自己紹介",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "政治家や地方選挙の立候補者が公式ホームページやチラシに掲載するプロフィールは、どのように書けば有権者に共感・信頼されますか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-025",
+    "slug": "integrating-senkyo-dot-com-line-and-official-website",
+    "category": "発信",
+    "title": "選挙ドットコム・公式LINE・自前HPの3大ツール連携術｜作っただけで放置しない運用ルーティン",
+    "target_keywords": [
+      "選挙ドットコム 活用法",
+      "政治家 公式LINE 運用",
+      "ネット選挙 ツール 連携",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "選挙ドットコム、公式LINE、自前の公式ホームページの3つを、地方選挙の候補者はどのように組み合わせて運用すべきですか？",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-026",
+    "slug": "social-media-buzz-vs-actual-votes-in-local-elections",
+    "category": "考え方",
+    "title": "「SNSでバズったのに落選？」ネットの数字と現場の票の決定的な違い｜地方議会選で本当に追うべき指標",
+    "target_keywords": [
+      "SNS 選挙 バズ 落選 理由",
+      "ネット選挙 フォロワー 票にならない",
+      "地方選挙 本当の指標",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "SNSのインプレッションやフォロワー数、いいねが多い候補者が地方選挙で落選してしまうのはなぜですか？",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-027",
+    "slug": "first-three-seconds-web-funnel-from-business-cards",
+    "category": "発信",
+    "title": "名刺交換・駅頭のあと有権者はどこを見る？QRコードから公式HPへつなぐ「初見3秒」のWeb導線設計",
+    "target_keywords": [
+      "政治活動 名刺 QRコード 導線",
+      "駅頭チラシ ホームページ つなげ方",
+      "候補者 Webサイト ファーストビュー",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "駅頭や街頭、集会で名刺やチラシを受け取った有権者が、QRコードを読み取って公式HPを開いた瞬間に離脱しないためのWeb導線はどう設計すべきですか？",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-028",
+    "slug": "why-campaign-insiders-cannot-see-voters-perspective",
+    "category": "考え方",
+    "title": "陣営の身内だけでチラシやHPを作ってはいけない理由｜有権者目線を取り戻す「思考の壁打ち」の重要性",
+    "target_keywords": [
+      "選挙 身内 目線 失敗",
+      "候補者 キャッチコピー 独りよがり",
+      "選挙 壁打ち 相談",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "選挙の陣営スタッフや身内だけでキャッチコピーやチラシを作ると、なぜ有権者に伝わらない内容になってしまうのですか？",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-029",
+    "slug": "public-offices-election-act-amendments-and-email-rules",
+    "category": "選挙",
+    "title": "【2027年統一地方選】公職選挙法の改正ポイントと、ネット選挙・電子メール運動を安全に行うためのチェックリスト",
+    "target_keywords": [
+      "公職選挙法 改正 2027",
+      "ネット選挙 メール解禁 ルール",
+      "選挙運動 電子メール 注意点",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "近年の公職選挙法改正で、インターネットや電子メールを使った選挙運動のルールはどのように変わりましたか？注意点を教えてください。",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-030",
+    "slug": "zero-click-marketing-for-local-politicians",
+    "category": "発信",
+    "title": "「検索されずに要約だけで判断される」ゼロクリック時代に選ばれる地方議員のWeb・SNS発信術",
+    "target_keywords": [
+      "ゼロクリック 政治家 発信",
+      "要約 検索 AI 地方議員",
+      "Web選挙 見出し タイトル 決め方",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "GoogleのAI OverviewやChatGPTなど、有権者がリンクをクリックせずに検索画面の要約だけで判断する「ゼロクリック時代」に、地方議員はどのような発信をすべきですか？",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "status": "pending",
+    "published_at": null
   }
 ]
