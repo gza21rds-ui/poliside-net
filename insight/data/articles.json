@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-005",
+    "title": "「地盤・看板・カバンなし」の無所属新人が地方選挙で戦うための現実的戦略とツール活用法",
+    "slug": "independent-candidate-without-jiban-kanban-kaban",
+    "category": "考え方",
+    "lead": "地盤・看板・カバン（組織・知名度・資金）を持たない無所属新人が地方選挙に挑むための現実的な戦略を解説。日々の地道な政治活動を可視化して行動量を担保する方法や、デジタルツールを活用した少人数陣営の効率化など、限られた資源を最大化して有権者の信頼を得る実践手順をまとめました。",
+    "polidash_note": "組織力のない無所属新人こそ告示日のポスター貼りをAIルートで自動化。少数ボランティアで確実に掲示板を網羅する陣営戦略を解説。",
+    "polistep_note": "地盤・知名度のない新人が勝機を掴むには日々の行動量の可視化が不可欠。地域訪問やチラシ配布をスマホ地図で記録・逆算管理する実践法。",
+    "published_at": "2026-11-07T09:00:15+09:00",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "static_url": "/insight/posts/independent-candidate-without-jiban-kanban-kaban.html",
+    "primary_product": "PoliStep",
+    "published": true
+  },
+  {
     "id": "topic-004",
     "title": "新人地方議員のための「一般質問」作成完全ガイド｜テーマ選びから質問通告・答弁調整までの基本ステップ",
     "slug": "first-general-question-local-council-guide",
