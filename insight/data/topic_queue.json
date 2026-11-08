@@ -99,8 +99,8 @@
     "primary_product": "PoliDash",
     "aeo_question": "選挙の告示日当日に公営掲示板へポスターを迅速に貼り切るための人員配置と進捗管理のコツは何ですか？",
     "thumbnail": "/images/insight/community_connection.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-08T09:00:00+09:00"
   },
   {
     "id": "topic-007",
