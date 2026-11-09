@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-007",
+    "title": "【公職選挙法の基礎】「政治活動」と「選挙運動」の明確な違い｜事前運動とみなされないためのチェックリスト",
+    "slug": "political-activity-vs-election-campaign-legal-boundaries",
+    "category": "選挙",
+    "lead": "公職選挙法における「政治活動」と「選挙運動」の定義の違いをわかりやすく解説。告示日前に禁止されている「事前運動」や「戸別訪問」とみなされないための注意点、討議資料（チラシ）・街頭演説・地域回りでの表現チェックリストをまとめました。",
+    "polidash_note": "告示前の「政治活動ポスター・チラシ」と告示後の「選挙運動ポスター」の法的な違いや注意点を整理した基礎ガイド。",
+    "polistep_note": "毎日の地域回り・街頭演説・対話記録を行う際に絶対押さえておきたい「政治活動」と「選挙運動（事前運動）」の境界線。",
+    "published_at": "2026-11-09T09:00:00+09:00",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "static_url": "/insight/posts/political-activity-vs-election-campaign-legal-boundaries.html",
+    "primary_product": "PoliStep",
+    "published": true
+  },
+  {
     "id": "topic-006",
     "title": "告示日当日に慌てない！公営ポスター掲示板の貼り出しルート設計とボランティア進捗管理の鉄則",
     "slug": "election-poster-board-mapping-and-volunteer-routing",
