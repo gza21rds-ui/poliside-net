@@ -80,14 +80,23 @@ function initScrollAnimations() {
    Insight Page Helpers
    =========================================== */
 async function fetchStaticArticles() {
-  try {
-    const response = await fetch('/insight/data/articles.json', { cache: 'no-cache' });
-    if (!response.ok) return [];
-    const data = await response.json();
-    return Array.isArray(data) ? data : [];
-  } catch (e) {
-    return [];
+  const urls = [
+    '/insight/data/articles.json',
+    'https://poliside.pages.dev/insight/data/articles.json'
+  ];
+  for (const url of urls) {
+    try {
+      const response = await fetch(url, { cache: 'no-cache' });
+      if (!response.ok) continue;
+      const text = await response.text();
+      if (!text || text.startsWith('404') || text.startsWith('<')) continue;
+      const data = JSON.parse(text);
+      if (Array.isArray(data) && data.length > 0) return data;
+    } catch (e) {
+      // try next url
+    }
   }
+  return [];
 }
 
 async function fetchMicroCMS() {
