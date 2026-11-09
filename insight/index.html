@@ -150,14 +150,91 @@
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="../js/main.js?v=20261109b"></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       const grid = document.getElementById('articlesGrid');
       const noResults = document.getElementById('noResults');
       const filters = document.querySelectorAll('.insight-filter');
       let currentCategory = 'all';
+
+      // 確実な記事取得関数（main.jsが古いキャッシュでも100%動くフェイルオーバー付き）
+      async function getMergedArticles(category) {
+        let articles = [];
+        try {
+          if (typeof loadArticles === 'function') {
+            articles = await loadArticles(category);
+          }
+        } catch (e) { articles = []; }
+
+        // もし静的記事（topic-*）が含まれていない場合は、オリジンから直接補完
+        const hasStatic = articles.some(a => a.id && a.id.startsWith('topic-'));
+        if (!hasStatic) {
+          try {
+            const fallbackUrls = [
+              '/insight/data/articles.json',
+              'https://poliside.pages.dev/insight/data/articles.json'
+            ];
+            for (const url of fallbackUrls) {
+              const r = await fetch(url, { cache: 'no-cache' });
+              if (!r.ok) continue;
+              const text = await r.text();
+              if (!text || text.startsWith('404') || text.startsWith('<')) continue;
+              const staticList = JSON.parse(text);
+              if (Array.isArray(staticList) && staticList.length > 0) {
+                const seen = new Set(articles.map(a => a.slug));
+                const filteredStatic = category === 'all' ? staticList : staticList.filter(a => a.category === category);
+                articles = [...filteredStatic.filter(a => !seen.has(a.slug)), ...articles];
+                articles.sort((a, b) => new Date(b.published_at || 0) - new Date(a.published_at || 0));
+                break;
+              }
+            }
+          } catch (e) {
+            console.error('Fallback fetch error:', e);
+          }
+        }
+        return articles;
+      }
+
+      function safeRenderCard(article) {
+        if (typeof renderArticleCard === 'function') {
+          return renderArticleCard(article);
+        }
+        const icons = { '選挙': '🗳️', '議会': '🏛️', '発信': '📢', '考え方': '💡', '政策': '📋' };
+        const icon = icons[article.category] || '📄';
+        const imgHtml = article.thumbnail ? `<img src="${article.thumbnail}" alt="${article.title}" style="width:100%;height:100%;object-fit:cover;">` : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:3rem;">${icon}</div>`;
+        const href = article.static_url || `/insight/article.html?slug=${article.slug}`;
+        const dateStr = article.published_at ? new Date(article.published_at).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+        return `
+          <a href="${href}" class="insight-card animate-on-scroll">
+            <div class="insight-card__img" style="padding:0; overflow:hidden; background: var(--color-bg-alt);">${imgHtml}</div>
+            <div class="insight-card__body">
+              <span class="insight-card__category">${article.category || 'その他'}</span>
+              <h3 class="insight-card__title">${article.title}</h3>
+              <p class="insight-card__lead">${article.lead ? article.lead.substring(0, 80) + '...' : ''}</p>
+              <span class="insight-card__date">${dateStr}</span>
+            </div>
+          </a>`;
+      }
       
+      async function renderArticles(category) {
+        grid.innerHTML = '<div class="loading"><div class="loading__spinner"></div></div>';
+        noResults.style.display = 'none';
+        
+        const articles = await getMergedArticles(category);
+        
+        if (articles.length === 0) {
+          grid.innerHTML = '';
+          noResults.style.display = 'block';
+          return;
+        }
+        
+        grid.innerHTML = articles.map(safeRenderCard).join('');
+        if (typeof initScrollAnimations === 'function') {
+          initScrollAnimations();
+        }
+      }
+
       await renderArticles('all');
       
       filters.forEach(btn => {
@@ -168,22 +245,6 @@
           await renderArticles(currentCategory);
         });
       });
-      
-      async function renderArticles(category) {
-        grid.innerHTML = '<div class="loading"><div class="loading__spinner"></div></div>';
-        noResults.style.display = 'none';
-        
-        const articles = await loadArticles(category);
-        
-        if (articles.length === 0) {
-          grid.innerHTML = '';
-          noResults.style.display = 'block';
-          return;
-        }
-        
-        grid.innerHTML = articles.map(renderArticleCard).join('');
-        initScrollAnimations();
-      }
     });
   </script>
 
