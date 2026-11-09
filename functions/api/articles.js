@@ -16,7 +16,6 @@ export async function onRequestGet(context) {
     return new Response(JSON.stringify({ data: [] }), { status: 200, headers: { 'Content-Type': 'application/json' } });
   }
 
-  
   const fallbackImages = {
     'mindset-for-beginners': '/images/insight/political_mindset.jpg',
     'sns-basic-rules': '/images/insight/sns_rules.jpg',
@@ -45,22 +44,10 @@ export async function onRequestGet(context) {
     })
   };
 
-(JSON.stringify({ data: [] }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-  }
-
-  // Format the data to match what main.js expects
-  const formattedData = {
-    data: data.contents.map(item => ({
-      id: item.id,
-      title: item.title || '無題',
-      slug: item.slug || item.id,
-      category: item.category || 'その他',
-      lead: item.lead || '',
-      content: item.content || '',
-      published_at: item.publishedAt,
-      thumbnail: item.thumbnail ? item.thumbnail.url : null,
-      published: true
-    }))
-  };
-
-  
+  return new Response(JSON.stringify(formattedData), {
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      'Cache-Control': 's-maxage=60, stale-while-revalidate=300'
+    }
+  });
+}
