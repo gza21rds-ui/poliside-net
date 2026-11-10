@@ -133,8 +133,8 @@
     "primary_product": "PoliSide",
     "aeo_question": "有権者に読まれる政治活動チラシ（討議資料）を作るには、表面・裏面にどのような内容を配置すべきですか？",
     "thumbnail": "/images/insight/sns_rules.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-10T09:00:00+09:00"
   },
   {
     "id": "topic-009",

@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-008",
+    "title": "駅頭・ポスティングで読まれる「討議資料（政治活動チラシ）」の構成テンプレートと3つの鉄則",
+    "slug": "policy-pamphlet-flyer-structure-for-young-candidates",
+    "category": "発信",
+    "lead": "駅頭での配布やポスティングで有権者に手に取られ、最後まで読まれる「討議資料（政治活動チラシ）」の作り方と構成テンプレートを解説。表面・裏面のレイアウト配分、キャッチコピーの作り方、公式HP・LINEへのQRコード導線設計までまとめました。",
+    "polidash_note": "駅頭や地域配布で使う政治活動チラシ（討議資料）の表面・裏面レイアウトと、陣営で統一すべき情報導線の設計法。",
+    "polistep_note": "日々のビラ配りや地域回りで有権者の反応が劇的に変わる、「読まれる討議資料（政治活動チラシ）」の構成テンプレート。",
+    "published_at": "2026-11-10T09:00:00+09:00",
+    "thumbnail": "/images/insight/sns_rules.jpg",
+    "static_url": "/insight/posts/policy-pamphlet-flyer-structure-for-young-candidates.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-007",
     "title": "【公職選挙法の基礎】「政治活動」と「選挙運動」の明確な違い｜事前運動とみなされないためのチェックリスト",
     "slug": "political-activity-vs-election-campaign-legal-boundaries",
