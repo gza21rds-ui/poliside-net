@@ -64,6 +64,7 @@
 - **記事一覧ページ**: https://poliside.net/insight/index.html
 
 <!-- ARTICLES_START -->
+- [地域の「市民相談・困りごと」を具体的な政策・議会質問へ昇華させる3ステップ思考法](https://poliside.net/insight/posts/turning-citizen-consultations-into-local-policies.html): 地方議員や立候補予定者が、日々の地域回りや市民相談で寄せられた「個別の困りごと」を、自治体全体の「政策」や「議会質問（一般質問）」へ昇華させる3ステップ思考法を解説。PoliStepでの対話記録からPoliSideでの政策整理までの実践手順をまとめました。
 - [駅頭・ポスティングで読まれる「討議資料（政治活動チラシ）」の構成テンプレートと3つの鉄則](https://poliside.net/insight/posts/policy-pamphlet-flyer-structure-for-young-candidates.html): 駅頭での配布やポスティングで有権者に手に取られ、最後まで読まれる「討議資料（政治活動チラシ）」の作り方と構成テンプレートを解説。表面・裏面のレイアウト配分、キャッチコピーの作り方、公式HP・LINEへのQRコード導線設計までまとめました。
 - [【公職選挙法の基礎】「政治活動」と「選挙運動」の明確な違い｜事前運動とみなされないためのチェックリスト](https://poliside.net/insight/posts/political-activity-vs-election-campaign-legal-boundaries.html): 公職選挙法における「政治活動」と「選挙運動」の定義の違いをわかりやすく解説。告示日前に禁止されている「事前運動」や「戸別訪問」とみなされないための注意点、討議資料（チラシ）・街頭演説・地域回りでの表現チェックリストをまとめました。
 - [告示日当日に慌てない！公営ポスター掲示板の貼り出しルート設計とボランティア進捗管理の鉄則](https://poliside.net/insight/posts/election-poster-board-mapping-and-volunteer-routing.html): 選挙の告示日当日に公営ポスター掲示板への貼り出しで混乱しないためのルート設計とボランティア進捗管理の鉄則を解説。エリア分けの基準、持ち物リスト、貼付番号の確認方法、PoliDashを使ったリアルタイム同期まで実践的にまとめました。

@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-009",
+    "title": "地域の「市民相談・困りごと」を具体的な政策・議会質問へ昇華させる3ステップ思考法",
+    "slug": "turning-citizen-consultations-into-local-policies",
+    "category": "政策",
+    "lead": "地方議員や立候補予定者が、日々の地域回りや市民相談で寄せられた「個別の困りごと」を、自治体全体の「政策」や「議会質問（一般質問）」へ昇華させる3ステップ思考法を解説。PoliStepでの対話記録からPoliSideでの政策整理までの実践手順をまとめました。",
+    "polidash_note": "地域課題のヒアリングから有権者に響く「重点政策・公約」を作り上げるための、論理的な3ステップ思考法を解説。",
+    "polistep_note": "PoliStepに記録した毎日の「対話メモ・地域の困りごと」を、実効性のある政策や議会質問へつなげる実践ノウハウ。",
+    "published_at": "2026-11-11T09:00:00+09:00",
+    "thumbnail": "/images/insight/political_mindset.jpg",
+    "static_url": "/insight/posts/turning-citizen-consultations-into-local-policies.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-008",
     "title": "駅頭・ポスティングで読まれる「討議資料（政治活動チラシ）」の構成テンプレートと3つの鉄則",
     "slug": "policy-pamphlet-flyer-structure-for-young-candidates",
