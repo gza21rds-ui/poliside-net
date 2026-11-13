@@ -35,14 +35,48 @@
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#C76A45">
+  <meta name="theme-color" content="#0F172A">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css?v=20261113">
+  <link rel="stylesheet" href="css/style.css?v=20261113b">
+
+  <!-- JSON-LD: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "PoliSide 伴走型サポート・候補者HP制作",
+    "serviceType": "政治活動・選挙準備オンライン伴走サポート",
+    "provider": {
+      "@type": "Organization",
+      "name": "PoliSide",
+      "url": "https://poliside.net"
+    },
+    "areaServed": "JP",
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "初めて地方選挙に挑戦する20代〜40代の無所属・若手候補者"
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "初期制作パッケージ（HP構築＋政策言語化・相談）",
+        "price": "50000",
+        "priceCurrency": "JPY"
+      },
+      {
+        "@type": "Offer",
+        "name": "継続サポート（月1回オンライン相談＋HP保守）",
+        "price": "5000",
+        "priceCurrency": "JPY"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -88,11 +122,11 @@
           <span class="hero-badge"><i class="fas fa-user-shield"></i> 完全秘密厳守</span>
         </div>
 
-        <p class="mainimg__sub">若手候補者・若手議員の伴走型サポート</p>
+        <p class="mainimg__sub">初めての選挙・無所属・20〜40代専門</p>
         <h1 class="mainimg__title">政治の挑戦を、<br><span class="highlight">ひとりにしない。</span></h1>
         <p class="mainimg__desc">
-          PoliSideは、あなたの「隣に立つ」伴走パートナーです。<br>
-          正解を押し付けず、孤立させず、戦略からHP構築まで一緒に考えます。
+          地盤・看板・カバンなしからの挑戦に、隣に立つ伴走パートナー。<br>
+          政策の言語化から候補者HP構築・SNS戦略まで一緒に考えます。
         </p>
         
         <div class="hero-cta-wrapper">
@@ -114,7 +148,7 @@
 
       <!-- Hero SVG Illustration: Concrete UI/Product Mockups for Accompaniment -->
       <div class="mainimg__graphic hero-illustration">
-        <img src="images/hero-online-support-happy.png" alt="オンラインでサポートを受け笑顔になる候補者" class="hero-image-render" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); display: block;" />
+        <img src="images/hero-online-support-happy.webp" alt="オンラインでサポートを受け笑顔になる候補者" width="1024" height="1024" fetchpriority="high" decoding="async" class="hero-image-render" style="width: 100%; height: auto; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); display: block;" />
       </div>
     </div>
   </section>
@@ -165,23 +199,10 @@
           <p class="section-header__lead">準備の進め方から日々の孤独感まで、政治活動特有の重圧を一人で抱える必要はありません。</p>
         </div>
         
-        <div style="text-align:center; margin-bottom: 40px;" class="animate-on-scroll">
-          <img src="images/section-worry.png" alt="悩む候補者のイメージ" style="max-width: 500px; width: 100%; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: inline-block;">
-        </div>
-
         <div class="gridbox gridbox-col3">
           <div class="worry-card animate-on-scroll">
             <div class="worry-card__icon-wrap">
-              <!-- SVG: 道標（迷子） -->
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
-                <circle cx="40" cy="40" r="38" fill="#FFF7ED"/>
-                <rect x="38" y="18" width="4" height="44" rx="2" fill="#F97316" opacity="0.7"/>
-                <rect x="25" y="22" width="30" height="12" rx="3" fill="#F97316" opacity="0.2"/>
-                <path d="M55,28 L60,28 L57,22 L60,22" stroke="#F97316" stroke-width="1.5" fill="none"/>
-                <rect x="25" y="38" width="25" height="10" rx="3" fill="#0EA5E9" opacity="0.15"/>
-                <circle cx="30" cy="60" r="3" fill="#F97316" opacity="0.4"/>
-                <path d="M27,58 Q30,52 33,58" stroke="#F97316" stroke-width="1" fill="none" opacity="0.5"/>
-              </svg>
+              <i class="fas fa-compass" aria-hidden="true"></i>
             </div>
             <h3>準備の進め方</h3>
             <ul>
@@ -191,19 +212,7 @@
           </div>
           <div class="worry-card animate-on-scroll delay-1">
             <div class="worry-card__icon-wrap">
-              <!-- SVG: 孤独（一人） -->
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
-                <circle cx="40" cy="40" r="38" fill="#FFF7ED"/>
-                <circle cx="40" cy="30" r="10" fill="#94A3B8" opacity="0.4"/>
-                <ellipse cx="40" cy="52" rx="14" ry="10" fill="#94A3B8" opacity="0.3"/>
-                <!-- Rain/tears -->
-                <line x1="20" y1="20" x2="18" y2="28" stroke="#0EA5E9" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
-                <line x1="60" y1="18" x2="58" y2="26" stroke="#0EA5E9" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
-                <line x1="25" y1="65" x2="23" y2="73" stroke="#0EA5E9" stroke-width="1.5" opacity="0.2" stroke-linecap="round"/>
-                <line x1="55" y1="63" x2="53" y2="71" stroke="#0EA5E9" stroke-width="1.5" opacity="0.2" stroke-linecap="round"/>
-                <!-- Sad expression -->
-                <path d="M35,34 Q40,30 45,34" stroke="#64748B" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-              </svg>
+              <i class="fas fa-user-shield" aria-hidden="true"></i>
             </div>
             <h3>孤独と不安</h3>
             <ul>
@@ -213,19 +222,7 @@
           </div>
           <div class="worry-card animate-on-scroll delay-2">
             <div class="worry-card__icon-wrap">
-              <!-- SVG: メガホン（広報） -->
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="60" height="60">
-                <circle cx="40" cy="40" r="38" fill="#FFF7ED"/>
-                <path d="M20,35 L35,30 L35,50 L20,45 Z" fill="#F97316" opacity="0.6"/>
-                <path d="M35,30 L55,22 L55,58 L35,50 Z" fill="#F97316" opacity="0.3"/>
-                <rect x="14" y="35" width="6" height="10" rx="2" fill="#F97316" opacity="0.5"/>
-                <!-- Sound waves -->
-                <path d="M58,32 Q65,40 58,48" stroke="#F97316" stroke-width="1.5" fill="none" opacity="0.3" stroke-linecap="round"/>
-                <path d="M62,28 Q72,40 62,52" stroke="#F97316" stroke-width="1.5" fill="none" opacity="0.2" stroke-linecap="round"/>
-                <!-- Question marks -->
-                <text x="60" y="28" font-size="12" fill="#94A3B8" opacity="0.5" font-family="Inter">?</text>
-                <text x="68" y="42" font-size="10" fill="#94A3B8" opacity="0.4" font-family="Inter">?</text>
-              </svg>
+              <i class="fas fa-bullhorn" aria-hidden="true"></i>
             </div>
             <h3>広報戦略</h3>
             <ul>
@@ -270,6 +267,64 @@
             </ul>
           </div>
         </div>
+
+        <div class="hp-mockup-showcase animate-on-scroll" aria-label="候補者HP制作イメージ">
+          <div>
+            <span class="hp-mockup-showcase__eyebrow"><i class="fas fa-desktop"></i> 候補者HP構築イメージ</span>
+            <h3 class="hp-mockup-showcase__title">有権者が検索した瞬間に、<br>信頼と人柄が伝わる公式HP</h3>
+            <p class="hp-mockup-showcase__desc">
+              無所属・初挑戦だからこそ、政策や想いが一目でわかるスマホ最適化済みの公式サイトが必要です。初期費用5万円で最短公開まで伴走します。
+            </p>
+            <ul class="hp-mockup-showcase__points">
+              <li><i class="fas fa-check-circle"></i> スマホ・PC両対応のレスポンシブ設計</li>
+              <li><i class="fas fa-check-circle"></i> 理念・3つの重点政策・プロフィールを構造化</li>
+              <li><i class="fas fa-check-circle"></i> SNS・公式LINEへの自然な導線設計</li>
+            </ul>
+          </div>
+          <div class="hp-mockup-stage">
+            <div class="hp-mockup-pc">
+              <div class="hp-mockup-pc__bar">
+                <span class="hp-mockup-pc__dot"></span>
+                <span class="hp-mockup-pc__dot"></span>
+                <span class="hp-mockup-pc__dot"></span>
+                <span class="hp-mockup-pc__url">https://yamada-taro.jp</span>
+              </div>
+              <div class="hp-mockup-pc__hero">
+                <div>
+                  <span class="hp-mockup-pc__tag">無所属・次世代の挑戦</span>
+                  <div class="hp-mockup-pc__name">山田 太郎 公式ホームページ</div>
+                  <p class="hp-mockup-pc__sub">子育て世代と働く世代の声を、まっすぐ市政へ。</p>
+                  <span class="hp-mockup-pc__cta"><i class="fab fa-line"></i> ご意見・応援はこちら</span>
+                </div>
+                <div class="hp-mockup-pc__avatar" aria-hidden="true">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+              </div>
+              <div class="hp-mockup-pc__pillars">
+                <div class="hp-mockup-pc__pillar">
+                  <div class="hp-mockup-pc__pillar-num">POLICY 01</div>
+                  <div class="hp-mockup-pc__pillar-title">子育て・教育支援</div>
+                </div>
+                <div class="hp-mockup-pc__pillar">
+                  <div class="hp-mockup-pc__pillar-num">POLICY 02</div>
+                  <div class="hp-mockup-pc__pillar-title">行政DXと見える化</div>
+                </div>
+                <div class="hp-mockup-pc__pillar">
+                  <div class="hp-mockup-pc__pillar-num">POLICY 03</div>
+                  <div class="hp-mockup-pc__pillar-title">地域の暮らしを守る</div>
+                </div>
+              </div>
+            </div>
+            <div class="hp-mockup-sp" aria-hidden="true">
+              <div class="hp-mockup-sp__screen">
+                <span class="hp-mockup-sp__badge">スマホ最適</span>
+                <div class="hp-mockup-sp__title">山田 太郎<br>公式HP</div>
+                <div style="font-size:0.58rem; color:#64748B;">3つの政策・プロフィール</div>
+                <span class="hp-mockup-sp__btn">公式LINEで相談</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -280,10 +335,6 @@
           <div class="section-header__tag">OUR STANCE</div>
           <h2 class="section-header__title">PoliSide 伴走サポート<br><span class="text-gradient">3つのスタンス</span></h2>
           <p class="section-header__lead">答えを押し付けるコンサルティングではなく、候補者本人の主体性を第一に尊重するパートナーシップです。</p>
-        </div>
-        
-        <div style="text-align:center; margin-bottom: 40px;" class="animate-on-scroll">
-          <img src="images/section-stance.png" alt="一緒に戦略を考えるイメージ" style="max-width: 500px; width: 100%; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); display: inline-block;">
         </div>
 
         <div class="gridbox gridbox-col3">
@@ -332,48 +383,27 @@
         <div class="flow-grid">
           <div class="flow-step animate-on-scroll">
             <span class="flow-step__label">STEP 01</span>
-            <figure style="margin: 0 auto 20px;">
-              <svg viewBox="0 0 60 60" fill="none" width="50" height="50">
-                <circle cx="30" cy="30" r="28" fill="#06C755" opacity="0.1"/>
-                <rect x="16" y="14" width="28" height="32" rx="6" fill="#06C755" opacity="0.25"/>
-                <circle cx="30" cy="22" r="5" fill="#06C755" opacity="0.4"/>
-                <line x1="20" y1="32" x2="40" y2="32" stroke="#06C755" stroke-width="2" opacity="0.3"/>
-                <line x1="22" y1="37" x2="38" y2="37" stroke="#06C755" stroke-width="1.5" opacity="0.2"/>
-              </svg>
-            </figure>
+            <div class="flow-step__icon flow-step__icon--line" aria-hidden="true">
+              <i class="fab fa-line"></i>
+            </div>
             <h4 class="flow-step__title">LINE相談・ヒアリング</h4>
             <p class="flow-step__desc">まずはLINEから気軽にご連絡ください。<br>初回60分無料相談にて、状況をじっくり伺います。</p>
           </div>
           <div class="flow-connector"></div>
           <div class="flow-step animate-on-scroll delay-1">
             <span class="flow-step__label">STEP 02</span>
-            <figure style="margin: 0 auto 20px;">
-              <svg viewBox="0 0 60 60" fill="none" width="50" height="50">
-                <circle cx="30" cy="30" r="28" fill="#F97316" opacity="0.1"/>
-                <rect x="12" y="18" width="36" height="26" rx="3" fill="#F97316" opacity="0.15"/>
-                <rect x="15" y="21" width="30" height="18" rx="2" fill="#0EA5E9" opacity="0.1"/>
-                <line x1="18" y1="26" x2="32" y2="26" stroke="#F97316" stroke-width="2" opacity="0.4"/>
-                <line x1="18" y1="30" x2="40" y2="30" stroke="#0EA5E9" stroke-width="1.5" opacity="0.3"/>
-                <line x1="18" y1="34" x2="28" y2="34" stroke="#F97316" stroke-width="1.5" opacity="0.3"/>
-                <rect x="22" y="44" width="16" height="2" rx="1" fill="#94A3B8" opacity="0.3"/>
-              </svg>
-            </figure>
+            <div class="flow-step__icon flow-step__icon--accent" aria-hidden="true">
+              <i class="fas fa-laptop-code"></i>
+            </div>
             <h4 class="flow-step__title">HP構築・戦略設計</h4>
             <p class="flow-step__desc">一緒に考えながら、あなたの政策が伝わるホームページを作成します。</p>
           </div>
           <div class="flow-connector"></div>
           <div class="flow-step animate-on-scroll delay-2">
             <span class="flow-step__label">STEP 03</span>
-            <figure style="margin: 0 auto 20px;">
-              <svg viewBox="0 0 60 60" fill="none" width="50" height="50">
-                <circle cx="30" cy="30" r="28" fill="#0EA5E9" opacity="0.1"/>
-                <circle cx="22" cy="25" r="7" fill="#F97316" opacity="0.2"/>
-                <circle cx="38" cy="25" r="7" fill="#0EA5E9" opacity="0.2"/>
-                <path d="M22,32 Q30,42 38,32" stroke="#F97316" stroke-width="2" fill="none" opacity="0.3" stroke-linecap="round"/>
-                <circle cx="30" cy="44" r="4" fill="#F97316" opacity="0.15"/>
-                <line x1="30" y1="38" x2="30" y2="40" stroke="#F97316" stroke-width="1.5" opacity="0.3"/>
-              </svg>
-            </figure>
+            <div class="flow-step__icon" aria-hidden="true">
+              <i class="fas fa-handshake-angle"></i>
+            </div>
             <h4 class="flow-step__title">継続伴走スタート</h4>
             <p class="flow-step__desc">HP完成後も、月1回の定期相談で走り続けるあなたをサポートします。</p>
           </div>
@@ -594,6 +624,59 @@
             <p>政治活動DXアプリ。日々の地域訪問・街頭演説・ビラ配りを地図とグラフで可視化し、目標日からの逆算ノルマ算出と日報共有を自動化します。</p>
             <a href="https://polistep.jp" target="_blank" rel="noopener" class="cta-btn" style="padding: 12px 24px; font-size: 0.95rem;">詳しく見る</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ===== INSIGHT (最新の政治活動ノウハウ記事) ===== -->
+    <section id="insight" class="section" style="background:#ffffff;">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <div class="section-header__tag">INSIGHTS</div>
+          <h2 class="section-header__title">最新の政治活動<span class="text-gradient">ノウハウ記事</span></h2>
+          <p class="section-header__lead">無所属・初めての選挙に挑戦する20〜40代候補者のための実践ガイドを公開しています。</p>
+        </div>
+
+        <div class="insight-grid insight-grid--home">
+          <a href="insight/posts/small-team-election-operation-with-digital-tools.html" class="insight-card animate-on-scroll">
+            <div class="insight-card__img" style="padding:0; overflow:hidden;">
+              <img src="images/insight/small-team-election-operation-with-digital-tools.jpg" alt="少人数陣営のデジタル選挙運営モデル" loading="lazy" width="1280" height="720" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="insight-card__body">
+              <span class="insight-card__category">選挙</span>
+              <h3 class="insight-card__title">スタッフ3〜5人の少人数陣営でも勝てる！デジタルツールを活用した省力化・高密度な選挙運営モデル</h3>
+              <p class="insight-card__lead">ポスター管理や日々の活動記録をDX化し、組織力に頼らず戦う少人数チームの作り方。</p>
+              <span class="insight-card__date">2026年11月13日</span>
+            </div>
+          </a>
+          <a href="insight/posts/local-election-cost-breakdown-deposit-and-public-subsidy.html" class="insight-card animate-on-scroll delay-1">
+            <div class="insight-card__img" style="padding:0; overflow:hidden;">
+              <img src="images/insight/local-election-cost-breakdown-deposit-and-public-subsidy.jpg" alt="地方選挙の費用・供託金と公費負担" loading="lazy" width="1280" height="720" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="insight-card__body">
+              <span class="insight-card__category">考え方</span>
+              <h3 class="insight-card__title">地方選挙に出るにはいくらかかる？供託金・公費負担（選挙公営）の仕組みと自己資金を抑える予算設計</h3>
+              <p class="insight-card__lead">市議・区議選のリアルな必要資金と、公費負担で自己負担を圧縮する実践ポイントを解説。</p>
+              <span class="insight-card__date">2026年11月12日</span>
+            </div>
+          </a>
+          <a href="insight/posts/turning-citizen-consultations-into-local-policies.html" class="insight-card animate-on-scroll delay-2">
+            <div class="insight-card__img" style="padding:0; overflow:hidden;">
+              <img src="images/insight/turning-citizen-consultations-into-local-policies.jpg" alt="市民相談を政策へ昇華させる思考法" loading="lazy" width="1280" height="720" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="insight-card__body">
+              <span class="insight-card__category">政策</span>
+              <h3 class="insight-card__title">地域の「市民相談・困りごと」を具体的な政策・議会質問へ昇華させる3ステップ思考法</h3>
+              <p class="insight-card__lead">駅頭や個別訪問で聴いた住民の声を、有権者に響く政策の柱へ整理するメソッド。</p>
+              <span class="insight-card__date">2026年11月11日</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="home-insight-more animate-on-scroll">
+          <a href="insight/index.html" class="home-insight-more__btn">
+            ノウハウ記事一覧を見る <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
     </section>
