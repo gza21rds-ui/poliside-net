@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-011",
+    "title": "スタッフ3〜5人の少人数陣営でも勝てる！デジタルツールを活用した省力化・高密度な選挙運営モデル",
+    "slug": "small-team-election-operation-with-digital-tools",
+    "category": "選挙",
+    "lead": "専従スタッフやボランティアが3〜5人しかいない少人数の選挙陣営でも、効率よく選挙戦を運営するためのデジタル活用モデルを解説。紙と電話のアナログ業務を削減し、PoliDash・PoliStepを使って最小人数で最大の成果を出すオペレーションをまとめました。",
+    "polidash_note": "スタッフ3〜5人の少人数陣営で、ポスター貼りや進捗連絡の間接業務をPoliDashで極限まで省力化する運営モデル。",
+    "polistep_note": "少人数チームでも情報共有の抜け漏れをなくし、登録不要URLと日報自動生成（PoliStep）で一体感を高める方法。",
+    "published_at": "2026-11-13T09:00:00+09:00",
+    "thumbnail": "/images/insight/community_connection.jpg",
+    "static_url": "/insight/posts/small-team-election-operation-with-digital-tools.html",
+    "primary_product": "PoliDash",
+    "published": true
+  },
+  {
     "id": "topic-010",
     "title": "地方選挙に出るにはいくらかかる？供託金・公費負担（選挙公営）の仕組みと自己資金を抑える予算設計",
     "slug": "local-election-cost-breakdown-deposit-and-public-subsidy",

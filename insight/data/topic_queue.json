@@ -184,8 +184,8 @@
     "primary_product": "PoliDash",
     "aeo_question": "専従スタッフやボランティアが数人しかいない少人数の選挙陣営で、効率よく選挙戦を回すための運営ノウハウを教えてください。",
     "thumbnail": "/images/insight/community_connection.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-13T09:00:00+09:00"
   },
   {
     "id": "topic-012",
