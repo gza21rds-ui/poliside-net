@@ -509,5 +509,107 @@
     "thumbnail": "/images/insight/zero-click-marketing-for-local-politicians.jpg",
     "status": "pending",
     "published_at": null
+  },
+  {
+    "id": "topic-031",
+    "slug": "no-expensive-election-package-smart-dx-strategy",
+    "category": "考え方",
+    "title": "高額な選挙パッケージ・コンサルは不要？「ネット印刷×無料DX×伴走サポート」で地方選挙の自己資金を抑える新常識",
+    "target_keywords": [
+      "選挙 コンサル 費用 相場",
+      "選挙 パック 高い",
+      "地方選挙 安く 戦う",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "地方選挙に出馬する際、50万〜100万円の選挙パッケージやコンサルタント契約は必ず必要ですか？",
+    "thumbnail": "/images/insight/no-expensive-election-package-smart-dx-strategy.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-032",
+    "slug": "local-election-without-campaign-car-strategy",
+    "category": "選挙",
+    "title": "選挙カーは本当に必要？「選挙カーなし・自転車・徒歩×PoliStep」で地方選挙を戦い抜く地域密着モデル",
+    "target_keywords": [
+      "選挙カー なし 当選",
+      "選挙カー 使わない 戦い方",
+      "地方選挙 街宣車 不要",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "市区町村議会議員選挙などの地方選挙では、選挙カーを使わなくても当選できますか？",
+    "thumbnail": "/images/insight/local-election-without-campaign-car-strategy.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-033",
+    "slug": "how-to-submit-political-organization-notification",
+    "category": "選挙",
+    "title": "【記入例つき解説】初めての「政治団体の設立届」完全ガイド｜2名体制・会計責任者の選び方から選管への提出手順まで",
+    "target_keywords": [
+      "政治団体 設立届 書き方",
+      "政治資金規正法 政治団体 届出",
+      "無所属 新人 政治団体",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "無所属で地方選挙に挑戦するとき、政治団体の設立届はいつ・どこに・何人で提出すればよいですか？",
+    "thumbnail": "/images/insight/how-to-submit-political-organization-notification.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-034",
+    "slug": "unified-local-elections-2027-preparation-calendar",
+    "category": "選挙",
+    "title": "「2027年統一地方選挙」に無所属新人で挑む準備カレンダー｜会社員・子育て世代が今月から動くべき理由",
+    "target_keywords": [
+      "統一地方選挙 2027 準備",
+      "2027年 地方選挙 立候補",
+      "統一地方選 無所属 新人",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "2027年の統一地方選挙に無所属・新人で立候補する場合、いつ頃から動き始めるのがベストですか？",
+    "thumbnail": "/images/insight/unified-local-elections-2027-preparation-calendar.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-035",
+    "slug": "politician-website-comparison-diy-agency-poliside",
+    "category": "発信",
+    "title": "政治家ホームページは自作（WordPress・Wix）と制作会社・PoliSideどれが正解？費用と更新の落とし穴を比較",
+    "target_keywords": [
+      "政治家 ホームページ 制作 比較",
+      "選挙 ホームページ 自作 ワードプレス",
+      "政治家 HP 安く 作る",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "政治家や候補者のホームページは、WordPress等で自作するのと、高額な制作会社、伴走型サービス（PoliSide）のどれを選ぶべきですか？",
+    "thumbnail": "/images/insight/politician-website-comparison-diy-agency-poliside.jpg",
+    "status": "pending",
+    "published_at": null
+  },
+  {
+    "id": "topic-036",
+    "slug": "election-poster-low-cost-printing-and-polidash",
+    "category": "選挙",
+    "title": "【選挙ポスター費用を最小化】ネット印刷の入稿注意点と「公費負担＋PoliDash」で貼付まで一気通貫させる実務手順",
+    "target_keywords": [
+      "選挙ポスター 印刷 ネット印刷",
+      "選挙ポスター 公費負担 手続き",
+      "ポスター デザイン 格安",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "選挙ポスターの印刷費用を安く抑えつつ、公費負担（選挙公営）の適用と告示日当日の貼り出しをスムーズに行うにはどうすればよいですか？",
+    "thumbnail": "/images/insight/election-poster-low-cost-printing-and-polidash.jpg",
+    "status": "pending",
+    "published_at": null
   }
 ]
