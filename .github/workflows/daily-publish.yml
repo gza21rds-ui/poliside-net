@@ -24,13 +24,15 @@ jobs:
           python-version: '3.11'
 
       - name: Publish today's SEO/AEO article
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 scripts/cloud_daily_publish.py
 
       - name: Commit and push if updated
         run: |
           git config user.name "PoliSide Auto Publisher"
           git config user.email "actions@github.com"
-          git add insight/ sitemap.xml llms.txt
+          git add insight/ images/insight/ sitemap.xml llms.txt
           if ! git diff --staged --quiet; then
             git commit -m "feat(seo-aeo): auto-publish daily article via GitHub Actions"
             git pull --rebase origin main

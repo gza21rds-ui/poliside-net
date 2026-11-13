@@ -8,7 +8,7 @@
     "polidash_note": "スタッフ3〜5人の少人数陣営で、ポスター貼りや進捗連絡の間接業務をPoliDashで極限まで省力化する運営モデル。",
     "polistep_note": "少人数チームでも情報共有の抜け漏れをなくし、登録不要URLと日報自動生成（PoliStep）で一体感を高める方法。",
     "published_at": "2026-11-13T09:00:00+09:00",
-    "thumbnail": "/images/insight/community_connection.jpg",
+    "thumbnail": "/images/insight/small-team-election-operation-with-digital-tools.jpg",
     "static_url": "/insight/posts/small-team-election-operation-with-digital-tools.html",
     "primary_product": "PoliDash",
     "published": true
@@ -22,7 +22,7 @@
     "polidash_note": "地方選挙の供託金・公費負担（選挙ポスター印刷費など）の仕組みと、無料ツール活用で選挙費用を抑える予算設計を解説。",
     "polistep_note": "「選挙には何百万円もかかる？」という疑問に回答。供託金・公費負担の基本と、自己資金を抑えて地方選挙に挑む方法。",
     "published_at": "2026-11-12T09:00:00+09:00",
-    "thumbnail": "/images/insight/political_mindset.jpg",
+    "thumbnail": "/images/insight/local-election-cost-breakdown-deposit-and-public-subsidy.jpg",
     "static_url": "/insight/posts/local-election-cost-breakdown-deposit-and-public-subsidy.html",
     "primary_product": "PoliStep",
     "published": true
@@ -36,7 +36,7 @@
     "polidash_note": "地域課題のヒアリングから有権者に響く「重点政策・公約」を作り上げるための、論理的な3ステップ思考法を解説。",
     "polistep_note": "PoliStepに記録した毎日の「対話メモ・地域の困りごと」を、実効性のある政策や議会質問へつなげる実践ノウハウ。",
     "published_at": "2026-11-11T09:00:00+09:00",
-    "thumbnail": "/images/insight/political_mindset.jpg",
+    "thumbnail": "/images/insight/turning-citizen-consultations-into-local-policies.jpg",
     "static_url": "/insight/posts/turning-citizen-consultations-into-local-policies.html",
     "primary_product": "PoliSide",
     "published": true
@@ -50,7 +50,7 @@
     "polidash_note": "駅頭や地域配布で使う政治活動チラシ（討議資料）の表面・裏面レイアウトと、陣営で統一すべき情報導線の設計法。",
     "polistep_note": "日々のビラ配りや地域回りで有権者の反応が劇的に変わる、「読まれる討議資料（政治活動チラシ）」の構成テンプレート。",
     "published_at": "2026-11-10T09:00:00+09:00",
-    "thumbnail": "/images/insight/sns_rules.jpg",
+    "thumbnail": "/images/insight/policy-pamphlet-flyer-structure-for-young-candidates.jpg",
     "static_url": "/insight/posts/policy-pamphlet-flyer-structure-for-young-candidates.html",
     "primary_product": "PoliSide",
     "published": true
@@ -64,7 +64,7 @@
     "polidash_note": "告示前の「政治活動ポスター・チラシ」と告示後の「選挙運動ポスター」の法的な違いや注意点を整理した基礎ガイド。",
     "polistep_note": "毎日の地域回り・街頭演説・対話記録を行う際に絶対押さえておきたい「政治活動」と「選挙運動（事前運動）」の境界線。",
     "published_at": "2026-11-09T09:00:00+09:00",
-    "thumbnail": "/images/insight/sns_rules.jpg",
+    "thumbnail": "/images/insight/political-activity-vs-election-campaign-legal-boundaries.jpg",
     "static_url": "/insight/posts/political-activity-vs-election-campaign-legal-boundaries.html",
     "primary_product": "PoliStep",
     "published": true
@@ -78,7 +78,7 @@
     "polidash_note": "告示日当日のボランティア配置・エリア分割・くじ引き番号共有からリアルタイム完了確認まで、PoliDash活用の鉄則を解説。",
     "polistep_note": "告示日朝のポスター貼り出しを混乱なく終え、候補者が第一声や選挙運動へ集中するための陣営オペレーション設計。",
     "published_at": "2026-11-08T09:00:00+09:00",
-    "thumbnail": "/images/insight/community_connection.jpg",
+    "thumbnail": "/images/insight/election-poster-board-mapping-and-volunteer-routing.jpg",
     "static_url": "/insight/posts/election-poster-board-mapping-and-volunteer-routing.html",
     "primary_product": "PoliDash",
     "published": true
@@ -92,7 +92,7 @@
     "polidash_note": "組織力のない無所属新人こそ告示日のポスター貼りをAIルートで自動化。少数ボランティアで確実に掲示板を網羅する陣営戦略を解説。",
     "polistep_note": "地盤・知名度のない新人が勝機を掴むには日々の行動量の可視化が不可欠。地域訪問やチラシ配布をスマホ地図で記録・逆算管理する実践法。",
     "published_at": "2026-11-07T09:00:15+09:00",
-    "thumbnail": "/images/insight/community_connection.jpg",
+    "thumbnail": "/images/insight/independent-candidate-without-jiban-kanban-kaban.jpg",
     "static_url": "/insight/posts/independent-candidate-without-jiban-kanban-kaban.html",
     "primary_product": "PoliStep",
     "published": true
@@ -106,7 +106,7 @@
     "polidash_note": "当選後の議会活動で最初に直面する「一般質問」の作成手順と、執行部から前向きな答弁を引き出す構成術を解説。",
     "polistep_note": "日々の地域回りで伺った住民の声（対話メモ）を、地方議会の「一般質問」や具体的な政策提案へつなげる実践ステップ。",
     "published_at": "2026-11-06T09:00:00+09:00",
-    "thumbnail": "/images/insight/political_mindset.jpg",
+    "thumbnail": "/images/insight/first-general-question-local-council-guide.jpg",
     "static_url": "/insight/posts/first-general-question-local-council-guide.html",
     "primary_product": "PoliSide",
     "published": true
@@ -120,7 +120,7 @@
     "polidash_note": "選挙ポスターやチラシのQRコードから誘導する「公式ホームページ」の必須構成と、コストを抑えて構築する方法を解説。",
     "polistep_note": "日々の地域回りや駅頭で配布するチラシ（討議資料）から有権者を受け止める、公式HPの必須コンテンツと費用比較。",
     "published_at": "2026-11-05T09:00:00+09:00",
-    "thumbnail": "/images/insight/sns_rules.jpg",
+    "thumbnail": "/images/insight/politician-website-creation-guide-cost-and-elements.jpg",
     "static_url": "/insight/posts/politician-website-creation-guide-cost-and-elements.html",
     "primary_product": "PoliSide",
     "published": true
@@ -134,7 +134,7 @@
     "polidash_note": "告示日当日のポスター貼りを少人数で最速完了させるための、住所一括登録・AI最適ルート生成・LINE進捗共有の実践手順。",
     "polistep_note": "平時の地域活動から告示日当日の公営掲示板ポスター貼りへスムーズに移行するための、チーム分担とルート設計のコツ。",
     "published_at": "2026-11-04T09:00:00+09:00",
-    "thumbnail": "/images/insight/community_connection.jpg",
+    "thumbnail": "/images/insight/election-poster-management-route-optimization-polidash.jpg",
     "static_url": "/insight/posts/election-poster-management-route-optimization-polidash.html",
     "primary_product": "PoliDash",
     "published": true
@@ -148,7 +148,7 @@
     "polidash_note": "告示1ヶ月前からの公営掲示板ポスター貼付ルート準備や事前審査を含む、立候補6ヶ月前からの全体スケジュールを整理。",
     "polistep_note": "決戦日からの逆算ノルマ設計や日々の地域活動の地図記録など、新人が告示6ヶ月前から進めるべき実践ステップを解説。",
     "published_at": "2026-11-03T09:00:00+09:00",
-    "thumbnail": "/images/insight/political_mindset.jpg",
+    "thumbnail": "/images/insight/local-election-preparation-roadmap-6months.jpg",
     "static_url": "/insight/posts/local-election-preparation-roadmap-6months.html",
     "primary_product": "PoliStep",
     "published": true

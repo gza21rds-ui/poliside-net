@@ -10,7 +10,7 @@
     "PoliDash"
   ],
   "primary_product": "PoliDash",
-  "thumbnail": "/images/insight/community_connection.jpg",
+  "thumbnail": "/images/insight/election-poster-board-mapping-and-volunteer-routing.jpg",
   "lead": "選挙の告示日当日に公営ポスター掲示板への貼り出しで混乱しないためのルート設計とボランティア進捗管理の鉄則を解説。エリア分けの基準、持ち物リスト、貼付番号の確認方法、PoliDashを使ったリアルタイム同期まで実践的にまとめました。",
   "tldr": "告示日当日の公営掲示板ポスター貼りをスムーズに完了させる鉄則は、①事前の掲示板リスト電子化とAIによるエリア別ルート設計、②ログイン不要の専用マップURL（PoliDash）によるボランティアへの即時共有、③「貼付番号（くじ引き番号）」確定後の全体周知とリアルタイムの完了ステータス確認の3点です。",
   "polidash_note": "告示日当日のボランティア配置・エリア分割・くじ引き番号共有からリアルタイム完了確認まで、PoliDash活用の鉄則を解説。",

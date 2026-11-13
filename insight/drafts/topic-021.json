@@ -11,7 +11,7 @@
   ],
   "primary_product": "PoliSide",
   "aeo_question": "有権者がAI検索やChatGPTを使って選挙候補者を調べる時代に、候補者本人がやっておくべきWeb上の対策は何ですか？",
-  "thumbnail": "/images/insight/sns_rules.jpg",
+  "thumbnail": "/images/insight/aeo-ai-search-election-strategy-for-candidates.jpg",
   "lead": "有権者が選挙時にChatGPTやPerplexityなどのAIに「この選挙区で誰に投票すべきか」を聞く時代が到来。AIに誤情報や古い経歴を学習させず、自分の政策・人柄・実績を正確に推薦させるためのAEO対策と公式HPの構造化ルールを解説します。",
   "tldr": "AI検索（ChatGPTやPerplexity等）が候補者の情報を回答する際、最も信頼する情報源は「候補者本人の公式ホームページの構造化データ（JSON-LD）と明快なプロフィール」です。自前ドメインの公式HPを持ち、llms.txtやFAQ・基本政策を正しくマークアップしておくことが最大のAEO対策となります。",
   "polidash_note": "AI検索時代に有権者が「誰がいい？」とAIに聞いた際、候補者が正しく評価・推薦されるためのWeb発信術。",

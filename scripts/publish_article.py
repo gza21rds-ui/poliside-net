@@ -259,7 +259,7 @@ def generate_static_html(article_data):
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/style.css?v=20261113">
   <style>
     .article-header {{ padding: 110px 0 48px; text-align: center; background: var(--color-bg-alt); border-bottom: 1px solid var(--color-border); }}
     .article-meta {{ font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 16px; }}
@@ -318,7 +318,7 @@ def generate_static_html(article_data):
     </header>
 
     <article class="article-content">
-      <img src="{rel_thumb}" alt="{title}" style="width:100%; max-height:420px; object-fit:cover; border-radius:16px; margin-bottom:36px; box-shadow:0 8px 24px rgba(15,23,42,0.06);">
+      <img src="{rel_thumb}" alt="{title}" style="width:100%; aspect-ratio:16/9; height:auto; object-fit:cover; border-radius:16px; margin-bottom:36px; box-shadow:0 8px 24px rgba(15,23,42,0.06);">
 
       <!-- AEO Direct Answer / TL;DR Box -->
       <div class="tldr-box">

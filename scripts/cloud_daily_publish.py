@@ -6,10 +6,12 @@ Picks the next pending topic from insight/data/topic_queue.json, loads its vette
 insight/drafts/<id>.json (or builds a compliant structured article), and invokes publish_article.py.
 """
 
+import base64
 import json
 import os
 import subprocess
 import sys
+import urllib.request
 from datetime import datetime, timedelta, timezone
 
 JST = timezone(timedelta(hours=9))
@@ -17,7 +19,44 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARTICLES_JSON_PATH = os.path.join(BASE_DIR, "insight", "data", "articles.json")
 TOPIC_QUEUE_PATH = os.path.join(BASE_DIR, "insight", "data", "topic_queue.json")
 DRAFTS_DIR = os.path.join(BASE_DIR, "insight", "drafts")
+IMAGES_INSIGHT_DIR = os.path.join(BASE_DIR, "images", "insight")
 PUBLISH_SCRIPT = os.path.join(BASE_DIR, "scripts", "publish_article.py")
+
+
+def resolve_or_generate_thumbnail(topic):
+    """Use per-article 16:9 thumbnail if present; optionally generate via Imagen API if GEMINI_API_KEY is set."""
+    slug = topic["slug"]
+    local_jpg = os.path.join(IMAGES_INSIGHT_DIR, f"{slug}.jpg")
+    if os.path.exists(local_jpg):
+        return f"/images/insight/{slug}.jpg"
+
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if api_key:
+        prompt = (
+            "16:9 widescreen modern Japanese flat-vector editorial illustration in clean light #F8FAFC "
+            "background, crisp dark navy (#0F172A) outlines, vibrant orange (#F97316) and clear sky blue (#0EA5E9) accents, "
+            "friendly Japanese local council candidate or community theme, strictly zero text, no letters, no watermarks, "
+            f"safe 80% central framing. Theme: {topic.get('title', slug)} ({topic.get('category', '選挙')})."
+        )
+        try:
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key={api_key}"
+            payload = json.dumps({
+                "instances": [{"prompt": prompt}],
+                "parameters": {"sampleCount": 1, "aspectRatio": "16:9", "outputOptions": {"mimeType": "image/jpeg"}}
+            }).encode("utf-8")
+            req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"}, method="POST")
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                data = json.loads(resp.read().decode("utf-8"))
+            b64 = data["predictions"][0]["bytesBase64Encoded"]
+            os.makedirs(IMAGES_INSIGHT_DIR, exist_ok=True)
+            with open(local_jpg, "wb") as img_f:
+                img_f.write(base64.b64decode(b64))
+            print(f"[INFO] Generated 16:9 thumbnail via Gemini Imagen API: {local_jpg}")
+            return f"/images/insight/{slug}.jpg"
+        except Exception as exc:
+            print(f"[WARN] Thumbnail generation skipped/failed ({exc}); falling back to topic thumbnail.")
+
+    return topic.get("thumbnail", "/images/insight/political_mindset.jpg")
 
 
 def build_fallback_article(topic, published_at):
@@ -146,6 +185,8 @@ def main():
     else:
         print(f"[INFO] Building structured article for {topic_id}")
         article_data = build_fallback_article(next_topic, published_at)
+
+    article_data["thumbnail"] = resolve_or_generate_thumbnail(next_topic)
 
     tmp_json = "/tmp/cloud_daily_article.json"
     with open(tmp_json, "w", encoding="utf-8") as f:
