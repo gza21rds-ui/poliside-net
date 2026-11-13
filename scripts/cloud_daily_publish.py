@@ -33,9 +33,12 @@ def resolve_or_generate_thumbnail(topic):
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if api_key:
         prompt = (
-            "16:9 widescreen modern Japanese flat-vector editorial illustration in clean light #F8FAFC "
-            "background, crisp dark navy (#0F172A) outlines, vibrant orange (#F97316) and clear sky blue (#0EA5E9) accents, "
-            "friendly Japanese local council candidate or community theme, strictly zero text, no letters, no watermarks, "
+            "16:9 widescreen gentle, warm contemporary Japanese magazine editorial illustration "
+            "(soft-lined, airy daylight, sunlit cafe or lounge atmosphere), featuring fresh-faced "
+            "approachable 30s Japanese adults in relaxed smart-casual attire (soft unstructured navy "
+            "jacket over white tee or clean knit sweater, NO stiff corporate suit, NO tie, NO election sash, "
+            "ZERO facial wrinkles). Color palette: sky blue (#0EA5E9), coral orange (#F97316), "
+            "slate navy (#1E293B), airy off-white (#F8FAFC). Strictly zero text, no letters, no watermarks, "
             f"safe 80% central framing. Theme: {topic.get('title', slug)} ({topic.get('category', '選挙')})."
         )
         try:
