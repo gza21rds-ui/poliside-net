@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-012",
+    "title": "初めての「駅頭（朝立ち）・街頭演説」完全マニュアル｜準備物・場所取りマナーから心を動かすトーク構成まで",
+    "slug": "morning-station-speech-tips-for-beginners",
+    "category": "発信",
+    "lead": "新人候補者や政治活動初心者が初めて駅頭（朝立ち）や街頭演説を行うための完全ガイド。必要な持ち物リスト、駅前の場所取りマナーや暗黙のルール、通勤客の心を動かす3分トーク構成から、PoliStepを活用した活動記録・日報共有まで、実践的なノウハウを徹底解説します。",
+    "polidash_note": "新人が最初に迷う駅頭（朝立ち）・街頭演説の場所取りマナーや持ち物、告示前の注意点を網羅した実践ガイド。",
+    "polistep_note": "駅頭や街頭でのビラ配り・辻立ち実績をPoliStepで記録し、チームへ日報共有しながら継続する実践術。",
+    "published_at": "2026-11-14T09:00:00+09:00",
+    "thumbnail": "/images/insight/morning-station-speech-tips-for-beginners.jpg",
+    "static_url": "/insight/posts/morning-station-speech-tips-for-beginners.html",
+    "primary_product": "PoliStep",
+    "published": true
+  },
+  {
     "id": "topic-011",
     "title": "スタッフ3〜5人の少人数陣営でも勝てる！デジタルツールを活用した省力化・高密度な選挙運営モデル",
     "slug": "small-team-election-operation-with-digital-tools",
