@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-013",
+    "title": "当選後に差がつく「議会報告（市政・区政レポート）」の継続術｜4年間途切れず発信し続ける仕組みづくり",
+    "slug": "council-report-newsletter-continuation-tips",
+    "category": "議会",
+    "lead": "地方議員が当選後に「議会報告（市政・区政・町政レポート）」を4年間途切れずに発行し続けるための仕組みづくりを解説。定例会ごとのテンプレート化、紙レポートと公式HP（PoliSide）の連動、PoliStepでの配布エリア管理まで実践ノウハウをまとめました。",
+    "polidash_note": "当選後の4年間で有権者からの信頼を決定づける「議会報告レポート」のテンプレート化と継続発行の仕組みを解説。",
+    "polistep_note": "年4回の定例会ごとの議会報告チラシ作成と、PoliStepを活用した配布エリア・駅頭配布の継続マネジメント術。",
+    "published_at": "2026-11-15T09:00:00+09:00",
+    "thumbnail": "/images/insight/council-report-newsletter-continuation-tips.jpg",
+    "static_url": "/insight/posts/council-report-newsletter-continuation-tips.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-012",
     "title": "初めての「駅頭（朝立ち）・街頭演説」完全マニュアル｜準備物・場所取りマナーから心を動かすトーク構成まで",
     "slug": "morning-station-speech-tips-for-beginners",
