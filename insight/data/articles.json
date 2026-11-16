@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-014",
+    "title": "政治活動・選挙準備で「孤独と不安」に押し潰されそうなときに実践したいメンタルマネジメントと壁打ちの効用",
+    "slug": "overcoming-loneliness-and-mental-burnout-in-politics",
+    "category": "考え方",
+    "lead": "選挙準備や議員活動の中で多くの挑戦者が直面する「孤独感・プレッシャー・メンタルの不調」への向き合い方を解説。進捗の数値化による不安の解消法や、利害関係のない第三者との「壁打ち（伴走サポート）」がもたらす心理的効用をまとめました。",
+    "polidash_note": "選挙準備のプレッシャーや孤独感を和らげ、陣営のタスクを整理して冷静な判断力を保つための実践メンタル術。",
+    "polistep_note": "「本当にこの活動で届いているのか…」という孤独なドブ板の不安を、PoliStepの可視化とPoliSideの壁打ちで乗り越える方法。",
+    "published_at": "2026-11-16T09:00:00+09:00",
+    "thumbnail": "/images/insight/overcoming-loneliness-and-mental-burnout-in-politics.jpg",
+    "static_url": "/insight/posts/overcoming-loneliness-and-mental-burnout-in-politics.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-013",
     "title": "当選後に差がつく「議会報告（市政・区政レポート）」の継続術｜4年間途切れず発信し続ける仕組みづくり",
     "slug": "council-report-newsletter-continuation-tips",
