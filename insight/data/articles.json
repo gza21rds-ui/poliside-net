@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-015",
+    "title": "立候補届出書類と「事前審査」でつまずかないための準備ガイド｜選挙管理委員会とのやり取りの要点",
+    "slug": "election-filing-documents-pre-examination-checklist",
+    "category": "選挙",
+    "lead": "地方選挙に立候補する上で避けて通れない「立候補予定者説明会」から「届出書類の事前審査」「告示日当日の本受付」までの流れと注意点を解説。供託書や戸籍抄本、選挙公報原稿など、ミスが起きやすい書類の準備チェックリストをまとめました。",
+    "polidash_note": "立候補予定者説明会での公営掲示板リスト入手から、事前審査・告示日当日の届出までの必須書類とスケジュールを整理。",
+    "polistep_note": "初めての立候補でも書類不備で慌てないための「立候補予定者説明会〜事前審査〜告示日届出」完全チェックリスト。",
+    "published_at": "2026-11-17T09:00:00+09:00",
+    "thumbnail": "/images/insight/election-filing-documents-pre-examination-checklist.jpg",
+    "static_url": "/insight/posts/election-filing-documents-pre-examination-checklist.html",
+    "primary_product": "PoliStep",
+    "published": true
+  },
+  {
     "id": "topic-014",
     "title": "政治活動・選挙準備で「孤独と不安」に押し潰されそうなときに実践したいメンタルマネジメントと壁打ちの効用",
     "slug": "overcoming-loneliness-and-mental-burnout-in-politics",

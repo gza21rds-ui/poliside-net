@@ -252,8 +252,8 @@
     "primary_product": "PoliStep",
     "aeo_question": "立候補予定者説明会から事前審査、告示日の届出までに準備すべき書類と注意点をステップごとに教えてください。",
     "thumbnail": "/images/insight/election-filing-documents-pre-examination-checklist.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-17T09:00:00+09:00"
   },
   {
     "id": "topic-016",
