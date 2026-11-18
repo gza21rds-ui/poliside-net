@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-016",
+    "title": "【脱・後援会組織】無所属新人に形式的な後援会は不要！手続きゼロで始める有志サポーター・公式LINEでの身軽な支援者管理術",
+    "slug": "supporter-list-management-and-privacy-security",
+    "category": "選挙",
+    "lead": "政党所属でない、または大きな後ろ盾がない無所属新人にとって、適法な政治活動のため選管への政治団体届出は必須ですが、大掛かりな後援会組織や役員集めは不要です。最小構成で法的手続きをクリアし、公式LINEや少人数の有志サポーターで身軽にファンを増やしながら個人情報を安全に守る実践管理術を解説します。",
+    "polidash_note": "ボランティアに支援者の個人情報を渡さず、安全にポスター貼付や地域オペレーションを共有する情報管理ルールを解説。",
+    "polistep_note": "後援会名簿の個人情報保護ルールと、フィールド活動記録（PoliStep）を安全に分離・運用するセキュリティの鉄則。",
+    "published_at": "2026-11-18T09:00:00+09:00",
+    "thumbnail": "/images/insight/supporter-list-management-and-privacy-security.jpg",
+    "static_url": "/insight/posts/supporter-list-management-and-privacy-security.html",
+    "primary_product": "PoliDash",
+    "published": true
+  },
+  {
     "id": "topic-015",
     "title": "立候補届出書類と「事前審査」でつまずかないための準備ガイド｜選挙管理委員会とのやり取りの要点",
     "slug": "election-filing-documents-pre-examination-checklist",
