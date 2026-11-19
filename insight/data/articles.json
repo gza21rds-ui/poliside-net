@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-017",
+    "title": "地方議員・候補者のためのSNS使い分け戦略（X・Instagram・公式LINE・HP）｜認知獲得からファン化までの導線設計",
+    "slug": "sns-x-instagram-line-strategy-for-local-politicians",
+    "category": "発信",
+    "lead": "地方選挙の候補者や地方議員が、X（旧Twitter）・Instagram・公式LINE・公式ホームページをどのように役割分担して運用すべきかを解説。認知獲得から信頼構築、支援者化までのWeb導線設計と、PoliStepの日報画像を活用した時短運用術をまとめました。",
+    "polidash_note": "X・Instagram・公式LINE・公式HPの4媒体を有機的に連携させ、認知から支援者・ボランティア参加へつなげるWeb導線設計。",
+    "polistep_note": "PoliStepの「ワンタップ日報画像生成」をフル活用して、毎日のX・Instagram投稿を5分で完了させるSNS継続術。",
+    "published_at": "2026-11-19T09:00:00+09:00",
+    "thumbnail": "/images/insight/sns-x-instagram-line-strategy-for-local-politicians.jpg",
+    "static_url": "/insight/posts/sns-x-instagram-line-strategy-for-local-politicians.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-016",
     "title": "【脱・後援会組織】無所属新人に形式的な後援会は不要！手続きゼロで始める有志サポーター・公式LINEでの身軽な支援者管理術",
     "slug": "supporter-list-management-and-privacy-security",
