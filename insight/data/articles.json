@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-018",
+    "title": "新人議員・候補者が知っておきたい「自治体予算書・決算書」の読み解き方｜数字から地域課題と財源を見つける技術",
+    "slug": "how-to-read-local-government-budget-and-settlement",
+    "category": "政策",
+    "lead": "新人地方議員や立候補予定者が、自治体の「予算書・決算書（主要な施策の成果説明書）」を読み解いて説得力のある政策や一般質問を作るための入門ガイド。最初に確認すべき5つの財政指標と、事業別シートから財源や課題を洗い出す手順を解説します。",
+    "polidash_note": "単なる思いつきの公約から脱却し、自治体の予算書・決算書の数字に基づいた説得力ある政策を作るための入門ガイド。",
+    "polistep_note": "地域回りで聞いた住民の課題（PoliStep記録）を、自治体の予算・決算データと照らし合わせて具体的な政策提案へ磨く方法。",
+    "published_at": "2026-11-20T09:00:00+09:00",
+    "thumbnail": "/images/insight/how-to-read-local-government-budget-and-settlement.jpg",
+    "static_url": "/insight/posts/how-to-read-local-government-budget-and-settlement.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-017",
     "title": "地方議員・候補者のためのSNS使い分け戦略（X・Instagram・公式LINE・HP）｜認知獲得からファン化までの導線設計",
     "slug": "sns-x-instagram-line-strategy-for-local-politicians",

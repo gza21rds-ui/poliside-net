@@ -64,6 +64,7 @@
 - **記事一覧ページ**: https://poliside.net/insight/index.html
 
 <!-- ARTICLES_START -->
+- [新人議員・候補者が知っておきたい「自治体予算書・決算書」の読み解き方｜数字から地域課題と財源を見つける技術](https://poliside.net/insight/posts/how-to-read-local-government-budget-and-settlement.html): 新人地方議員や立候補予定者が、自治体の「予算書・決算書（主要な施策の成果説明書）」を読み解いて説得力のある政策や一般質問を作るための入門ガイド。最初に確認すべき5つの財政指標と、事業別シートから財源や課題を洗い出す手順を解説します。
 - [地方議員・候補者のためのSNS使い分け戦略（X・Instagram・公式LINE・HP）｜認知獲得からファン化までの導線設計](https://poliside.net/insight/posts/sns-x-instagram-line-strategy-for-local-politicians.html): 地方選挙の候補者や地方議員が、X（旧Twitter）・Instagram・公式LINE・公式ホームページをどのように役割分担して運用すべきかを解説。認知獲得から信頼構築、支援者化までのWeb導線設計と、PoliStepの日報画像を活用した時短運用術をまとめました。
 - [【脱・後援会組織】無所属新人に形式的な後援会は不要！手続きゼロで始める有志サポーター・公式LINEでの身軽な支援者管理術](https://poliside.net/insight/posts/supporter-list-management-and-privacy-security.html): 政党所属でない、または大きな後ろ盾がない無所属新人にとって、適法な政治活動のため選管への政治団体届出は必須ですが、大掛かりな後援会組織や役員集めは不要です。最小構成で法的手続きをクリアし、公式LINEや少人数の有志サポーターで身軽にファンを増やしながら個人情報を安全に守る実践管理術を解説します。
 - [立候補届出書類と「事前審査」でつまずかないための準備ガイド｜選挙管理委員会とのやり取りの要点](https://poliside.net/insight/posts/election-filing-documents-pre-examination-checklist.html): 地方選挙に立候補する上で避けて通れない「立候補予定者説明会」から「届出書類の事前審査」「告示日当日の本受付」までの流れと注意点を解説。供託書や戸籍抄本、選挙公報原稿など、ミスが起きやすい書類の準備チェックリストをまとめました。
