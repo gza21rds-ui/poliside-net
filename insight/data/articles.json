@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-019",
+    "title": "会社員・子育て世代が働きながら地方選挙の準備を進めるタイムマネジメント術｜限られた時間で成果を出す優先順位",
+    "slug": "balancing-day-job-and-election-preparation",
+    "category": "考え方",
+    "lead": "会社員や共働き・子育て世代の若手挑戦者が、仕事を続けながら限られた時間で地方選挙の準備を進めるためのタイムマネジメント術を解説。平日朝晩と週末の時間配分、やらないことの明確化、PoliStep・PoliDash・PoliSideを使った超効率化ノウハウをまとめました。",
+    "polidash_note": "仕事や育児と両立する現役世代の候補者が、限られた準備時間で最大の成果を出すための優先順位とDXツール活用術。",
+    "polistep_note": "平日朝晩と週末の限られた時間でも着実に地域活動を積み上げる、PoliStepの逆算ノルマ管理を使ったタイムマネジメント術。",
+    "published_at": "2026-11-21T09:00:00+09:00",
+    "thumbnail": "/images/insight/balancing-day-job-and-election-preparation.jpg",
+    "static_url": "/insight/posts/balancing-day-job-and-election-preparation.html",
+    "primary_product": "PoliStep",
+    "published": true
+  },
+  {
     "id": "topic-018",
     "title": "新人議員・候補者が知っておきたい「自治体予算書・決算書」の読み解き方｜数字から地域課題と財源を見つける技術",
     "slug": "how-to-read-local-government-budget-and-settlement",
