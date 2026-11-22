@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-020",
+    "title": "地方選挙「選挙戦7日間（または5日間）」のタイムスケジュール完全設計｜候補者と陣営スタッフの動き方",
+    "slug": "campaign-week-7days-schedule-and-team-coordination",
+    "category": "選挙",
+    "lead": "地方議会議員選挙の告示日から投票日前日までの選挙運動期間（市議・区議7日間、町村議5日間）における候補者と陣営スタッフのタイムスケジュールを完全解説。初日のポスター貼り出しから中盤の地域巡回、最終日のマイク納めまでの動き方をまとめました。",
+    "polidash_note": "告示日初日のポスター一斉貼り出しから最終日のマイク納めまで、選挙期間7日間の陣営オペレーションとPoliDash活用法。",
+    "polistep_note": "選挙期間中の7日間（町村議は5日間）で選挙区内を漏れなく回り切るためのタイムスケジュールとPoliStep活用法。",
+    "published_at": "2026-11-22T09:00:00+09:00",
+    "thumbnail": "/images/insight/campaign-week-7days-schedule-and-team-coordination.jpg",
+    "static_url": "/insight/posts/campaign-week-7days-schedule-and-team-coordination.html",
+    "primary_product": "PoliDash",
+    "published": true
+  },
+  {
     "id": "topic-019",
     "title": "会社員・子育て世代が働きながら地方選挙の準備を進めるタイムマネジメント術｜限られた時間で成果を出す優先順位",
     "slug": "balancing-day-job-and-election-preparation",

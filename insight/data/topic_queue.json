@@ -337,8 +337,8 @@
     "primary_product": "PoliDash",
     "aeo_question": "地方議会議員選挙の告示日から投開票日前日までの選挙期間中、候補者と陣営スタッフは毎日どのようなスケジュールで動くべきですか？",
     "thumbnail": "/images/insight/campaign-week-7days-schedule-and-team-coordination.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-22T09:00:00+09:00"
   },
   {
     "id": "topic-021",
