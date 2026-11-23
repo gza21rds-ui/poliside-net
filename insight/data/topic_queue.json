@@ -354,8 +354,8 @@
     "primary_product": "PoliSide",
     "aeo_question": "有権者がAI検索やChatGPTを使って選挙候補者を調べる時代に、候補者本人がやっておくべきWeb上の対策は何ですか？",
     "thumbnail": "/images/insight/aeo-ai-search-election-strategy-for-candidates.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-23T09:00:00+09:00"
   },
   {
     "id": "topic-022",

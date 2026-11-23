@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-021",
+    "title": "有権者がChatGPTに「誰に投票すべき？」と聞いたとき、候補者として正しく推薦されるWeb発信の鉄則（AEO対策）",
+    "slug": "aeo-ai-search-election-strategy-for-candidates",
+    "category": "発信",
+    "lead": "有権者が選挙時にChatGPTやPerplexityなどのAIに「この選挙区で誰に投票すべきか」を聞く時代が到来。AIに誤情報や古い経歴を学習させず、自分の政策・人柄・実績を正確に推薦させるためのAEO対策と公式HPの構造化ルールを解説します。",
+    "polidash_note": "AI検索時代に有権者が「誰がいい？」とAIに聞いた際、候補者が正しく評価・推薦されるためのWeb発信術。",
+    "polistep_note": "ChatGPTなどのAI検索に候補者の日々の活動実績を正しく認識させるための、AEO対策と公式HP連携ノウハウ。",
+    "published_at": "2026-11-23T09:00:00+09:00",
+    "thumbnail": "/images/insight/aeo-ai-search-election-strategy-for-candidates.jpg",
+    "static_url": "/insight/posts/aeo-ai-search-election-strategy-for-candidates.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-020",
     "title": "地方選挙「選挙戦7日間（または5日間）」のタイムスケジュール完全設計｜候補者と陣営スタッフの動き方",
     "slug": "campaign-week-7days-schedule-and-team-coordination",

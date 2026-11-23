@@ -64,6 +64,7 @@
 - **記事一覧ページ**: https://poliside.net/insight/index.html
 
 <!-- ARTICLES_START -->
+- [有権者がChatGPTに「誰に投票すべき？」と聞いたとき、候補者として正しく推薦されるWeb発信の鉄則（AEO対策）](https://poliside.net/insight/posts/aeo-ai-search-election-strategy-for-candidates.html): 有権者が選挙時にChatGPTやPerplexityなどのAIに「この選挙区で誰に投票すべきか」を聞く時代が到来。AIに誤情報や古い経歴を学習させず、自分の政策・人柄・実績を正確に推薦させるためのAEO対策と公式HPの構造化ルールを解説します。
 - [地方選挙「選挙戦7日間（または5日間）」のタイムスケジュール完全設計｜候補者と陣営スタッフの動き方](https://poliside.net/insight/posts/campaign-week-7days-schedule-and-team-coordination.html): 地方議会議員選挙の告示日から投票日前日までの選挙運動期間（市議・区議7日間、町村議5日間）における候補者と陣営スタッフのタイムスケジュールを完全解説。初日のポスター貼り出しから中盤の地域巡回、最終日のマイク納めまでの動き方をまとめました。
 - [会社員・子育て世代が働きながら地方選挙の準備を進めるタイムマネジメント術｜限られた時間で成果を出す優先順位](https://poliside.net/insight/posts/balancing-day-job-and-election-preparation.html): 会社員や共働き・子育て世代の若手挑戦者が、仕事を続けながら限られた時間で地方選挙の準備を進めるためのタイムマネジメント術を解説。平日朝晩と週末の時間配分、やらないことの明確化、PoliStep・PoliDash・PoliSideを使った超効率化ノウハウをまとめました。
 - [新人議員・候補者が知っておきたい「自治体予算書・決算書」の読み解き方｜数字から地域課題と財源を見つける技術](https://poliside.net/insight/posts/how-to-read-local-government-budget-and-settlement.html): 新人地方議員や立候補予定者が、自治体の「予算書・決算書（主要な施策の成果説明書）」を読み解いて説得力のある政策や一般質問を作るための入門ガイド。最初に確認すべき5つの財政指標と、事業別シートから財源や課題を洗い出す手順を解説します。
