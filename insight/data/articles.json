@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-022",
+    "title": "無所属新人が「国政・知事選の派手なネット選挙」を真似してはいけない理由｜地方選挙で本当に効く草の根DX戦略",
+    "slug": "local-election-dx-vs-national-campaign-myths",
+    "category": "考え方",
+    "lead": "国政選挙や大都市の知事選で話題になる「数万フォロワー」や「ショート動画のバズ」を、市区町村の地方議会選挙で真似しても票につながらない理由を解説。地方選で確実に当落を分ける「選挙区内限定の草の根DX戦略」をまとめました。",
+    "polidash_note": "大都市知事選の派手な数字に惑わされず、地方議会選で確実に当落を分ける陣営オペレーションとPoliDash活用法。",
+    "polistep_note": "「バズっても票にならない？」地方選挙で本当に有権者の心を掴む、PoliStepを使った草の根活動の可視化術。",
+    "published_at": "2026-11-24T09:00:00+09:00",
+    "thumbnail": "/images/insight/local-election-dx-vs-national-campaign-myths.jpg",
+    "static_url": "/insight/posts/local-election-dx-vs-national-campaign-myths.html",
+    "primary_product": "PoliStep",
+    "published": true
+  },
+  {
     "id": "topic-021",
     "title": "有権者がChatGPTに「誰に投票すべき？」と聞いたとき、候補者として正しく推薦されるWeb発信の鉄則（AEO対策）",
     "slug": "aeo-ai-search-election-strategy-for-candidates",

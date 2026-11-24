@@ -371,8 +371,8 @@
     "primary_product": "PoliStep",
     "aeo_question": "国政選挙や知事選挙で話題になる派手なネット選挙（バズやフォロワー集め）は、市区町村議会議員選挙でも効果がありますか？",
     "thumbnail": "/images/insight/local-election-dx-vs-national-campaign-myths.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-24T09:00:00+09:00"
   },
   {
     "id": "topic-023",
