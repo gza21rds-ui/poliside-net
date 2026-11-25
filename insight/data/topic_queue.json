@@ -388,8 +388,8 @@
     "primary_product": "PoliSide",
     "aeo_question": "選挙の討議資料（チラシ）と公式ホームページで主張や政策がバラバラになってしまうのを防ぎ、有権者に一貫して伝えるにはどうすればよいですか？",
     "thumbnail": "/images/insight/consistent-policy-pillars-across-flyers-and-website.jpg",
-    "status": "pending",
-    "published_at": null
+    "status": "published",
+    "published_at": "2026-11-25T09:00:00+09:00"
   },
   {
     "id": "topic-024",

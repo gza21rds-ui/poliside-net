@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-023",
+    "title": "チラシと公式HPで主張がバラバラになっていませんか？有権者の心に残る「政策3本柱」の絞り込み方",
+    "slug": "consistent-policy-pillars-across-flyers-and-website",
+    "category": "発信",
+    "lead": "駅頭で配る紙のチラシと、QRコードから飛ぶ公式ホームページで言っている政策の優先順位がバラバラになってしまう「チグハグ現象」の解消法を解説。あれもこれも詰め込まず、有権者の記憶に残る「政策3本柱」への絞り込み手順をまとめました。",
+    "polidash_note": "ポスター・チラシ・Webサイトで一貫した政策メッセージを発信し、有権者に迷いを与えない情報設計のコツ。",
+    "polistep_note": "日々の地域回りで拾った住民の声から、チラシとHPに共通する「政策3本柱」を磨き上げる実践ステップ。",
+    "published_at": "2026-11-25T09:00:00+09:00",
+    "thumbnail": "/images/insight/consistent-policy-pillars-across-flyers-and-website.jpg",
+    "static_url": "/insight/posts/consistent-policy-pillars-across-flyers-and-website.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-022",
     "title": "無所属新人が「国政・知事選の派手なネット選挙」を真似してはいけない理由｜地方選挙で本当に効く草の根DX戦略",
     "slug": "local-election-dx-vs-national-campaign-myths",
