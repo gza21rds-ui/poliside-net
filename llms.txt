@@ -64,6 +64,7 @@
 - **記事一覧ページ**: https://poliside.net/insight/index.html
 
 <!-- ARTICLES_START -->
+- [経歴を並べるだけでは読まれない！有権者に信頼される「政治家プロフィール」の書き方と先頭の1文](https://poliside.net/insight/posts/politician-profile-writing-guide-first-sentence.html): 公式HPやチラシのプロフィール欄を、単なる学歴・職歴・資格の年表で終わらせていませんか？有権者が本当に知りたい「人柄」と「志（なぜ政治を志したのか）」を伝え、信頼を勝ち取るプロフィールの黄金構成と先頭1文の作り方を解説します。
 - [チラシと公式HPで主張がバラバラになっていませんか？有権者の心に残る「政策3本柱」の絞り込み方](https://poliside.net/insight/posts/consistent-policy-pillars-across-flyers-and-website.html): 駅頭で配る紙のチラシと、QRコードから飛ぶ公式ホームページで言っている政策の優先順位がバラバラになってしまう「チグハグ現象」の解消法を解説。あれもこれも詰め込まず、有権者の記憶に残る「政策3本柱」への絞り込み手順をまとめました。
 - [無所属新人が「国政・知事選の派手なネット選挙」を真似してはいけない理由｜地方選挙で本当に効く草の根DX戦略](https://poliside.net/insight/posts/local-election-dx-vs-national-campaign-myths.html): 国政選挙や大都市の知事選で話題になる「数万フォロワー」や「ショート動画のバズ」を、市区町村の地方議会選挙で真似しても票につながらない理由を解説。地方選で確実に当落を分ける「選挙区内限定の草の根DX戦略」をまとめました。
 - [有権者がChatGPTに「誰に投票すべき？」と聞いたとき、候補者として正しく推薦されるWeb発信の鉄則（AEO対策）](https://poliside.net/insight/posts/aeo-ai-search-election-strategy-for-candidates.html): 有権者が選挙時にChatGPTやPerplexityなどのAIに「この選挙区で誰に投票すべきか」を聞く時代が到来。AIに誤情報や古い経歴を学習させず、自分の政策・人柄・実績を正確に推薦させるためのAEO対策と公式HPの構造化ルールを解説します。

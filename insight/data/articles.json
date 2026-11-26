@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-024",
+    "title": "経歴を並べるだけでは読まれない！有権者に信頼される「政治家プロフィール」の書き方と先頭の1文",
+    "slug": "politician-profile-writing-guide-first-sentence",
+    "category": "発信",
+    "lead": "公式HPやチラシのプロフィール欄を、単なる学歴・職歴・資格の年表で終わらせていませんか？有権者が本当に知りたい「人柄」と「志（なぜ政治を志したのか）」を伝え、信頼を勝ち取るプロフィールの黄金構成と先頭1文の作り方を解説します。",
+    "polidash_note": "公営掲示板ポスターやチラシから公式HPにアクセスした有権者をファンに変える、プロフィール構成の鉄則。",
+    "polistep_note": "日々の地域回りで名刺を渡した後に読まれる、「共感を生む候補者プロフィール」の書き方。",
+    "published_at": "2026-11-26T09:00:00+09:00",
+    "thumbnail": "/images/insight/politician-profile-writing-guide-first-sentence.jpg",
+    "static_url": "/insight/posts/politician-profile-writing-guide-first-sentence.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-023",
     "title": "チラシと公式HPで主張がバラバラになっていませんか？有権者の心に残る「政策3本柱」の絞り込み方",
     "slug": "consistent-policy-pillars-across-flyers-and-website",
