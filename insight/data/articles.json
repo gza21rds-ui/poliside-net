@@ -1,5 +1,19 @@
 [
   {
+    "id": "topic-025",
+    "title": "選挙ドットコム・公式LINE・自前HPの3大ツール連携術｜作っただけで放置しない運用ルーティン",
+    "slug": "integrating-senkyo-dot-com-line-and-official-website",
+    "category": "発信",
+    "lead": "選挙ドットコムを契約したきり更新していない、公式LINEを開設したが配信していない…そんな放置を防ぐための3大ツール連携術を解説。週1回5分の作業で3媒体を有機的につなぎ、有権者を支援者へと育てる運用ルーティンをまとめました。",
+    "polidash_note": "選挙ドットコム・LINE・公式HPを連動させ、少人数陣営でも無理なく回るWeb運用の標準化モデル。",
+    "polistep_note": "PoliStepの日報記録をフックにして、選挙ドットコム・公式LINE・HPの3媒体を短時間で同時更新する実践術。",
+    "published_at": "2026-11-27T09:00:00+09:00",
+    "thumbnail": "/images/insight/integrating-senkyo-dot-com-line-and-official-website.jpg",
+    "static_url": "/insight/posts/integrating-senkyo-dot-com-line-and-official-website.html",
+    "primary_product": "PoliSide",
+    "published": true
+  },
+  {
     "id": "topic-024",
     "title": "経歴を並べるだけでは読まれない！有権者に信頼される「政治家プロフィール」の書き方と先頭の1文",
     "slug": "politician-profile-writing-guide-first-sentence",
