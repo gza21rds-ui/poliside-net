@@ -244,7 +244,7 @@ def build_related_articles_html(current_slug, current_category, current_product,
         r_date = format_jp_date(art.get("published_at", ""))
         r_lead = html_lib.escape((art.get("lead") or "")[:72] + "…")
         cards.append(f"""
-          <a href="{r_slug}.html" class="related-card" data-cta-location="related_article" style="display:block; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:16px; padding:20px; text-decoration:none; transition:border-color 0.2s, transform 0.2s; box-shadow:0 2px 8px rgba(15,23,42,0.03);">
+          <a href="/insight/posts/{r_slug}" class="related-card" data-cta-location="related_article" style="display:block; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:16px; padding:20px; text-decoration:none; transition:border-color 0.2s, transform 0.2s; box-shadow:0 2px 8px rgba(15,23,42,0.03);">
             <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:0.78rem;">
               <span style="background:rgba(249,115,22,0.12); color:#EA580C; font-weight:700; padding:2px 10px; border-radius:999px;">{r_cat}</span>
               <span style="color:#64748B;">{r_date}</span>
@@ -287,7 +287,7 @@ def generate_static_html(article_data, all_articles=None):
         rel_thumb = thumb_path
         abs_thumb = "https://poliside.net/ogp.jpg"
 
-    page_url = f"https://poliside.net/insight/posts/{slug}.html"
+    page_url = f"https://poliside.net/insight/posts/{slug}"
     polistep_bottom = build_utm_url("https://polistep.jp/", slug, "article_bottom_polistep")
     polidash_bottom = build_utm_url("https://polidash.jp/", slug, "article_bottom_polidash")
     polistep_footer = build_utm_url("https://polistep.jp/", slug, "article_footer_polistep")
@@ -389,7 +389,7 @@ def generate_static_html(article_data, all_articles=None):
         "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "TOP", "item": "https://poliside.net/"},
-            {"@type": "ListItem", "position": 2, "name": "政治活動ノウハウ記事", "item": "https://poliside.net/insight/index.html"},
+            {"@type": "ListItem", "position": 2, "name": "政治活動ノウハウ記事", "item": "https://poliside.net/insight/"},
             {"@type": "ListItem", "position": 3, "name": title, "item": page_url}
         ]
     }
@@ -619,7 +619,7 @@ def update_articles_json(article_data):
         "polistep_note": polistep_note,
         "published_at": article_data.get("published_at", datetime.now().strftime("%Y-%m-%dT09:00:00+09:00")),
         "thumbnail": article_data.get("thumbnail", "/images/insight/political_mindset.jpg"),
-        "static_url": f"/insight/posts/{slug}.html",
+        "static_url": f"/insight/posts/{slug}",
         "primary_product": article_data.get("primary_product", "PoliSide"),
         "published": True
     }
@@ -630,42 +630,57 @@ def update_articles_json(article_data):
     return articles
 
 
-def update_sitemap(slug, published_at):
-    if not os.path.exists(SITEMAP_PATH):
-        return
-    with open(SITEMAP_PATH, "r", encoding="utf-8") as f:
-        xml = f.read()
+def update_sitemap(slug, published_at, all_articles=None):
+    """Rebuild or update sitemap.xml with clean Cloudflare Pages URLs (no .html redirects, no noindex pages)."""
+    date_str = (published_at or datetime.now().strftime("%Y-%m-%d"))[:10]
+    if all_articles is None:
+        all_articles = load_all_articles()
 
-    date_str = published_at[:10]
-    if slug:
-        loc = f"https://poliside.net/insight/posts/{slug}.html"
-        if loc not in xml:
-            new_entry = f"""  <url>
-    <loc>{loc}</loc>
-    <lastmod>{date_str}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-</urlset>"""
-            xml = xml.replace("</urlset>", new_entry)
-
-    # Keep homepage and insight index <lastmod> fresh for crawlers
-    for root_loc in ["https://poliside.net/", "https://poliside.net/insight/index.html"]:
-        xml = re.sub(
-            rf"(<loc>{re.escape(root_loc)}</loc>\s*<lastmod>)[0-9\-]+(</lastmod>)",
-            rf"\g<1>{date_str}\g<2>",
-            xml,
-        )
-
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '  <url>',
+        '    <loc>https://poliside.net/</loc>',
+        f'    <lastmod>{date_str}</lastmod>',
+        '    <changefreq>weekly</changefreq>',
+        '    <priority>1.0</priority>',
+        '  </url>',
+        '  <url>',
+        '    <loc>https://poliside.net/about</loc>',
+        '    <lastmod>2026-08-13</lastmod>',
+        '    <changefreq>monthly</changefreq>',
+        '    <priority>0.8</priority>',
+        '  </url>',
+        '  <url>',
+        '    <loc>https://poliside.net/insight/</loc>',
+        f'    <lastmod>{date_str}</lastmod>',
+        '    <changefreq>weekly</changefreq>',
+        '    <priority>0.9</priority>',
+        '  </url>',
+    ]
+    for art in sorted(all_articles, key=lambda a: a.get("published_at", "")):
+        a_slug = art.get("slug")
+        if not a_slug:
+            continue
+        a_date = (art.get("published_at") or date_str)[:10]
+        lines.extend([
+            '  <url>',
+            f'    <loc>https://poliside.net/insight/posts/{a_slug}</loc>',
+            f'    <lastmod>{a_date}</lastmod>',
+            '    <changefreq>monthly</changefreq>',
+            '    <priority>0.8</priority>',
+            '  </url>',
+        ])
+    lines.append('</urlset>')
     with open(SITEMAP_PATH, "w", encoding="utf-8") as f:
-        f.write(xml)
+        f.write("\n".join(lines) + "\n")
 
 
 def update_llms_txt(article_data):
     slug = article_data["slug"]
     title = article_data["title"]
     lead = article_data["lead"]
-    url = f"https://poliside.net/insight/posts/{slug}.html"
+    url = f"https://poliside.net/insight/posts/{slug}"
     line = f"- [{title}]({url}): {lead}"
     marker = "<!-- ARTICLES_START -->"
 
@@ -691,7 +706,7 @@ def build_static_article_card(art, relative_prefix="", delay_class=""):
     date_jp = format_jp_date(art.get("published_at", ""))
     thumb = (art.get("thumbnail") or "/images/insight/political_mindset.jpg").lstrip("/")
     img_src = f"{relative_prefix}{thumb}"
-    href = f"{relative_prefix}insight/posts/{slug}.html" if relative_prefix == "" else f"posts/{slug}.html"
+    href = f"/insight/posts/{slug}"
     cls = f"insight-card animate-on-scroll{(' ' + delay_class) if delay_class else ''}"
     return f"""          <a href="{href}" class="{cls}" data-category="{category}">
             <div class="insight-card__img" style="padding:0; overflow:hidden; background: var(--color-bg-alt);">
@@ -832,7 +847,28 @@ def refresh_existing_posts_seo(all_articles):
                 1,
             )
 
-        # 5. Add hover CSS for related-card if absent & bump main.js cache query
+        # 5. Normalize Clean URLs (remove .html from canonical, og:url, JSON-LD, nav/footer links)
+        clean_url = f"https://poliside.net/insight/posts/{slug}"
+        page = page.replace(f"https://poliside.net/insight/posts/{slug}.html", clean_url)
+        page = page.replace("https://poliside.net/insight/index.html", "https://poliside.net/insight/")
+        page = page.replace('href="../../index.html"', 'href="/"')
+        page = page.replace('href="../../index.html#', 'href="/#')
+        page = page.replace('href="../index.html"', 'href="/insight/"')
+        page = page.replace('href="../../terms.html"', 'href="/terms"')
+        page = page.replace('href="../../privacy.html"', 'href="/privacy"')
+        page = page.replace('href="../../law.html"', 'href="/law"')
+
+        # 6. Sync <title>, meta description, OGP/Twitter tags from articles.json
+        t_esc = html_lib.escape(art["title"], quote=True)
+        d_esc = html_lib.escape(art["lead"], quote=True)
+        page = re.sub(r"<title>.*?</title>", f"<title>{t_esc} | PoliSide</title>", page, count=1, flags=re.DOTALL)
+        page = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{d_esc}">', page, count=1)
+        page = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{t_esc} | PoliSide">', page, count=1)
+        page = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{d_esc}">', page, count=1)
+        page = re.sub(r'<meta name="twitter:title" content="[^"]*">', f'<meta name="twitter:title" content="{t_esc}">', page, count=1)
+        page = re.sub(r'<meta name="twitter:description" content="[^"]*">', f'<meta name="twitter:description" content="{d_esc}">', page, count=1)
+
+        # 7. Add hover CSS for related-card if absent & bump main.js cache query
         if ".related-card:hover" not in page and "</style>" in page:
             page = page.replace(
                 "</style>",
@@ -864,7 +900,7 @@ def update_sister_site_feeds(article_data):
     category = article_data.get("category", "選挙")
     published_at = article_data.get("published_at", datetime.now().strftime("%Y-%m-%dT09:00:00+09:00"))
     date_jp = format_jp_date(published_at)
-    url = f"https://poliside.net/insight/posts/{slug}.html"
+    url = f"https://poliside.net/insight/posts/{slug}"
     primary_product = article_data.get("primary_product", "PoliSide")
 
     polidash_note = article_data.get(
