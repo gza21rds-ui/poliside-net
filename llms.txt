@@ -64,6 +64,7 @@
 - **記事一覧ページ**: https://poliside.net/insight/
 
 <!-- ARTICLES_START -->
+- [「SNSでバズったのに落選？」ネットの数字と現場の票の決定的な違い｜地方議会選で本当に追うべき指標](https://poliside.net/insight/posts/social-media-buzz-vs-actual-votes-in-local-elections): SNSで万バズして全国から何万件もいいねを集めた候補者が、なぜ地方選挙の本番で落選してしまうのか？ネットの数字（虚栄の指標）と現場の票の決定的な違いを解説し、地方選で本当に追うべき指標とPoliStepによる活動管理をまとめました。
 - [選挙ドットコム・公式LINE・自前HPの3大ツール連携術｜作っただけで放置しない運用ルーティン](https://poliside.net/insight/posts/integrating-senkyo-dot-com-line-and-official-website): 選挙ドットコムを契約したきり更新していない、公式LINEを開設したが配信していない…そんな放置を防ぐための3大ツール連携術を解説。週1回5分の作業で3媒体を有機的につなぎ、有権者を支援者へと育てる運用ルーティンをまとめました。
 - [経歴を並べるだけでは読まれない！有権者に信頼される「政治家プロフィール」の書き方と先頭の1文](https://poliside.net/insight/posts/politician-profile-writing-guide-first-sentence): 公式HPやチラシのプロフィール欄を、単なる学歴・職歴・資格の年表で終わらせていませんか？有権者が本当に知りたい「人柄」と「志（なぜ政治を志したのか）」を伝え、信頼を勝ち取るプロフィールの黄金構成と先頭1文の作り方を解説します。
 - [チラシと公式HPで主張がバラバラになっていませんか？有権者の心に残る「政策3本柱」の絞り込み方](https://poliside.net/insight/posts/consistent-policy-pillars-across-flyers-and-website): 駅頭で配る紙のチラシと、QRコードから飛ぶ公式ホームページで言っている政策の優先順位がバラバラになってしまう「チグハグ現象」の解消法を解説。あれもこれも詰め込まず、有権者の記憶に残る「政策3本柱」への絞り込み手順をまとめました。
