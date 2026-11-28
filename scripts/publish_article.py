@@ -2,21 +2,34 @@
 # -*- coding: utf-8 -*-
 """
 PoliSide × PoliDash × PoliStep SEO/AEO Static Article Publisher
-Generates static HTML with Triple JSON-LD (Article, FAQPage, BreadcrumbList + SoftwareApplication mentions),
-updates articles.json, sitemap.xml, llms.txt, and topic_queue.json.
+Generates static HTML with:
+- Triple JSON-LD (Article, FAQPage, BreadcrumbList + SoftwareApplication mentions)
+- Cross-domain UTM attribution links for PoliStep / PoliDash
+- Mid-article contextual CTA & bottom ecosystem spotlight
+- Topic-cluster internal links (Related Articles) across all published posts
+- Static HTML sync for index.html, insight/index.html, sitemap.xml, and llms.txt
+
+Supports `--sync-all` to retrofit all existing static posts, homepage cards,
+insight index cards, and sitemap lastmod dates cleanly.
 """
 
+import html as html_lib
 import json
 import os
 import re
 import sys
 from datetime import datetime
+from urllib.parse import urlencode, urlparse, urlunparse, parse_qsl
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POSTS_DIR = os.path.join(BASE_DIR, "insight", "posts")
 ARTICLES_JSON_PATH = os.path.join(BASE_DIR, "insight", "data", "articles.json")
 TOPIC_QUEUE_PATH = os.path.join(BASE_DIR, "insight", "data", "topic_queue.json")
 SITEMAP_PATH = os.path.join(BASE_DIR, "sitemap.xml")
+HOME_HTML_PATH = os.path.join(BASE_DIR, "index.html")
+INSIGHT_INDEX_PATH = os.path.join(BASE_DIR, "insight", "index.html")
+MAIN_JS_VERSION = "20261128"
+
 LLMS_TXT_PATHS = [
     os.path.join(BASE_DIR, "llms.txt"),
     "/Users/takanoyousuke/.gemini/antigravity/scratch/poli-dash/public/llms.txt",
@@ -32,12 +45,118 @@ def format_jp_date(date_str):
         dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
         return f"{dt.year}年{dt.month}月{dt.day}日"
     except Exception:
-        return date_str[:10]
+        return (date_str or "")[:10]
 
 
-def build_product_spotlight_html(primary_product):
+def load_all_articles():
+    if not os.path.exists(ARTICLES_JSON_PATH):
+        return []
+    try:
+        with open(ARTICLES_JSON_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, list):
+                return sorted(data, key=lambda a: a.get("published_at", ""), reverse=True)
+    except Exception:
+        pass
+    return []
+
+
+def build_utm_url(base_url, slug, content_loc, medium="article"):
+    parsed = urlparse(base_url)
+    params = dict(parse_qsl(parsed.query))
+    params["utm_source"] = "poliside"
+    params["utm_medium"] = medium
+    params["utm_campaign"] = slug
+    params["utm_content"] = content_loc
+    return urlunparse(parsed._replace(query=urlencode(params)))
+
+
+def add_utm_to_inline_ecosystem_links(content_html, slug):
+    """Attach UTM parameters to inline PoliStep / PoliDash links inside article body."""
+    def repl(match):
+        prefix, url, suffix = match.group(1), match.group(2), match.group(3)
+        if "utm_source=" in url:
+            return match.group(0)
+        if "polistep.jp" in url:
+            new_url = build_utm_url(url, slug, "article_inline_polistep")
+        elif "polidash.jp" in url:
+            new_url = build_utm_url(url, slug, "article_inline_polidash")
+        else:
+            return match.group(0)
+        return f"{prefix}{new_url}{suffix}"
+
+    return re.sub(
+        r'(href=")(https://(?:polistep\.jp|polidash\.jp)[^"]*)(")',
+        repl,
+        content_html,
+    )
+
+
+def build_mid_article_cta_html(primary_product, slug):
     if primary_product == "PoliStep":
-        return """
+        url = build_utm_url("https://polistep.jp/", slug, "article_mid_polistep")
+        return f"""<!-- MID_CTA_START -->
+      <aside class="mid-article-cta" style="margin: 36px 0; padding: 22px 24px; border-radius: 16px; background: #F0F9FF; border: 1.5px solid #7DD3FC; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+        <div style="flex: 1 1 320px;">
+          <div style="font-size: 0.76rem; font-weight: 800; color: #0284C7; letter-spacing: 0.04em; margin-bottom: 4px;">無料ツールで今すぐ実践</div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0F172A; margin-bottom: 4px;">日々の地域活動・駅頭・対話ログを地図で可視化「PoliStep」</div>
+          <p style="margin: 0; font-size: 0.88rem; color: #334155; line-height: 1.6;">2027年統一地方選キャンペーンで全機能0円。スマホ1つで活動記録・目標逆算・SNS日報生成まで完結します。</p>
+        </div>
+        <a href="{url}" data-cta-location="article_mid_polistep" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#0EA5E9; color:#fff; padding:11px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem; white-space:nowrap;">
+          <i class="fas fa-shoe-prints"></i> PoliStepを無料で試す
+        </a>
+      </aside>
+      <!-- MID_CTA_END -->"""
+    elif primary_product == "PoliDash":
+        url = build_utm_url("https://polidash.jp/", slug, "article_mid_polidash")
+        return f"""<!-- MID_CTA_START -->
+      <aside class="mid-article-cta" style="margin: 36px 0; padding: 22px 24px; border-radius: 16px; background: #ECFDF5; border: 1.5px solid #6EE7B7; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+        <div style="flex: 1 1 320px;">
+          <div style="font-size: 0.76rem; font-weight: 800; color: #059669; letter-spacing: 0.04em; margin-bottom: 4px;">無料ツールで今すぐ実践</div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0F172A; margin-bottom: 4px;">公営掲示板マッピング＆AI最適ルート生成「PoliDash」</div>
+          <p style="margin: 0; font-size: 0.88rem; color: #334155; line-height: 1.6;">住所リストを貼るだけで地図化＆スタッフへLINE共有。告示日当日のポスター貼りを最速で完了できます。</p>
+        </div>
+        <a href="{url}" data-cta-location="article_mid_polidash" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#10B981; color:#fff; padding:11px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem; white-space:nowrap;">
+          <i class="fas fa-map-location-dot"></i> PoliDashを無料で試す
+        </a>
+      </aside>
+      <!-- MID_CTA_END -->"""
+    else:
+        return """<!-- MID_CTA_START -->
+      <aside class="mid-article-cta" style="margin: 36px 0; padding: 22px 24px; border-radius: 16px; background: #FFF7ED; border: 1.5px solid #FDBA74; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+        <div style="flex: 1 1 320px;">
+          <div style="font-size: 0.76rem; font-weight: 800; color: #EA580C; letter-spacing: 0.04em; margin-bottom: 4px;">初回60分無料・秘密厳守</div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0F172A; margin-bottom: 4px;">選挙準備・候補者HP・発信戦略をひとりで抱えていませんか？</div>
+          <p style="margin: 0; font-size: 0.88rem; color: #334155; line-height: 1.6;">PoliSideでは立候補経験者が壁打ち相手として伴走します。まずはLINEからお気軽にご相談ください。</p>
+        </div>
+        <a href="https://lin.ee/en5smI7" data-cta-location="article_mid_line" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#06C755; color:#fff; padding:11px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem; white-space:nowrap;">
+          <i class="fab fa-line"></i> LINEで無料相談する
+        </a>
+      </aside>
+      <!-- MID_CTA_END -->"""
+
+
+def inject_mid_article_cta(content_html, primary_product, slug):
+    mid_cta = build_mid_article_cta_html(primary_product, slug)
+    if "<!-- MID_CTA_START -->" in content_html:
+        return re.sub(
+            r"<!-- MID_CTA_START -->.*?<!-- MID_CTA_END -->",
+            mid_cta,
+            content_html,
+            flags=re.DOTALL,
+        )
+    h2_matches = list(re.finditer(r"<h2\b", content_html))
+    if len(h2_matches) >= 2:
+        pos = h2_matches[1].start()
+        return content_html[:pos] + "\n" + mid_cta + "\n\n" + content_html[pos:]
+    return content_html
+
+
+def build_product_spotlight_html(primary_product, slug):
+    polistep_primary = build_utm_url("https://polistep.jp/", slug, "article_spotlight_polistep")
+    polidash_primary = build_utm_url("https://polidash.jp/", slug, "article_spotlight_polidash")
+    if primary_product == "PoliStep":
+        return f"""
         <div class="ecosystem-spotlight" style="margin: 48px 0; padding: 32px; border-radius: 20px; background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFC 100%); border: 2px solid #0EA5E9; box-shadow: 0 10px 28px rgba(14, 165, 233, 0.08);">
           <div style="display:inline-block; background:#0EA5E9; color:#fff; font-size:0.78rem; font-weight:800; padding:4px 12px; border-radius:999px; margin-bottom:12px;">政治活動DX・フィールド活動可視化アプリ</div>
           <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">孤独なドブ板を可視化で変える「PoliStep（ポリステップ）」</h3>
@@ -45,17 +164,17 @@ def build_product_spotlight_html(primary_product):
             日々の地域訪問・対話記録・ポスター貼付・街頭演説・ビラ配りをスマホ地図上でワンタップ記録。目標日からの1日あたりのノルマ自動逆算や、SNS・LINEグループへの日報画像自動生成まで、政治活動の進捗管理とチーム共有を完全無料でサポートします。
           </p>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
-            <a href="https://polistep.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#0EA5E9; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
+            <a href="{polistep_primary}" data-cta-location="article_spotlight_polistep" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#0EA5E9; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
               <i class="fas fa-shoe-prints"></i> PoliStep 公式サイトを見る（無料）
             </a>
-            <a href="https://polidash.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem;">
+            <a href="{polidash_primary}" data-cta-location="article_spotlight_polidash_sub" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem;">
               <i class="fas fa-map-location-dot" style="color:#10B981;"></i> ポスター貼付管理なら PoliDash
             </a>
           </div>
         </div>
         """
     elif primary_product == "PoliDash":
-        return """
+        return f"""
         <div class="ecosystem-spotlight" style="margin: 48px 0; padding: 32px; border-radius: 20px; background: linear-gradient(135deg, #ECFDF5 0%, #F8FAFC 100%); border: 2px solid #10B981; box-shadow: 0 10px 28px rgba(16, 185, 129, 0.08);">
           <div style="display:inline-block; background:#10B981; color:#fff; font-size:0.78rem; font-weight:800; padding:4px 12px; border-radius:999px; margin-bottom:12px;">選挙ポスター貼付管理アプリ</div>
           <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">ポスター割り振りと進捗をスマホで一元管理「PoliDash（ポリダッシュ）」</h3>
@@ -63,17 +182,17 @@ def build_product_spotlight_html(primary_product):
             掲示場所の住所リストをコピペするだけで地図上にピンを一括自動配置。AIがスタッフ人数や移動手段に合わせて最適な巡回ルートを自動生成し、ログイン不要の専用URLをLINEで送るだけでリアルタイムに進捗を同期できます。
           </p>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
-            <a href="https://polidash.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#10B981; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
+            <a href="{polidash_primary}" data-cta-location="article_spotlight_polidash" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#10B981; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
               <i class="fas fa-map-location-dot"></i> PoliDash 公式サイトを見る（無料）
             </a>
-            <a href="https://polistep.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem;">
+            <a href="{polistep_primary}" data-cta-location="article_spotlight_polistep_sub" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem;">
               <i class="fas fa-shoe-prints" style="color:#0EA5E9;"></i> 日々の地域活動記録なら PoliStep
             </a>
           </div>
         </div>
         """
     else:
-        return """
+        return f"""
         <div class="ecosystem-spotlight" style="margin: 48px 0; padding: 32px; border-radius: 20px; background: linear-gradient(135deg, #F8FAFC 0%, #FFF7ED 100%); border: 2px solid #F97316; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);">
           <div style="display:inline-block; background:#0F172A; color:#fff; font-size:0.78rem; font-weight:800; padding:4px 12px; border-radius:999px; margin-bottom:12px;">PoliSide エコシステム</div>
           <h3 style="margin-top:0; margin-bottom:12px; font-size:1.35rem; color:#0F172A;">HP作成・伴走相談から政治活動DXツールまでトータルサポート</h3>
@@ -81,13 +200,13 @@ def build_product_spotlight_html(primary_product):
             PoliSide（候補者HP作成＆月1回のオンライン伴走サポート）に加え、日々の地域活動を地図とグラフで可視化する「PoliStep」、選挙ポスター貼付管理アプリ「PoliDash」であなたの挑戦を全方位から支えます。
           </p>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
-            <a href="https://poliside.net/#pricing" style="display:inline-flex; align-items:center; gap:8px; background:#F97316; color:#fff; padding:12px 22px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.92rem;">
+            <a href="https://poliside.net/#pricing" data-cta-location="article_spotlight_poliside" style="display:inline-flex; align-items:center; gap:8px; background:#F97316; color:#fff; padding:12px 22px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.92rem;">
               <i class="fas fa-handshake-angle"></i> PoliSideの伴走支援・料金を見る
             </a>
-            <a href="https://polidash.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 18px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.88rem;">
+            <a href="{polidash_primary}" data-cta-location="article_spotlight_polidash_sub" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 18px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.88rem;">
               <i class="fas fa-map-location-dot" style="color:#10B981;"></i> PoliDash（ポスター管理）
             </a>
-            <a href="https://polistep.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 18px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.88rem;">
+            <a href="{polistep_primary}" data-cta-location="article_spotlight_polistep_sub" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 18px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.88rem;">
               <i class="fas fa-shoe-prints" style="color:#0EA5E9;"></i> PoliStep（活動記録DX）
             </a>
           </div>
@@ -95,18 +214,71 @@ def build_product_spotlight_html(primary_product):
         """
 
 
-def generate_static_html(article_data):
+def select_related_articles(current_slug, current_category, current_product, all_articles, limit=3):
+    scored = []
+    for idx, art in enumerate(all_articles):
+        if art.get("slug") == current_slug:
+            continue
+        score = 0
+        if art.get("primary_product") == current_product:
+            score += 3
+        if art.get("category") == current_category:
+            score += 2
+        # Slight recency bonus
+        score += max(0, (30 - idx) * 0.02)
+        scored.append((score, art))
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return [item[1] for item in scored[:limit]]
+
+
+def build_related_articles_html(current_slug, current_category, current_product, all_articles):
+    related = select_related_articles(current_slug, current_category, current_product, all_articles, limit=3)
+    if not related:
+        return "<!-- RELATED_ARTICLES_START --><!-- RELATED_ARTICLES_END -->"
+
+    cards = []
+    for art in related:
+        r_slug = art["slug"]
+        r_title = html_lib.escape(art["title"])
+        r_cat = html_lib.escape(art.get("category", "選挙"))
+        r_date = format_jp_date(art.get("published_at", ""))
+        r_lead = html_lib.escape((art.get("lead") or "")[:72] + "…")
+        cards.append(f"""
+          <a href="{r_slug}.html" class="related-card" data-cta-location="related_article" style="display:block; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:16px; padding:20px; text-decoration:none; transition:border-color 0.2s, transform 0.2s; box-shadow:0 2px 8px rgba(15,23,42,0.03);">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:0.78rem;">
+              <span style="background:rgba(249,115,22,0.12); color:#EA580C; font-weight:700; padding:2px 10px; border-radius:999px;">{r_cat}</span>
+              <span style="color:#64748B;">{r_date}</span>
+            </div>
+            <div style="font-size:1rem; font-weight:800; color:#0F172A; line-height:1.5; margin-bottom:6px;">{r_title}</div>
+            <p style="margin:0; font-size:0.86rem; color:#475569; line-height:1.6;">{r_lead}</p>
+          </a>""")
+
+    return f"""<!-- RELATED_ARTICLES_START -->
+    <section class="related-articles" aria-label="あわせて読みたい関連記事" style="max-width:760px; margin:48px auto 0; padding:0 20px;">
+      <h2 style="font-size:1.35rem; font-weight:800; color:#0F172A; margin-bottom:18px; display:flex; align-items:center; gap:10px;">
+        <i class="fas fa-book-open" style="color:#F97316;"></i>
+        <span>あわせて読みたい実践ガイド</span>
+      </h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
+        {''.join(cards)}
+      </div>
+    </section>
+    <!-- RELATED_ARTICLES_END -->"""
+
+
+def generate_static_html(article_data, all_articles=None):
     slug = article_data["slug"]
     title = article_data["title"]
     category = article_data.get("category", "選挙")
     lead = article_data["lead"]
     tldr = article_data.get("tldr", lead)
-    content_html = article_data["content_html"]
+    primary_product = article_data.get("primary_product", "PoliSide")
+    content_html = add_utm_to_inline_ecosystem_links(article_data["content_html"], slug)
+    content_html = inject_mid_article_cta(content_html, primary_product, slug)
     faqs = article_data.get("faqs", [])
     keywords = ", ".join(article_data.get("target_keywords", ["地方選挙", "若手候補者", "PoliSide", "PoliDash", "PoliStep"]))
     published_at = article_data.get("published_at", datetime.now().strftime("%Y-%m-%dT09:00:00+09:00"))
     date_jp = format_jp_date(published_at)
-    primary_product = article_data.get("primary_product", "PoliSide")
     thumb_path = article_data.get("thumbnail", "/images/insight/political_mindset.jpg")
     if thumb_path.startswith("/"):
         rel_thumb = "../.." + thumb_path
@@ -116,6 +288,10 @@ def generate_static_html(article_data):
         abs_thumb = "https://poliside.net/ogp.jpg"
 
     page_url = f"https://poliside.net/insight/posts/{slug}.html"
+    polistep_bottom = build_utm_url("https://polistep.jp/", slug, "article_bottom_polistep")
+    polidash_bottom = build_utm_url("https://polidash.jp/", slug, "article_bottom_polidash")
+    polistep_footer = build_utm_url("https://polistep.jp/", slug, "article_footer_polistep")
+    polidash_footer = build_utm_url("https://polidash.jp/", slug, "article_footer_polidash")
 
     # Build FAQ HTML & JSON-LD
     faq_html_items = []
@@ -218,7 +394,10 @@ def generate_static_html(article_data):
         ]
     }
 
-    spotlight_html = build_product_spotlight_html(primary_product)
+    spotlight_html = build_product_spotlight_html(primary_product, slug)
+    related_html = build_related_articles_html(
+        slug, category, primary_product, all_articles if all_articles is not None else load_all_articles()
+    )
 
     html = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -279,6 +458,7 @@ def generate_static_html(article_data):
     .tldr-box {{ background: #FFF7ED; border-left: 4px solid #F97316; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; }}
     .tldr-box__label {{ font-size: 0.85rem; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }}
     .btn-back {{ display: inline-block; margin-top: 32px; color: var(--color-accent); font-weight: 700; text-decoration: none; }}
+    .related-card:hover {{ border-color: #F97316 !important; transform: translateY(-2px); }}
   </style>
 </head>
 <body>
@@ -295,7 +475,7 @@ def generate_static_html(article_data):
         <a href="../index.html" class="nav__link">政治活動ノウハウ記事</a>
         <a href="../../index.html#lineup" class="nav__link">サービス</a>
         <a href="../../index.html#pricing" class="nav__link">料金</a>
-        <a href="https://lin.ee/en5smI7" onclick="if(typeof gtag==='function'){{gtag('event', 'add_line', {{ 'event_category': 'conversion' }});}}" target="_blank" rel="noopener" class="nav__link nav__link--cta">
+        <a href="https://lin.ee/en5smI7" data-cta-location="article_nav_line" target="_blank" rel="noopener" class="nav__link nav__link--cta">
           <i class="fab fa-line"></i> LINE相談
         </a>
       </div>
@@ -339,15 +519,17 @@ def generate_static_html(article_data):
       </div>
     </article>
 
+    {related_html}
+
     <!-- 記事読了後のCTA導線 -->
     <div class="article-cta-banner" style="max-width:760px; margin:48px auto; padding:36px 28px; background:#0F172A; color:#fff; border-radius:24px; text-align:center;">
       <h3 style="color:#fff; font-size:1.4rem; margin-bottom:12px;">まずは、ひとりで抱えないことから。</h3>
       <p style="color:#CBD5E1; font-size:0.98rem; line-height:1.8; margin-bottom:24px;">
         PoliSideは、若手候補者・若手議員の「隣に立つ」伴走型サポートです。<br>
-        日々の政治活動の地図記録・可視化（<a href="https://polistep.jp" target="_blank" rel="noopener" style="color:#38BDF8; text-decoration:underline;">PoliStep</a>）・選挙ポスター貼付管理（<a href="https://polidash.jp" target="_blank" rel="noopener" style="color:#34D399; text-decoration:underline;">PoliDash</a>）・HP作成まで、初回60分無料でご相談いただけます。
+        日々の政治活動の地図記録・可視化（<a href="{polistep_bottom}" data-cta-location="article_bottom_polistep" target="_blank" rel="noopener" style="color:#38BDF8; text-decoration:underline;">PoliStep</a>）・選挙ポスター貼付管理（<a href="{polidash_bottom}" data-cta-location="article_bottom_polidash" target="_blank" rel="noopener" style="color:#34D399; text-decoration:underline;">PoliDash</a>）・HP作成まで、初回60分無料でご相談いただけます。
       </p>
       <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:14px;">
-        <a href="https://lin.ee/en5smI7" onclick="if(typeof gtag==='function'){{gtag('event', 'add_line', {{ 'event_category': 'conversion' }});}}" target="_blank" rel="noopener" class="cta-btn">
+        <a href="https://lin.ee/en5smI7" data-cta-location="article_bottom_line" target="_blank" rel="noopener" class="cta-btn">
           <i class="fab fa-line" style="font-size:1.3rem;"></i>
           <span>無料相談を予約する（LINE）</span>
         </a>
@@ -369,9 +551,9 @@ def generate_static_html(article_data):
         <div class="footer__links">
           <a href="../../index.html" class="footer__link">TOP</a>
           <a href="../index.html" class="footer__link">政治活動ノウハウ記事</a>
-          <a href="https://polidash.jp" target="_blank" rel="noopener" class="footer__link">PoliDash（ポスター管理）</a>
-          <a href="https://polistep.jp" target="_blank" rel="noopener" class="footer__link">PoliStep（活動記録DX）</a>
-          <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="footer__link">LINE相談</a>
+          <a href="{polidash_footer}" data-cta-location="article_footer_polidash" target="_blank" rel="noopener" class="footer__link">PoliDash（ポスター管理）</a>
+          <a href="{polistep_footer}" data-cta-location="article_footer_polistep" target="_blank" rel="noopener" class="footer__link">PoliStep（活動記録DX）</a>
+          <a href="https://lin.ee/en5smI7" data-cta-location="article_footer_line" target="_blank" rel="noopener" class="footer__link">LINE相談</a>
         </div>
       </div>
       <div class="footer__legal">
@@ -385,7 +567,7 @@ def generate_static_html(article_data):
     </div>
   </footer>
 
-  <script src="../../js/main.js"></script>
+  <script src="../../js/main.js?v={MAIN_JS_VERSION}"></script>
   <script type="application/ld+json">
 {json.dumps(article_json_ld, ensure_ascii=False, indent=2)}
   </script>
@@ -442,8 +624,10 @@ def update_articles_json(article_data):
         "published": True
     }
     articles.insert(0, entry)
+    articles.sort(key=lambda a: a.get("published_at", ""), reverse=True)
     with open(ARTICLES_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(articles, f, ensure_ascii=False, indent=2)
+    return articles
 
 
 def update_sitemap(slug, published_at):
@@ -452,19 +636,27 @@ def update_sitemap(slug, published_at):
     with open(SITEMAP_PATH, "r", encoding="utf-8") as f:
         xml = f.read()
 
-    loc = f"https://poliside.net/insight/posts/{slug}.html"
     date_str = published_at[:10]
-    if loc in xml:
-        return
-
-    new_entry = f"""  <url>
+    if slug:
+        loc = f"https://poliside.net/insight/posts/{slug}.html"
+        if loc not in xml:
+            new_entry = f"""  <url>
     <loc>{loc}</loc>
     <lastmod>{date_str}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>"""
-    xml = xml.replace("</urlset>", new_entry)
+            xml = xml.replace("</urlset>", new_entry)
+
+    # Keep homepage and insight index <lastmod> fresh for crawlers
+    for root_loc in ["https://poliside.net/", "https://poliside.net/insight/index.html"]:
+        xml = re.sub(
+            rf"(<loc>{re.escape(root_loc)}</loc>\s*<lastmod>)[0-9\-]+(</lastmod>)",
+            rf"\g<1>{date_str}\g<2>",
+            xml,
+        )
+
     with open(SITEMAP_PATH, "w", encoding="utf-8") as f:
         f.write(xml)
 
@@ -488,6 +680,176 @@ def update_llms_txt(article_data):
             content = content.replace(marker, f"{marker}\n{line}")
             with open(llms_path, "w", encoding="utf-8") as f:
                 f.write(content)
+
+
+def build_static_article_card(art, relative_prefix="", delay_class=""):
+    slug = art["slug"]
+    title = html_lib.escape(art["title"])
+    category = html_lib.escape(art.get("category", "選挙"))
+    lead_raw = art.get("lead", "")
+    lead = html_lib.escape(lead_raw[:80] + ("..." if len(lead_raw) > 80 else ""))
+    date_jp = format_jp_date(art.get("published_at", ""))
+    thumb = (art.get("thumbnail") or "/images/insight/political_mindset.jpg").lstrip("/")
+    img_src = f"{relative_prefix}{thumb}"
+    href = f"{relative_prefix}insight/posts/{slug}.html" if relative_prefix == "" else f"posts/{slug}.html"
+    cls = f"insight-card animate-on-scroll{(' ' + delay_class) if delay_class else ''}"
+    return f"""          <a href="{href}" class="{cls}" data-category="{category}">
+            <div class="insight-card__img" style="padding:0; overflow:hidden; background: var(--color-bg-alt);">
+              <img src="{img_src}" alt="{title}" loading="lazy" width="1280" height="720" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div class="insight-card__body">
+              <span class="insight-card__category">{category}</span>
+              <h3 class="insight-card__title">{title}</h3>
+              <p class="insight-card__lead">{lead}</p>
+              <span class="insight-card__date">{date_jp}</span>
+            </div>
+          </a>"""
+
+
+def update_home_and_insight_index(all_articles):
+    """Sync latest 3 cards in index.html and all static cards in insight/index.html."""
+    if not all_articles:
+        return
+
+    # 1. Homepage (latest 3 articles)
+    if os.path.exists(HOME_HTML_PATH):
+        with open(HOME_HTML_PATH, "r", encoding="utf-8") as f:
+            home_html = f.read()
+        delays = ["", "delay-1", "delay-2"]
+        home_cards = "\n".join(
+            build_static_article_card(art, relative_prefix="", delay_class=delays[i])
+            for i, art in enumerate(all_articles[:3])
+        )
+        new_home_block = f"<!-- LATEST_INSIGHTS_START -->\n{home_cards}\n          <!-- LATEST_INSIGHTS_END -->"
+        if "<!-- LATEST_INSIGHTS_START -->" in home_html:
+            home_html = re.sub(
+                r"<!-- LATEST_INSIGHTS_START -->.*?<!-- LATEST_INSIGHTS_END -->",
+                new_home_block,
+                home_html,
+                flags=re.DOTALL,
+            )
+            with open(HOME_HTML_PATH, "w", encoding="utf-8") as f:
+                f.write(home_html)
+
+    # 2. Insight index (all published articles statically embedded for SEO crawlers)
+    if os.path.exists(INSIGHT_INDEX_PATH):
+        with open(INSIGHT_INDEX_PATH, "r", encoding="utf-8") as f:
+            idx_html = f.read()
+        all_cards = "\n".join(
+            build_static_article_card(art, relative_prefix="../", delay_class="visible")
+            for art in all_articles
+        )
+        new_idx_block = f"<!-- STATIC_ARTICLES_START -->\n{all_cards}\n        <!-- STATIC_ARTICLES_END -->"
+        if "<!-- STATIC_ARTICLES_START -->" in idx_html:
+            idx_html = re.sub(
+                r"<!-- STATIC_ARTICLES_START -->.*?<!-- STATIC_ARTICLES_END -->",
+                new_idx_block,
+                idx_html,
+                flags=re.DOTALL,
+            )
+            with open(INSIGHT_INDEX_PATH, "w", encoding="utf-8") as f:
+                f.write(idx_html)
+
+
+def refresh_existing_posts_seo(all_articles):
+    """Retrofit/refresh all existing static post HTMLs with UTMs, mid-CTA, related articles, and main.js version."""
+    art_map = {a["slug"]: a for a in all_articles}
+    updated = 0
+
+    for slug, art in art_map.items():
+        path = os.path.join(POSTS_DIR, f"{slug}.html")
+        if not os.path.exists(path):
+            continue
+        with open(path, "r", encoding="utf-8") as f:
+            page = f.read()
+
+        category = art.get("category", "選挙")
+        primary_product = art.get("primary_product", "PoliSide")
+
+        # 1. Replace inline onclick add_line with unified data-cta-location (avoid double-fire & capture location)
+        page = re.sub(
+            r'<a href="https://lin\.ee/en5smI7" onclick="[^"]*" target="_blank" rel="noopener" class="nav__link nav__link--cta">',
+            '<a href="https://lin.ee/en5smI7" data-cta-location="article_nav_line" target="_blank" rel="noopener" class="nav__link nav__link--cta">',
+            page,
+        )
+        page = re.sub(
+            r'<a href="https://lin\.ee/en5smI7" onclick="[^"]*" target="_blank" rel="noopener" class="cta-btn">',
+            '<a href="https://lin.ee/en5smI7" data-cta-location="article_bottom_line" target="_blank" rel="noopener" class="cta-btn">',
+            page,
+        )
+        page = page.replace(
+            '<a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="footer__link">LINE相談</a>',
+            '<a href="https://lin.ee/en5smI7" data-cta-location="article_footer_line" target="_blank" rel="noopener" class="footer__link">LINE相談</a>',
+        )
+
+        # 2. Add UTMs to PoliStep / PoliDash links across sections
+        def add_utm_generic(m):
+            prefix, url, suffix = m.group(1), m.group(2), m.group(3)
+            if "utm_source=" in url:
+                return m.group(0)
+            target = "polistep" if "polistep.jp" in url else "polidash"
+            new_url = build_utm_url(url, slug, f"article_{target}")
+            return f"{prefix}{new_url}{suffix}"
+
+        page = re.sub(
+            r'(href=")(https://(?:polistep\.jp|polidash\.jp)[^"]*)(")',
+            add_utm_generic,
+            page,
+        )
+
+        # 3. Inject or refresh Mid-Article CTA inside <article class="article-content">
+        mid_cta = build_mid_article_cta_html(primary_product, slug)
+        if "<!-- MID_CTA_START -->" in page:
+            page = re.sub(
+                r"<!-- MID_CTA_START -->.*?<!-- MID_CTA_END -->",
+                mid_cta,
+                page,
+                flags=re.DOTALL,
+            )
+        else:
+            art_match = re.search(r'(<article class="article-content">)(.*?)(</article>)', page, flags=re.DOTALL)
+            if art_match:
+                body = art_match.group(2)
+                h2s = list(re.finditer(r"<h2\b", body))
+                if len(h2s) >= 2:
+                    pos = h2s[1].start()
+                    new_body = body[:pos] + "\n" + mid_cta + "\n\n" + body[pos:]
+                    page = page[:art_match.start(2)] + new_body + page[art_match.end(2):]
+
+        # 4. Inject or refresh Related Articles section right before <!-- 記事読了後のCTA導線 -->
+        related_html = build_related_articles_html(slug, category, primary_product, all_articles)
+        if "<!-- RELATED_ARTICLES_START -->" in page:
+            page = re.sub(
+                r"<!-- RELATED_ARTICLES_START -->.*?<!-- RELATED_ARTICLES_END -->",
+                related_html,
+                page,
+                flags=re.DOTALL,
+            )
+        elif "<!-- 記事読了後のCTA導線 -->" in page:
+            page = page.replace(
+                "<!-- 記事読了後のCTA導線 -->",
+                related_html + "\n\n    <!-- 記事読了後のCTA導線 -->",
+                1,
+            )
+
+        # 5. Add hover CSS for related-card if absent & bump main.js cache query
+        if ".related-card:hover" not in page and "</style>" in page:
+            page = page.replace(
+                "</style>",
+                "    .related-card:hover { border-color: #F97316 !important; transform: translateY(-2px); }\n  </style>",
+                1,
+            )
+        page = re.sub(
+            r'<script src="\.\./\.\./js/main\.js(?:\?v=[^"]*)?"></script>',
+            f'<script src="../../js/main.js?v={MAIN_JS_VERSION}"></script>',
+            page,
+        )
+
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(page)
+        updated += 1
+
+    return updated
 
 
 def update_sister_site_feeds(article_data):
@@ -545,7 +907,6 @@ def update_sister_site_feeds(article_data):
         with open(feed_path, "w", encoding="utf-8") as f:
             json.dump(items, f, ensure_ascii=False, indent=2)
 
-    # PoliStep sitemap.xml の <lastmod> を最新記事公開日に自動更新
     if os.path.exists(POLISTEP_SITEMAP_PATH):
         with open(POLISTEP_SITEMAP_PATH, "r", encoding="utf-8") as f:
             sxml = f.read()
@@ -575,8 +936,17 @@ def mark_topic_published(slug, published_at):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python3 publish_article.py <article_json_path>")
+        print("Usage: python3 publish_article.py <article_json_path> | --sync-all")
         sys.exit(1)
+
+    if sys.argv[1] == "--sync-all":
+        all_articles = load_all_articles()
+        updated = refresh_existing_posts_seo(all_articles)
+        update_home_and_insight_index(all_articles)
+        if all_articles:
+            update_sitemap(None, all_articles[0].get("published_at", datetime.now().strftime("%Y-%m-%d")))
+        print(f"Synced SEO/UTM/internal links across {updated} posts, homepage, insight index, and sitemap.")
+        return
 
     input_path = sys.argv[1]
     with open(input_path, "r", encoding="utf-8") as f:
@@ -585,8 +955,10 @@ def main():
     if "published_at" not in article_data or not article_data["published_at"]:
         article_data["published_at"] = datetime.now().strftime("%Y-%m-%dT09:00:00+09:00")
 
-    html_file = generate_static_html(article_data)
-    update_articles_json(article_data)
+    all_articles = update_articles_json(article_data)
+    html_file = generate_static_html(article_data, all_articles=all_articles)
+    refresh_existing_posts_seo(all_articles)
+    update_home_and_insight_index(all_articles)
     update_sitemap(article_data["slug"], article_data["published_at"])
     update_llms_txt(article_data)
     update_sister_site_feeds(article_data)

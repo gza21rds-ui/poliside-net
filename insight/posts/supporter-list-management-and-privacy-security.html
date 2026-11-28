@@ -57,6 +57,7 @@
     .tldr-box { background: #FFF7ED; border-left: 4px solid #F97316; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; }
     .tldr-box__label { font-size: 0.85rem; font-weight: 800; color: #EA580C; letter-spacing: 0.06em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
     .btn-back { display: inline-block; margin-top: 32px; color: var(--color-accent); font-weight: 700; text-decoration: none; }
+      .related-card:hover { border-color: #F97316 !important; transform: translateY(-2px); }
   </style>
 </head>
 <body>
@@ -73,7 +74,7 @@
         <a href="../index.html" class="nav__link">政治活動ノウハウ記事</a>
         <a href="../../index.html#lineup" class="nav__link">サービス</a>
         <a href="../../index.html#pricing" class="nav__link">料金</a>
-        <a href="https://lin.ee/en5smI7" onclick="if(typeof gtag==='function'){gtag('event', 'add_line', { 'event_category': 'conversion' });}" target="_blank" rel="noopener" class="nav__link nav__link--cta">
+        <a href="https://lin.ee/en5smI7" data-cta-location="article_nav_line" target="_blank" rel="noopener" class="nav__link nav__link--cta">
           <i class="fab fa-line"></i> LINE相談
         </a>
       </div>
@@ -136,18 +137,32 @@
   </tbody>
 </table>
 
+
+<!-- MID_CTA_START -->
+      <aside class="mid-article-cta" style="margin: 36px 0; padding: 22px 24px; border-radius: 16px; background: #ECFDF5; border: 1.5px solid #6EE7B7; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+        <div style="flex: 1 1 320px;">
+          <div style="font-size: 0.76rem; font-weight: 800; color: #059669; letter-spacing: 0.04em; margin-bottom: 4px;">無料ツールで今すぐ実践</div>
+          <div style="font-size: 1.05rem; font-weight: 800; color: #0F172A; margin-bottom: 4px;">公営掲示板マッピング＆AI最適ルート生成「PoliDash」</div>
+          <p style="margin: 0; font-size: 0.88rem; color: #334155; line-height: 1.6;">住所リストを貼るだけで地図化＆スタッフへLINE共有。告示日当日のポスター貼りを最速で完了できます。</p>
+        </div>
+        <a href="https://polidash.jp/?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_mid_polidash" data-cta-location="article_mid_polidash" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#10B981; color:#fff; padding:11px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem; white-space:nowrap;">
+          <i class="fas fa-map-location-dot"></i> PoliDashを無料で試す
+        </a>
+      </aside>
+      <!-- MID_CTA_END -->
+
 <h2>2. 理念が整ったら即スタート！身軽な支援者集めの3ステップ</h2>
 <h3>ステップ①：理念・問題意識の軸を固める（PoliSide）</h3>
 <p>「なぜ自分が政治に挑むのか」「どんな地域課題を解決したいのか」という軸を言葉にします。<a href="https://poliside.net" target="_blank" rel="noopener">PoliSide</a>の伴走サポートなどで理念を言語化し、公式ホームページに掲載します。</p>
 
 <h3>ステップ②：即座に駅頭・個別訪問（地域回り）を開始する</h3>
-<p>政治団体の届出（代表・会計の2名）を速やかに済ませたら、大掛かりな組織拡大を待つ必要はありません。理念が固まったら、翌朝から駅頭に立ち、地域を歩いて住民と1対1で対話（日々の政治活動）をスタートします。現場の対話ログは「<a href="https://polistep.jp" target="_blank" rel="noopener">PoliStep</a>」で地図上に記録していきます。</p>
+<p>政治団体の届出（代表・会計の2名）を速やかに済ませたら、大掛かりな組織拡大を待つ必要はありません。理念が固まったら、翌朝から駅頭に立ち、地域を歩いて住民と1対1で対話（日々の政治活動）をスタートします。現場の対話ログは「<a href="https://polistep.jp?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_polistep" target="_blank" rel="noopener">PoliStep</a>」で地図上に記録していきます。</p>
 
 <h3>ステップ③：公式LINEで「ゆるく強いファン」をストックする</h3>
 <p>チラシ（討議資料）や名刺に公式LINEのQRコードを載せ、「市政レポートの配信」「ボランティア募集」として友だち登録を促します。紙の名簿のように紛失リスクがなく、必要なときに一斉配信でボランティア呼びかけが可能です。</p>
 
 <h2>3. 告示日オペレーションを支える「PoliDash」の権限分離</h2>
-<p>選挙の告示日当日、公営掲示板へのポスター貼り出しを手伝ってくれるボランティアに、支援者の個人情報リストを渡す必要はありません。<a href="https://polidash.jp" target="_blank" rel="noopener">PoliDash</a>を使えば、ボランティアごとに担当ルートの専用URLを発行するだけで、ログイン不要・個人情報非開示のまま、スマホ地図上でポスター貼り完了状況をリアルタイム同期できます。</p>
+<p>選挙の告示日当日、公営掲示板へのポスター貼り出しを手伝ってくれるボランティアに、支援者の個人情報リストを渡す必要はありません。<a href="https://polidash.jp?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_polidash" target="_blank" rel="noopener">PoliDash</a>を使えば、ボランティアごとに担当ルートの専用URLを発行するだけで、ログイン不要・個人情報非開示のまま、スマホ地図上でポスター貼り完了状況をリアルタイム同期できます。</p>
 
 
       
@@ -158,10 +173,10 @@
             掲示場所の住所リストをコピペするだけで地図上にピンを一括自動配置。AIがスタッフ人数や移動手段に合わせて最適な巡回ルートを自動生成し、ログイン不要の専用URLをLINEで送るだけでリアルタイムに進捗を同期できます。
           </p>
           <div style="display:flex; flex-wrap:wrap; gap:12px;">
-            <a href="https://polidash.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#10B981; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
+            <a href="https://polidash.jp?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_polidash" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#10B981; color:#fff; padding:12px 24px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.95rem;">
               <i class="fas fa-map-location-dot"></i> PoliDash 公式サイトを見る（無料）
             </a>
-            <a href="https://polistep.jp" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem;">
+            <a href="https://polistep.jp?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_polistep" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0F172A; border:1px solid #CBD5E1; padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none; font-size:0.9rem;">
               <i class="fas fa-shoe-prints" style="color:#0EA5E9;"></i> 日々の地域活動記録なら PoliStep
             </a>
           </div>
@@ -206,15 +221,51 @@
       </div>
     </article>
 
+    <!-- RELATED_ARTICLES_START -->
+    <section class="related-articles" aria-label="あわせて読みたい関連記事" style="max-width:760px; margin:48px auto 0; padding:0 20px;">
+      <h2 style="font-size:1.35rem; font-weight:800; color:#0F172A; margin-bottom:18px; display:flex; align-items:center; gap:10px;">
+        <i class="fas fa-book-open" style="color:#F97316;"></i>
+        <span>あわせて読みたい実践ガイド</span>
+      </h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
+        
+          <a href="campaign-week-7days-schedule-and-team-coordination.html" class="related-card" data-cta-location="related_article" style="display:block; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:16px; padding:20px; text-decoration:none; transition:border-color 0.2s, transform 0.2s; box-shadow:0 2px 8px rgba(15,23,42,0.03);">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:0.78rem;">
+              <span style="background:rgba(249,115,22,0.12); color:#EA580C; font-weight:700; padding:2px 10px; border-radius:999px;">選挙</span>
+              <span style="color:#64748B;">2026年11月22日</span>
+            </div>
+            <div style="font-size:1rem; font-weight:800; color:#0F172A; line-height:1.5; margin-bottom:6px;">地方選挙「選挙戦7日間（または5日間）」のタイムスケジュール完全設計｜候補者と陣営スタッフの動き方</div>
+            <p style="margin:0; font-size:0.86rem; color:#475569; line-height:1.6;">地方議会議員選挙の告示日から投票日前日までの選挙運動期間（市議・区議7日間、町村議5日間）における候補者と陣営スタッフのタイムスケジュールを完全…</p>
+          </a>
+          <a href="small-team-election-operation-with-digital-tools.html" class="related-card" data-cta-location="related_article" style="display:block; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:16px; padding:20px; text-decoration:none; transition:border-color 0.2s, transform 0.2s; box-shadow:0 2px 8px rgba(15,23,42,0.03);">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:0.78rem;">
+              <span style="background:rgba(249,115,22,0.12); color:#EA580C; font-weight:700; padding:2px 10px; border-radius:999px;">選挙</span>
+              <span style="color:#64748B;">2026年11月13日</span>
+            </div>
+            <div style="font-size:1rem; font-weight:800; color:#0F172A; line-height:1.5; margin-bottom:6px;">スタッフ3〜5人の少人数陣営でも勝てる！デジタルツールを活用した省力化・高密度な選挙運営モデル</div>
+            <p style="margin:0; font-size:0.86rem; color:#475569; line-height:1.6;">専従スタッフやボランティアが3〜5人しかいない少人数の選挙陣営でも、効率よく選挙戦を運営するためのデジタル活用モデルを解説。紙と電話のアナログ業…</p>
+          </a>
+          <a href="election-poster-board-mapping-and-volunteer-routing.html" class="related-card" data-cta-location="related_article" style="display:block; background:#FFFFFF; border:1px solid #E2E8F0; border-radius:16px; padding:20px; text-decoration:none; transition:border-color 0.2s, transform 0.2s; box-shadow:0 2px 8px rgba(15,23,42,0.03);">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:0.78rem;">
+              <span style="background:rgba(249,115,22,0.12); color:#EA580C; font-weight:700; padding:2px 10px; border-radius:999px;">選挙</span>
+              <span style="color:#64748B;">2026年11月8日</span>
+            </div>
+            <div style="font-size:1rem; font-weight:800; color:#0F172A; line-height:1.5; margin-bottom:6px;">告示日当日に慌てない！公営ポスター掲示板の貼り出しルート設計とボランティア進捗管理の鉄則</div>
+            <p style="margin:0; font-size:0.86rem; color:#475569; line-height:1.6;">選挙の告示日当日に公営ポスター掲示板への貼り出しで混乱しないためのルート設計とボランティア進捗管理の鉄則を解説。エリア分けの基準、持ち物リスト、…</p>
+          </a>
+      </div>
+    </section>
+    <!-- RELATED_ARTICLES_END -->
+
     <!-- 記事読了後のCTA導線 -->
     <div class="article-cta-banner" style="max-width:760px; margin:48px auto; padding:36px 28px; background:#0F172A; color:#fff; border-radius:24px; text-align:center;">
       <h3 style="color:#fff; font-size:1.4rem; margin-bottom:12px;">まずは、ひとりで抱えないことから。</h3>
       <p style="color:#CBD5E1; font-size:0.98rem; line-height:1.8; margin-bottom:24px;">
         PoliSideは、若手候補者・若手議員の「隣に立つ」伴走型サポートです。<br>
-        日々の政治活動の地図記録・可視化（<a href="https://polistep.jp" target="_blank" rel="noopener" style="color:#38BDF8; text-decoration:underline;">PoliStep</a>）・選挙ポスター貼付管理（<a href="https://polidash.jp" target="_blank" rel="noopener" style="color:#34D399; text-decoration:underline;">PoliDash</a>）・HP作成まで、初回60分無料でご相談いただけます。
+        日々の政治活動の地図記録・可視化（<a href="https://polistep.jp?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_polistep" target="_blank" rel="noopener" style="color:#38BDF8; text-decoration:underline;">PoliStep</a>）・選挙ポスター貼付管理（<a href="https://polidash.jp?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_polidash" target="_blank" rel="noopener" style="color:#34D399; text-decoration:underline;">PoliDash</a>）・HP作成まで、初回60分無料でご相談いただけます。
       </p>
       <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:14px;">
-        <a href="https://lin.ee/en5smI7" onclick="if(typeof gtag==='function'){gtag('event', 'add_line', { 'event_category': 'conversion' });}" target="_blank" rel="noopener" class="cta-btn">
+        <a href="https://lin.ee/en5smI7" data-cta-location="article_bottom_line" target="_blank" rel="noopener" class="cta-btn">
           <i class="fab fa-line" style="font-size:1.3rem;"></i>
           <span>無料相談を予約する（LINE）</span>
         </a>
@@ -236,9 +287,9 @@
         <div class="footer__links">
           <a href="../../index.html" class="footer__link">TOP</a>
           <a href="../index.html" class="footer__link">政治活動ノウハウ記事</a>
-          <a href="https://polidash.jp" target="_blank" rel="noopener" class="footer__link">PoliDash（ポスター管理）</a>
-          <a href="https://polistep.jp" target="_blank" rel="noopener" class="footer__link">PoliStep（活動記録DX）</a>
-          <a href="https://lin.ee/en5smI7" target="_blank" rel="noopener" class="footer__link">LINE相談</a>
+          <a href="https://polidash.jp?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_polidash" target="_blank" rel="noopener" class="footer__link">PoliDash（ポスター管理）</a>
+          <a href="https://polistep.jp?utm_source=poliside&utm_medium=article&utm_campaign=supporter-list-management-and-privacy-security&utm_content=article_polistep" target="_blank" rel="noopener" class="footer__link">PoliStep（活動記録DX）</a>
+          <a href="https://lin.ee/en5smI7" data-cta-location="article_footer_line" target="_blank" rel="noopener" class="footer__link">LINE相談</a>
         </div>
       </div>
       <div class="footer__legal">
@@ -252,7 +303,7 @@
     </div>
   </footer>
 
-  <script src="../../js/main.js"></script>
+  <script src="../../js/main.js?v=20261128"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

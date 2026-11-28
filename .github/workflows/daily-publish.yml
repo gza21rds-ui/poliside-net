@@ -32,7 +32,7 @@ jobs:
         run: |
           git config user.name "PoliSide Auto Publisher"
           git config user.email "actions@github.com"
-          git add insight/ images/insight/ sitemap.xml llms.txt
+          git add index.html insight/ images/insight/ sitemap.xml llms.txt
           if ! git diff --staged --quiet; then
             git commit -m "feat(seo-aeo): auto-publish daily article via GitHub Actions"
             git pull --rebase origin main

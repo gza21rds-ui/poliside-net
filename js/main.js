@@ -198,60 +198,166 @@ function showToast(message, type = 'success') {
 }
 
 /* ===========================================
-   GA4 Event Tracking
+   GA4 Event Tracking & Cross-Domain Attribution
    =========================================== */
 (function initGA4Tracking() {
+  function getArticleSlug() {
+    const match = window.location.pathname.match(/\/insight\/posts\/([^/]+)\.html$/);
+    if (match) return match[1];
+    const params = new URLSearchParams(window.location.search);
+    return params.get('slug') || '';
+  }
+
+  function detectCtaLocation(link) {
+    if (link.dataset && link.dataset.ctaLocation) return link.dataset.ctaLocation;
+    if (link.closest('nav')) return 'nav';
+    if (link.closest('.hero')) return 'hero';
+    if (link.closest('#pricing') || link.classList.contains('pricing-btn')) return 'pricing';
+    if (link.closest('#lineup') || link.closest('.lineup-card')) return 'lineup';
+    if (link.closest('.floating-btn')) return 'floating';
+    if (link.closest('.mid-article-cta')) return 'article_mid_cta';
+    if (link.closest('.ecosystem-spotlight')) return 'article_spotlight';
+    if (link.closest('.related-articles')) return 'related_article';
+    if (link.closest('.article-cta-banner')) return 'article_bottom_cta';
+    if (link.closest('.cta-section')) return 'page_bottom_cta';
+    if (link.closest('footer')) return 'footer';
+    return 'body';
+  }
+
+  function ensureEcosystemUtm(link, targetProduct, ctaLocation, articleSlug) {
+    const rawHref = link.getAttribute('href');
+    if (!rawHref || !rawHref.startsWith('http')) return rawHref || '';
+    try {
+      const url = new URL(rawHref);
+      if (!url.searchParams.has('utm_source')) {
+        url.searchParams.set('utm_source', 'poliside');
+        url.searchParams.set('utm_medium', articleSlug ? 'article' : 'referral');
+        url.searchParams.set('utm_campaign', articleSlug || 'site_nav');
+        url.searchParams.set('utm_content', ctaLocation);
+        link.setAttribute('href', url.toString());
+      }
+      return url.toString();
+    } catch (e) {
+      return rawHref;
+    }
+  }
+
+  const articleSlug = getArticleSlug();
+  const pagePath = window.location.pathname;
+
+  // Ensure all ecosystem links carry UTM parameters before click (works even for middle-click/copy)
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href*="polistep.jp"], a[href*="polidash.jp"]').forEach(function(link) {
+      const href = link.getAttribute('href') || '';
+      const targetProduct = href.includes('polistep.jp') ? 'polistep' : 'polidash';
+      const ctaLocation = detectCtaLocation(link);
+      ensureEcosystemUtm(link, targetProduct, ctaLocation, articleSlug);
+    });
+  });
+
   if (typeof gtag !== 'function') return;
 
   document.addEventListener('click', function(e) {
     const link = e.target.closest('a');
     if (!link) return;
     const href = link.getAttribute('href') || '';
-    const text = (link.textContent || '').trim().substring(0, 50);
+    const text = (link.textContent || '').trim().replace(/\s+/g, ' ').substring(0, 60);
+    const ctaLocation = detectCtaLocation(link);
 
-    // CTA clicks (LINE links)
-    if (href.includes('lin.ee/') || link.classList.contains('nav__link--cta') || link.classList.contains('cta__btn')) {
+    // 1. LINE consultation conversion tracking (unified across all pages, avoiding double-fire)
+    if (href.includes('lin.ee/')) {
+      const inlineAttr = link.getAttribute('onclick') || '';
+      if (!inlineAttr.includes('add_line')) {
+        gtag('event', 'add_line', {
+          event_category: 'conversion',
+          event_label: text || href,
+          cta_location: ctaLocation,
+          article_slug: articleSlug || '(none)',
+          page_path: pagePath,
+          link_url: href
+        });
+      }
       gtag('event', 'cta_click', {
         event_category: 'CTA',
         event_label: text || href,
-        link_url: href,
-        page_location: window.location.href
+        cta_location: ctaLocation,
+        article_slug: articleSlug || '(none)',
+        page_path: pagePath,
+        link_url: href
       });
+      return;
     }
 
-    // External link clicks
+    // 2. Ecosystem outbound clicks (PoliStep / PoliDash)
+    if (href.includes('polistep.jp') || href.includes('polidash.jp')) {
+      const targetProduct = href.includes('polistep.jp') ? 'polistep' : 'polidash';
+      const finalHref = ensureEcosystemUtm(link, targetProduct, ctaLocation, articleSlug);
+      gtag('event', 'ecosystem_outbound_click', {
+        event_category: 'ecosystem',
+        target_product: targetProduct,
+        cta_location: ctaLocation,
+        article_slug: articleSlug || '(none)',
+        page_path: pagePath,
+        event_label: text || finalHref,
+        link_url: finalHref
+      });
+      return;
+    }
+
+    // 3. Related article internal clicks
+    if (link.closest('.related-articles')) {
+      const targetMatch = href.match(/([^/]+)\.html$/);
+      gtag('event', 'related_article_click', {
+        event_category: 'Navigation',
+        source_slug: articleSlug || '(none)',
+        target_slug: targetMatch ? targetMatch[1] : href,
+        event_label: text || href,
+        link_url: href
+      });
+      return;
+    }
+
+    // 4. General external link clicks
     if (link.hostname && link.hostname !== window.location.hostname && !href.includes('fonts.google') && !href.includes('cdn.jsdelivr')) {
       gtag('event', 'outbound_click', {
         event_category: 'Outbound',
         event_label: text || href,
+        cta_location: ctaLocation,
+        article_slug: articleSlug || '(none)',
         link_url: href,
         page_location: window.location.href
       });
     }
 
-    // Internal navigation
+    // 5. Internal navigation
     if (link.hostname === window.location.hostname || href.startsWith('/') || href.startsWith('./') || href.startsWith('../') || (!href.startsWith('http') && href.endsWith('.html'))) {
       gtag('event', 'internal_navigation', {
         event_category: 'Navigation',
         event_label: text || href,
+        cta_location: ctaLocation,
+        article_slug: articleSlug || '(none)',
         link_url: href,
         page_location: window.location.href
       });
     }
   });
 
-  // Scroll depth tracking
-  let scrollMarkers = [25, 50, 75, 90];
-  let firedMarkers = new Set();
+  // Scroll depth tracking (safe against short pages)
+  const scrollMarkers = [25, 50, 75, 90];
+  const firedMarkers = new Set();
   window.addEventListener('scroll', function() {
-    const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-    scrollMarkers.forEach(marker => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    const scrollPercent = Math.round((window.scrollY / scrollable) * 100);
+    scrollMarkers.forEach(function(marker) {
       if (scrollPercent >= marker && !firedMarkers.has(marker)) {
         firedMarkers.add(marker);
         gtag('event', 'scroll_depth', {
           event_category: 'Engagement',
           event_label: marker + '%',
           value: marker,
+          article_slug: articleSlug || '(none)',
+          page_path: pagePath,
           page_location: window.location.href
         });
       }
@@ -259,13 +365,14 @@ function showToast(message, type = 'success') {
   }, { passive: true });
 
   // Page visibility (time on page)
-  let pageStartTime = Date.now();
+  const pageStartTime = Date.now();
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'hidden') {
       const timeOnPage = Math.round((Date.now() - pageStartTime) / 1000);
       gtag('event', 'page_engagement_time', {
         event_category: 'Engagement',
-        event_label: window.location.pathname,
+        event_label: pagePath,
+        article_slug: articleSlug || '(none)',
         value: timeOnPage
       });
     }

@@ -611,5 +611,197 @@
     "thumbnail": "/images/insight/election-poster-low-cost-printing-and-polidash.jpg",
     "status": "pending",
     "published_at": null
+  },
+  {
+    "id": "topic-037",
+    "slug": "election-poster-board-csv-google-maps-vs-polidash",
+    "category": "選挙",
+    "title": "公営ポスター掲示板の管理はGoogleマイマップとPoliDashどっちが速い？告示日当日の進捗共有を徹底比較",
+    "target_keywords": [
+      "選挙 ポスター掲示板 Googleマップ",
+      "公営掲示板 地図 管理 アプリ",
+      "選挙ポスター 貼り方 アプリ",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "選挙の公営ポスター掲示板を管理する際、Googleマイマップと専用アプリ（PoliDash）ではどのような違いがありますか？",
+    "thumbnail": "/images/insight/election-poster-management-route-optimization-polidash.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-038",
+    "slug": "election-poster-size-tack-seal-and-weatherproof-tips",
+    "category": "選挙",
+    "title": "選挙ポスターのサイズ規定・裏面両面テープ（タック紙）・雨天対策まで｜告示日当日の失敗を防ぐ準備完全ガイド",
+    "target_keywords": [
+      "選挙ポスター サイズ 規定",
+      "選挙ポスター タック紙 貼り方",
+      "選挙ポスター 雨 対策",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "地方選挙の公営掲示板に貼る選挙ポスターのサイズ規定や、雨天でも剥がれにくい貼り方・準備物のポイントは何ですか？",
+    "thumbnail": "/images/insight/election-poster-board-mapping-and-volunteer-routing.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-039",
+    "slug": "door-to-door-residential-map-vs-polistep-dx",
+    "category": "選挙",
+    "title": "紙の住宅地図と蛍光ペンでの地域回りは限界？スマホ地図アプリで重複訪問ゼロ＆対話ログを残す政治活動DX",
+    "target_keywords": [
+      "政治活動 住宅地図 アプリ",
+      "地域回り 記録 アプリ",
+      "選挙 活動記録 DX",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "政治活動の地域回りやポスティングで紙の住宅地図を使う課題と、スマホ地図アプリ（PoliStep）に切り替えるメリットは何ですか？",
+    "thumbnail": "/images/insight/small-team-election-operation-with-digital-tools.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-040",
+    "slug": "political-activity-poster-negotiation-and-tracking",
+    "category": "選挙",
+    "title": "政治活動用ポスター（2連ポスター）の掲示交渉のコツと貼付箇所管理｜剥がれ・期限切れを防ぐマップ運用術",
+    "target_keywords": [
+      "2連ポスター 交渉 コツ",
+      "政治活動 ポスター 貼り方 法律",
+      "ポスター 掲示 許可 管理",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "政治活動用ポスター（2連ポスター等）の掲示交渉を成功させるコツと、貼付後の管理で注意すべき公職選挙法のルールは何ですか？",
+    "thumbnail": "/images/insight/political-activity-vs-election-campaign-legal-boundaries.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-041",
+    "slug": "poster-volunteer-recruitment-and-line-briefing-template",
+    "category": "選挙",
+    "title": "告示日ポスター貼りボランティアの募集文面＆LINE事前案内テンプレート｜当日迷わせない役割分担とURL共有",
+    "target_keywords": [
+      "選挙 ポスター貼り ボランティア 募集",
+      "ポスター貼り LINE 連絡 テンプレート",
+      "選挙 ボランティア マニュアル",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "告示日の選挙ポスター貼りボランティアを集め、当日に混乱なく動いてもらうための事前案内と地図共有の方法を教えてください。",
+    "thumbnail": "/images/insight/campaign-week-7days-schedule-and-team-coordination.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-042",
+    "slug": "local-election-posting-flyer-efficiency-and-legal-rules",
+    "category": "発信",
+    "title": "政治活動チラシのポスティング完全ガイド｜配布枚数の目安・反応率を上げるエリア選定と禁止事項チェック",
+    "target_keywords": [
+      "政治活動 チラシ ポスティング",
+      "選挙 討議資料 配布 ルール",
+      "ポスティング エリア 管理 アプリ",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "政治活動チラシ（討議資料）をポスティングする際の適切な配布枚数の目安、効果を高めるエリア管理法、法的注意点は何ですか？",
+    "thumbnail": "/images/insight/policy-pamphlet-flyer-structure-for-young-candidates.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-043",
+    "slug": "municipality-poster-board-count-and-time-simulation",
+    "category": "選挙",
+    "title": "公営掲示板100箇所・200箇所を何人で何時間かかる？選挙ポスター貼りの人員・所要時間シミュレーション",
+    "target_keywords": [
+      "選挙 ポスター貼り 所要時間",
+      "公営掲示板 数 何人",
+      "選挙 ポスター 貼り出し スケジュール",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "公営ポスター掲示板が100〜200箇所ある自治体で告示日当日にポスターを貼り切るには、何人のスタッフと何時間が必要ですか？",
+    "thumbnail": "/images/insight/election-poster-management-route-optimization-polidash.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-044",
+    "slug": "candidate-official-line-rich-menu-and-welcome-message",
+    "category": "発信",
+    "title": "候補者・地方議員の公式LINE設計ガイド｜初回あいさつ・リッチメニュー・ブロックされない配信頻度の鉄則",
+    "target_keywords": [
+      "政治家 公式LINE 作り方",
+      "選挙 公式LINE 配信 頻度",
+      "地方議員 LINE リッチメニュー",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "地方議員や立候補予定者が公式LINEを運用する際、支援者を増やしつつブロックを防ぐ初期設定と配信頻度の目安は何ですか？",
+    "thumbnail": "/images/insight/sns-x-instagram-line-strategy-for-local-politicians.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-045",
+    "slug": "election-daily-activity-kpi-and-reverse-calculation",
+    "category": "考え方",
+    "title": "地方選挙で当選ラインから逆算する「日々の活動KPI」設計法｜駅頭・チラシ・対話件数の目標を毎日可視化する",
+    "target_keywords": [
+      "地方選挙 当選ライン 逆算",
+      "選挙 活動量 目安 1日",
+      "政治活動 目標管理 アプリ",
+      "PoliStep"
+    ],
+    "primary_product": "PoliStep",
+    "aeo_question": "地方選挙の当選ラインから逆算して、告示日までの毎日の駅頭・地域訪問・チラシ配布の目標件数をどう設計すればよいですか？",
+    "thumbnail": "/images/insight/local-election-preparation-roadmap-6months.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-046",
+    "slug": "election-poster-board-number-lottery-and-day1-workflow",
+    "category": "選挙",
+    "title": "告示日朝の「届出順抽選・掲示板番号確定」から一斉貼り出し開始までの最短オペレーション手順",
+    "target_keywords": [
+      "選挙 告示日 抽選 掲示板番号",
+      "選挙ポスター 番号 確定後 連絡",
+      "告示日 朝 スケジュール",
+      "PoliDash"
+    ],
+    "primary_product": "PoliDash",
+    "aeo_question": "選挙の告示日朝に立候補届出の抽選でポスター掲示板番号が確定した後、全ボランティアへ最速で指示を出して貼り終える手順は何ですか？",
+    "thumbnail": "/images/insight/election-filing-documents-pre-examination-checklist.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-047",
+    "slug": "election-bulletin-senkyo-koho-copywriting-guide",
+    "category": "発信",
+    "title": "有権者が投票直前に必ず見る「選挙公報」の作り方｜限られた枠で記憶に残るレイアウトとキャッチコピー設計",
+    "target_keywords": [
+      "選挙公報 作り方 レイアウト",
+      "選挙公報 キャッチコピー 例",
+      "地方選挙 選挙公報 原稿",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "投票率への影響が大きい選挙公報を作成する際、限られた紙面スペースで有権者の記憶に残るレイアウトと文章構成のコツは何ですか？",
+    "thumbnail": "/images/insight/consistent-policy-pillars-across-flyers-and-website.jpg",
+    "status": "pending"
+  },
+  {
+    "id": "topic-048",
+    "slug": "first-term-councilor-first-100-days-roadmap",
+    "category": "議会",
+    "title": "初当選した新人地方議員の「最初の100日間」ロードマップ｜会派選び・委員会・議会質問・活動発信の優先順位",
+    "target_keywords": [
+      "新人議員 当選後 やること",
+      "地方議員 会派 選び方",
+      "市議会議員 1年目 活動",
+      "PoliSide"
+    ],
+    "primary_product": "PoliSide",
+    "aeo_question": "地方選挙で初当選した新人議員が、就任から最初の100日間で取り組むべき優先事項（会派・委員会・議会質問・発信）は何ですか？",
+    "thumbnail": "/images/insight/first-general-question-local-council-guide.jpg",
+    "status": "pending"
   }
 ]
